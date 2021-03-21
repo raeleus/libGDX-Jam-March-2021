@@ -41,7 +41,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "background01",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
