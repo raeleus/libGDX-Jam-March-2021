@@ -1,12 +1,82 @@
 
 textures.png
-size: 16,16
+size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-game/white
+cinematic/bed
   rotate: false
-  xy: 1, 1
+  xy: 558, 789
+  size: 332, 228
+  orig: 332, 228
+  offset: 0, 0
+  index: -1
+cinematic/clock3
+  rotate: true
+  xy: 892, 822
+  size: 94, 106
+  orig: 94, 106
+  offset: 0, 0
+  index: -1
+cinematic/clock4
+  rotate: true
+  xy: 892, 726
+  size: 94, 99
+  orig: 94, 99
+  offset: 0, 0
+  index: -1
+cinematic/clock5
+  rotate: true
+  xy: 892, 918
+  size: 99, 112
+  orig: 99, 112
+  offset: 0, 0
+  index: -1
+cinematic/clock6
+  rotate: false
+  xy: 714, 694
+  size: 100, 93
+  orig: 100, 93
+  offset: 0, 0
+  index: -1
+cinematic/ekg
+  rotate: true
+  xy: 558, 637
+  size: 150, 154
+  orig: 150, 154
+  offset: 0, 0
+  index: -1
+cinematic/heart-rate
+  rotate: true
+  xy: 816, 641
+  size: 146, 52
+  orig: 146, 52
+  offset: 0, 0
+  index: -1
+cinematic/heart-rate-blip
+  rotate: false
+  xy: 993, 812
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+cinematic/heart-rate-flat
+  rotate: true
+  xy: 1006, 759
+  size: 258, 8
+  orig: 258, 8
+  offset: 0, 0
+  index: -1
+cinematic/hospital
+  rotate: false
+  xy: 1, 604
+  size: 555, 413
+  orig: 555, 413
+  offset: 0, 0
+  index: -1
+cinematic/white
+  rotate: false
+  xy: 1016, 1016
   size: 1, 1
   orig: 1, 1
   offset: 0, 0

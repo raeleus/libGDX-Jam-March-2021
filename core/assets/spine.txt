@@ -1,3 +1,4 @@
+spine/cinematic1.json
 spine/logo-libgdx.json
 spine/logo-ray3k.json
 spine/preload.json
