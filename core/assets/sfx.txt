@@ -1,4 +1,5 @@
 sfx/click.mp3
+sfx/cry.mp3
 sfx/ekg-beep.mp3
 sfx/happynes.mp3
 sfx/libgdx ahhh.mp3

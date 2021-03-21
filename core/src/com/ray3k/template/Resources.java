@@ -16,6 +16,8 @@ public class Resources {
 
     public static Sound sfx_click;
 
+    public static Sound sfx_cry;
+
     public static Sound sfx_ekgBeep;
 
     public static Sound sfx_happynes;
@@ -49,6 +51,11 @@ public class Resources {
         Cinematic1Spine.animationAnimation = Cinematic1Spine.skeletonData.findAnimation("animation");
         Cinematic1Spine.standingAnimation = Cinematic1Spine.skeletonData.findAnimation("standing");
         Cinematic1Spine.defaultSkin = Cinematic1Spine.skeletonData.findSkin("default");
+        Cinematic3Spine.skeletonData = assetManager.get("spine/cinematic3.json");
+        Cinematic3Spine.animationData = assetManager.get("spine/cinematic3.json-animation");
+        Cinematic3Spine.animationAnimation = Cinematic3Spine.skeletonData.findAnimation("animation");
+        Cinematic3Spine.standingAnimation = Cinematic3Spine.skeletonData.findAnimation("standing");
+        Cinematic3Spine.defaultSkin = Cinematic3Spine.skeletonData.findSkin("default");
         LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
         LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
         LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
@@ -65,6 +72,7 @@ public class Resources {
         PreloadSpine.defaultSkin = PreloadSpine.skeletonData.findSkin("default");
         textures_textures = assetManager.get("textures/textures.atlas");
         sfx_click = assetManager.get("sfx/click.mp3");
+        sfx_cry = assetManager.get("sfx/cry.mp3");
         sfx_ekgBeep = assetManager.get("sfx/ekg-beep.mp3");
         sfx_happynes = assetManager.get("sfx/happynes.mp3");
         sfx_libgdxAhhh = assetManager.get("sfx/libgdx ahhh.mp3");
@@ -81,6 +89,18 @@ public class Resources {
     }
 
     public static class Cinematic1Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class Cinematic3Spine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;

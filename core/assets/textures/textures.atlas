@@ -1,82 +1,138 @@
 
 textures.png
-size: 1024,1024
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 cinematic/bed
   rotate: false
-  xy: 558, 789
+  xy: 558, 1124
   size: 332, 228
   orig: 332, 228
   offset: 0, 0
   index: -1
 cinematic/clock3
   rotate: true
-  xy: 892, 822
+  xy: 690, 927
   size: 94, 106
   orig: 94, 106
   offset: 0, 0
   index: -1
 cinematic/clock4
   rotate: true
-  xy: 892, 726
+  xy: 558, 846
   size: 94, 99
   orig: 94, 99
   offset: 0, 0
   index: -1
 cinematic/clock5
   rotate: true
-  xy: 892, 918
+  xy: 693, 1023
   size: 99, 112
   orig: 99, 112
   offset: 0, 0
   index: -1
 cinematic/clock6
   rotate: false
-  xy: 714, 694
+  xy: 892, 954
   size: 100, 93
   orig: 100, 93
   offset: 0, 0
   index: -1
+cinematic/doctor
+  rotate: true
+  xy: 892, 1201
+  size: 151, 280
+  orig: 151, 280
+  offset: 0, 0
+  index: -1
+cinematic/doctor-head
+  rotate: false
+  xy: 1048, 834
+  size: 75, 120
+  orig: 75, 120
+  offset: 0, 0
+  index: -1
 cinematic/ekg
   rotate: true
-  xy: 558, 637
+  xy: 892, 1049
   size: 150, 154
   orig: 150, 154
   offset: 0, 0
   index: -1
 cinematic/heart-rate
   rotate: true
-  xy: 816, 641
+  xy: 994, 901
   size: 146, 52
   orig: 146, 52
   offset: 0, 0
   index: -1
 cinematic/heart-rate-blip
   rotate: false
-  xy: 993, 812
+  xy: 659, 932
   size: 9, 8
   orig: 9, 8
   offset: 0, 0
   index: -1
 cinematic/heart-rate-flat
   rotate: true
-  xy: 1006, 759
+  xy: 1134, 941
   size: 258, 8
   orig: 258, 8
   offset: 0, 0
   index: -1
 cinematic/hospital
   rotate: false
-  xy: 1, 604
+  xy: 1, 939
   size: 555, 413
   orig: 555, 413
   offset: 0, 0
   index: -1
+cinematic/mom
+  rotate: false
+  xy: 1048, 956
+  size: 84, 243
+  orig: 84, 243
+  offset: 0, 0
+  index: -1
+cinematic/mom-head
+  rotate: false
+  xy: 807, 993
+  size: 83, 129
+  orig: 83, 129
+  offset: 0, 0
+  index: -1
+cinematic/mom-tear
+  rotate: true
+  xy: 1144, 1181
+  size: 18, 26
+  orig: 18, 26
+  offset: 0, 0
+  index: -1
+cinematic/speech-come-back
+  rotate: false
+  xy: 558, 1024
+  size: 133, 98
+  orig: 133, 98
+  offset: 0, 0
+  index: -1
+cinematic/speech-come-on
+  rotate: false
+  xy: 558, 942
+  size: 127, 80
+  orig: 127, 80
+  offset: 0, 0
+  index: -1
+cinematic/speech-we-did-all
+  rotate: true
+  xy: 1174, 1188
+  size: 164, 178
+  orig: 164, 178
+  offset: 0, 0
+  index: -1
 cinematic/white
   rotate: false
-  xy: 1016, 1016
+  xy: 687, 1021
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
