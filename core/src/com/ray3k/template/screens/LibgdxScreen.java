@@ -125,11 +125,11 @@ public class LibgdxScreen extends JamScreen {
         batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         stage.draw();
         
-        if (bone != null) {
-            stage.getBatch().begin();
-            particleEffect.draw(stage.getBatch());
-            stage.getBatch().end();
-        }
+//        if (bone != null) {
+//            stage.getBatch().begin();
+//            particleEffect.draw(stage.getBatch());
+//            stage.getBatch().end();
+//        }
     }
     
     @Override
