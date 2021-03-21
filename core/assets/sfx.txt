@@ -1,6 +1,7 @@
 sfx/click.mp3
 sfx/cry.mp3
 sfx/ekg-beep.mp3
+sfx/ekg-flat.mp3
 sfx/happynes.mp3
 sfx/libgdx ahhh.mp3
 sfx/libgdx applause.mp3
@@ -11,3 +12,4 @@ sfx/libgdx magnificent dee.mp3
 sfx/libgdx poof.mp3
 sfx/libgdx saw.mp3
 sfx/libgdx something wrong.mp3
+sfx/mumble.mp3

@@ -20,6 +20,8 @@ public class Resources {
 
     public static Sound sfx_ekgBeep;
 
+    public static Sound sfx_ekgFlat;
+
     public static Sound sfx_happynes;
 
     public static Sound sfx_libgdxAhhh;
@@ -40,6 +42,8 @@ public class Resources {
 
     public static Sound sfx_libgdxSomethingWrong;
 
+    public static Sound sfx_mumble;
+
     public static Music bgm_audioSample;
 
     public static Music bgm_menu;
@@ -51,6 +55,11 @@ public class Resources {
         Cinematic1Spine.animationAnimation = Cinematic1Spine.skeletonData.findAnimation("animation");
         Cinematic1Spine.standingAnimation = Cinematic1Spine.skeletonData.findAnimation("standing");
         Cinematic1Spine.defaultSkin = Cinematic1Spine.skeletonData.findSkin("default");
+        Cinematic2Spine.skeletonData = assetManager.get("spine/cinematic2.json");
+        Cinematic2Spine.animationData = assetManager.get("spine/cinematic2.json-animation");
+        Cinematic2Spine.animationAnimation = Cinematic2Spine.skeletonData.findAnimation("animation");
+        Cinematic2Spine.standingAnimation = Cinematic2Spine.skeletonData.findAnimation("standing");
+        Cinematic2Spine.defaultSkin = Cinematic2Spine.skeletonData.findSkin("default");
         Cinematic3Spine.skeletonData = assetManager.get("spine/cinematic3.json");
         Cinematic3Spine.animationData = assetManager.get("spine/cinematic3.json-animation");
         Cinematic3Spine.animationAnimation = Cinematic3Spine.skeletonData.findAnimation("animation");
@@ -74,6 +83,7 @@ public class Resources {
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_cry = assetManager.get("sfx/cry.mp3");
         sfx_ekgBeep = assetManager.get("sfx/ekg-beep.mp3");
+        sfx_ekgFlat = assetManager.get("sfx/ekg-flat.mp3");
         sfx_happynes = assetManager.get("sfx/happynes.mp3");
         sfx_libgdxAhhh = assetManager.get("sfx/libgdx ahhh.mp3");
         sfx_libgdxApplause = assetManager.get("sfx/libgdx applause.mp3");
@@ -84,11 +94,24 @@ public class Resources {
         sfx_libgdxPoof = assetManager.get("sfx/libgdx poof.mp3");
         sfx_libgdxSaw = assetManager.get("sfx/libgdx saw.mp3");
         sfx_libgdxSomethingWrong = assetManager.get("sfx/libgdx something wrong.mp3");
+        sfx_mumble = assetManager.get("sfx/mumble.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
 
     public static class Cinematic1Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class Cinematic2Spine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
