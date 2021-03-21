@@ -7,7 +7,7 @@
 				"child": {
 					"class": "Image",
 					"name": null,
-					"drawable": "libgdx-animation",
+					"drawable": "title",
 					"scaling": "none",
 					"touchable": "enabled",
 					"visible": true
@@ -41,12 +41,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "play",
-					"text": "Play",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "play"
 					},
 					"checked": false,
 					"disabled": false,
@@ -87,12 +86,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "options",
-					"text": "Options",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "options"
 					},
 					"checked": false,
 					"disabled": false,
@@ -133,12 +131,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "credits",
-					"text": "Credits",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "credits"
 					},
 					"checked": false,
 					"disabled": false,
@@ -179,18 +176,10 @@
 			},
 			{
 				"child": {
-					"class": "Label",
+					"class": "Image",
 					"name": null,
-					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-						"name": "default"
-					},
-					"text": "Copyright Raymond \"Raeleus\" Buckley © 2020",
-					"textAlignment": 8,
-					"ellipsis": false,
-					"ellipsisString": "...",
-					"wrap": false,
-					"color": null,
+					"drawable": "copyright",
+					"scaling": "none",
 					"touchable": "enabled",
 					"visible": true
 				},
@@ -202,7 +191,7 @@
 				"padBottom": 0,
 				"spaceLeft": 30,
 				"spaceRight": 30,
-				"spaceTop": 30,
+				"spaceTop": 10,
 				"spaceBottom": 30,
 				"expandX": false,
 				"expandY": false,
@@ -223,7 +212,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "background01",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
@@ -236,7 +225,7 @@
 		"visible": true
 	}
 ],
-"backgroundColor": "black",
+"backgroundColor": null,
 "skinPath": "skin.json",
 "packageString": "com.mygdx.game",
 "classString": "Core"

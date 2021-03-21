@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -33,7 +35,7 @@ public class MenuScreen extends JamScreen {
         Gdx.input.setInputProcessor(stage);
     
         sceneBuilder.build(stage, skin, Gdx.files.internal("menus/main.json"));
-        TextButton textButton = stage.getRoot().findActor("play");
+        ImageButton textButton = stage.getRoot().findActor("play");
         textButton.addListener(sndChangeListener);
         textButton.addListener(new ChangeListener() {
             @Override

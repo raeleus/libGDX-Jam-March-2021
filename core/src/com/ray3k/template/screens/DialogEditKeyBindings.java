@@ -117,13 +117,13 @@ public class DialogEditKeyBindings extends Dialog {
         
         getButtonTable().pad(5);
         getButtonTable().defaults().uniform().fill().space(10);
-        TextButton textButton = new TextButton("OK", skin);
+        ImageButton textButton = new ImageButton(skin, "ok");
         button(textButton);
         focusables.add(textButton);
         textButton.addListener(sndChangeListener);
         textButton.addListener(mouseEnterListener);
         
-        textButton = new TextButton("Defaults", skin);
+        textButton = new ImageButton(skin, "defaults");
         getButtonTable().add(textButton);
         focusables.add(textButton);
         textButton.addListener(sndChangeListener);

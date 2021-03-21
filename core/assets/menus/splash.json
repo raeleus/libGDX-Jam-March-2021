@@ -5,18 +5,10 @@
 		"cells": [
 			{
 				"child": {
-					"class": "Label",
+					"class": "Image",
 					"name": null,
-					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-						"name": "default"
-					},
-					"text": "CLICK HERE TO PLAY",
-					"textAlignment": 8,
-					"ellipsis": false,
-					"ellipsisString": "...",
-					"wrap": false,
-					"color": null,
+					"drawable": "click-here-to-play",
+					"scaling": "stretch",
 					"touchable": "enabled",
 					"visible": true
 				},

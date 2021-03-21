@@ -5,18 +5,10 @@
 		"cells": [
 			{
 				"child": {
-					"class": "Label",
-					"name": "label",
-					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-						"name": "default"
-					},
-					"text": "This game was made by Raeleus.\\nCopyright Raymond \"Raeleus\" Buckley © 2020\\n\\nMusic by Devynn LaShure, Echo Blue Music\\nhttps://www.echobluemusic.com",
-					"textAlignment": 1,
-					"ellipsis": false,
-					"ellipsisString": "...",
-					"wrap": false,
-					"color": null,
+					"class": "Image",
+					"name": null,
+					"drawable": "this-game",
+					"scaling": "stretch",
 					"touchable": "enabled",
 					"visible": true
 				},
@@ -49,12 +41,47 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "Image",
+					"name": null,
+					"drawable": "copyright",
+					"scaling": "stretch",
+					"touchable": "enabled",
+					"visible": true
+				},
+				"row": 1,
+				"column": 0,
+				"padLeft": 0,
+				"padRight": 0,
+				"padTop": 0,
+				"padBottom": 0,
+				"spaceLeft": 0,
+				"spaceRight": 0,
+				"spaceTop": 10,
+				"spaceBottom": 0,
+				"expandX": false,
+				"expandY": false,
+				"fillX": false,
+				"fillY": false,
+				"growX": false,
+				"growY": false,
+				"alignment": 1,
+				"minWidth": -1,
+				"minHeight": -1,
+				"maxWidth": -1,
+				"maxHeight": -1,
+				"preferredWidth": -1,
+				"preferredHeight": -1,
+				"uniformX": false,
+				"uniformY": false,
+				"colSpan": 1
+			},
+			{
+				"child": {
+					"class": "ImageButton",
 					"name": "ok",
-					"text": "OK",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "ok"
 					},
 					"checked": false,
 					"disabled": false,
@@ -66,7 +93,7 @@
 					"touchable": "enabled",
 					"visible": true
 				},
-				"row": 1,
+				"row": 2,
 				"column": 0,
 				"padLeft": 0,
 				"padRight": 0,
@@ -95,7 +122,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "background01",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
@@ -108,7 +135,7 @@
 		"visible": true
 	}
 ],
-"backgroundColor": "black",
+"backgroundColor": null,
 "skinPath": "skin.json",
 "packageString": "com.mygdx.game",
 "classString": "Core"

@@ -5,14 +5,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.rafaskoberg.gdx.typinglabel.TypingConfig;
-import com.rafaskoberg.gdx.typinglabel.TypingLabel;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
@@ -30,7 +26,7 @@ public class CreditsScreen extends JamScreen {
         
         sceneBuilder.build(stage, skin, Gdx.files.internal("menus/credits.json"));
         
-        TextButton textButton = stage.getRoot().findActor("ok");
+        ImageButton textButton = stage.getRoot().findActor("ok");
         textButton.addListener(sndChangeListener);
         textButton.addListener(new ChangeListener() {
             @Override
@@ -39,12 +35,6 @@ public class CreditsScreen extends JamScreen {
                 core.transition(new MenuScreen());
             }
         });
-    
-        TypingConfig.INTERVAL_MULTIPLIERS_BY_CHAR.put('\n', .5f);
-        Label label = stage.getRoot().findActor("label");
-        var typingLabel = new TypingLabel(label.getText(), skin);
-        typingLabel.setAlignment(Align.center);
-        ((Table) label.getParent()).getCell(label).setActor(typingLabel);
     }
     
     @Override

@@ -14,19 +14,27 @@ public class Resources {
 
     public static TextureAtlas textures_textures;
 
-    public static Sound sfx_ahh;
-
     public static Sound sfx_click;
 
-    public static Sound sfx_libgdx;
+    public static Sound sfx_happynes;
 
-    public static Sound sfx_pleaseDontKillMe;
+    public static Sound sfx_libgdxAhhh;
 
-    public static Sound sfx_shot;
+    public static Sound sfx_libgdxApplause;
 
-    public static Sound sfx_swoosh;
+    public static Sound sfx_libgdxGore;
 
-    public static Sound sfx_tv;
+    public static Sound sfx_libgdxHeeHee;
+
+    public static Sound sfx_libgdxMagic;
+
+    public static Sound sfx_libgdxMagnificentDee;
+
+    public static Sound sfx_libgdxPoof;
+
+    public static Sound sfx_libgdxSaw;
+
+    public static Sound sfx_libgdxSomethingWrong;
 
     public static Music bgm_audioSample;
 
@@ -34,48 +42,66 @@ public class Resources {
 
     public static void loadResources(AssetManager assetManager) {
         skin_skin = assetManager.get("skin/skin.json");
-        LibgdxSpine.skeletonData = assetManager.get("spine/libgdx.json");
-        LibgdxSpine.animationData = assetManager.get("spine/libgdx.json-animation");
-        LibgdxSpine.animationAnimation = LibgdxSpine.skeletonData.findAnimation("animation");
-        LibgdxSpine.standAnimation = LibgdxSpine.skeletonData.findAnimation("stand");
-        LibgdxSpine.defaultSkin = LibgdxSpine.skeletonData.findSkin("default");
-        Ray3kSpine.skeletonData = assetManager.get("spine/ray3k.json");
-        Ray3kSpine.animationData = assetManager.get("spine/ray3k.json-animation");
-        Ray3kSpine.animationAnimation = Ray3kSpine.skeletonData.findAnimation("animation");
-        Ray3kSpine.standAnimation = Ray3kSpine.skeletonData.findAnimation("stand");
-        Ray3kSpine.defaultSkin = Ray3kSpine.skeletonData.findSkin("default");
+        LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
+        LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
+        LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
+        LogoLibgdxSpine.standingAnimation = LogoLibgdxSpine.skeletonData.findAnimation("standing");
+        LogoLibgdxSpine.defaultSkin = LogoLibgdxSpine.skeletonData.findSkin("default");
+        LogoRay3kSpine.skeletonData = assetManager.get("spine/logo-ray3k.json");
+        LogoRay3kSpine.animationData = assetManager.get("spine/logo-ray3k.json-animation");
+        LogoRay3kSpine.animationAnimation = LogoRay3kSpine.skeletonData.findAnimation("animation");
+        LogoRay3kSpine.standingAnimation = LogoRay3kSpine.skeletonData.findAnimation("standing");
+        LogoRay3kSpine.defaultSkin = LogoRay3kSpine.skeletonData.findSkin("default");
+        PreloadSpine.skeletonData = assetManager.get("spine/preload.json");
+        PreloadSpine.animationData = assetManager.get("spine/preload.json-animation");
+        PreloadSpine.animationAnimation = PreloadSpine.skeletonData.findAnimation("animation");
+        PreloadSpine.defaultSkin = PreloadSpine.skeletonData.findSkin("default");
         textures_textures = assetManager.get("textures/textures.atlas");
-        sfx_ahh = assetManager.get("sfx/ahh.mp3");
         sfx_click = assetManager.get("sfx/click.mp3");
-        sfx_libgdx = assetManager.get("sfx/libgdx.mp3");
-        sfx_pleaseDontKillMe = assetManager.get("sfx/please don't kill me.mp3");
-        sfx_shot = assetManager.get("sfx/shot.mp3");
-        sfx_swoosh = assetManager.get("sfx/swoosh.mp3");
-        sfx_tv = assetManager.get("sfx/tv.mp3");
+        sfx_happynes = assetManager.get("sfx/happynes.mp3");
+        sfx_libgdxAhhh = assetManager.get("sfx/libgdx ahhh.mp3");
+        sfx_libgdxApplause = assetManager.get("sfx/libgdx applause.mp3");
+        sfx_libgdxGore = assetManager.get("sfx/libgdx gore.mp3");
+        sfx_libgdxHeeHee = assetManager.get("sfx/libgdx hee hee.mp3");
+        sfx_libgdxMagic = assetManager.get("sfx/libgdx magic.mp3");
+        sfx_libgdxMagnificentDee = assetManager.get("sfx/libgdx magnificent dee.mp3");
+        sfx_libgdxPoof = assetManager.get("sfx/libgdx poof.mp3");
+        sfx_libgdxSaw = assetManager.get("sfx/libgdx saw.mp3");
+        sfx_libgdxSomethingWrong = assetManager.get("sfx/libgdx something wrong.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
 
-    public static class LibgdxSpine {
+    public static class LogoLibgdxSpine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
 
         public static Animation animationAnimation;
 
-        public static Animation standAnimation;
+        public static Animation standingAnimation;
 
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
-    public static class Ray3kSpine {
+    public static class LogoRay3kSpine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
 
         public static Animation animationAnimation;
 
-        public static Animation standAnimation;
+        public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class PreloadSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
 
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }

@@ -5,18 +5,10 @@
 		"cells": [
 			{
 				"child": {
-					"class": "Label",
+					"class": "Image",
 					"name": null,
-					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-						"name": "default"
-					},
-					"text": "Options",
-					"textAlignment": 8,
-					"ellipsis": false,
-					"ellipsisString": "...",
-					"wrap": false,
-					"color": null,
+					"drawable": "options-text",
+					"scaling": "stretch",
 					"touchable": "enabled",
 					"visible": true
 				},
@@ -53,18 +45,10 @@
 					"cells": [
 						{
 							"child": {
-								"class": "Label",
+								"class": "Image",
 								"name": null,
-								"style": {
-									"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-									"name": "default"
-								},
-								"text": "BGM",
-								"textAlignment": 8,
-								"ellipsis": false,
-								"ellipsisString": "...",
-								"wrap": false,
-								"color": null,
+								"drawable": "bgm",
+								"scaling": "stretch",
 								"touchable": "enabled",
 								"visible": true
 							},
@@ -145,18 +129,10 @@
 						},
 						{
 							"child": {
-								"class": "Label",
+								"class": "Image",
 								"name": null,
-								"style": {
-									"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
-									"name": "default"
-								},
-								"text": "SFX",
-								"textAlignment": 8,
-								"ellipsis": false,
-								"ellipsisString": "...",
-								"wrap": false,
-								"color": null,
+								"drawable": "sfx",
+								"scaling": "stretch",
 								"touchable": "enabled",
 								"visible": true
 							},
@@ -278,12 +254,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "bindings",
-					"text": "Edit Key Bindings",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "edit-key-bindings"
 					},
 					"checked": false,
 					"disabled": false,
@@ -324,12 +299,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "ok",
-					"text": "OK",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "ok"
 					},
 					"checked": false,
 					"disabled": false,
@@ -370,7 +344,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "background01",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
@@ -383,7 +357,7 @@
 		"visible": true
 	}
 ],
-"backgroundColor": "black",
+"backgroundColor": null,
 "skinPath": "skin.json",
 "packageString": "com.mygdx.game",
 "classString": "Core"

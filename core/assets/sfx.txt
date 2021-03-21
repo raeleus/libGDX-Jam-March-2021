@@ -1,7 +1,11 @@
-sfx/ahh.mp3
 sfx/click.mp3
-sfx/libgdx.mp3
-sfx/please don't kill me.mp3
-sfx/shot.mp3
-sfx/swoosh.mp3
-sfx/tv.mp3
+sfx/happynes.mp3
+sfx/libgdx ahhh.mp3
+sfx/libgdx applause.mp3
+sfx/libgdx gore.mp3
+sfx/libgdx hee hee.mp3
+sfx/libgdx magic.mp3
+sfx/libgdx magnificent dee.mp3
+sfx/libgdx poof.mp3
+sfx/libgdx saw.mp3
+sfx/libgdx something wrong.mp3

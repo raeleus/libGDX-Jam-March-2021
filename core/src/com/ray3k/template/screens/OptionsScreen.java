@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -30,7 +32,7 @@ public class OptionsScreen extends JamScreen {
     
         sceneBuilder.build(stage, skin, Gdx.files.internal("menus/options.json"));
         
-        TextButton textButton = stage.getRoot().findActor("bindings");
+        ImageButton textButton = stage.getRoot().findActor("bindings");
         textButton.addListener(sndChangeListener);
         textButton.addListener(new ChangeListener() {
             @Override

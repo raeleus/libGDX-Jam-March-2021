@@ -20,7 +20,7 @@ import com.esotericsoftware.spine.utils.SkeletonDrawable;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.LibgdxSpine.*;
+import static com.ray3k.template.Resources.LogoLibgdxSpine.*;
 
 public class LibgdxScreen extends JamScreen {
     private Stage stage;
@@ -38,7 +38,7 @@ public class LibgdxScreen extends JamScreen {
         Skeleton skeleton = new Skeleton(skeletonData);
         AnimationState animationState = new AnimationState(animationData);
         var spineDrawable = new SpineDrawable(skeletonRenderer, skeleton, animationState);
-        spineDrawable.getAnimationState().setAnimation(0, standAnimation, false);
+        spineDrawable.getAnimationState().setAnimation(0, standingAnimation, false);
         spineDrawable.getAnimationState().apply(spineDrawable.getSkeleton());
         spineDrawables.add(spineDrawable);
         
@@ -65,7 +65,7 @@ public class LibgdxScreen extends JamScreen {
             @Override
             public void event(AnimationState.TrackEntry entry, Event event) {
                 if (event.getData().getAudioPath() != null && !event.getData().getAudioPath().equals("")) {
-                    Sound sound = assetManager.get("sfx/" + event.getData().getAudioPath());
+                    Sound sound = assetManager.get(event.getData().getAudioPath());
                     sound.play();
                     sounds.add(sound);
                 }

@@ -1,0 +1,67 @@
+{
+"skeleton": { "hash": "kc+gaC+vfEdJaWxjP2OTXqsn0XA", "spine": "3.8.99", "width": 304.98, "height": 512.1, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "preloadlogo-loading", "parent": "root", "length": 166.29, "rotation": -0.88, "x": 559.93, "y": 256.02 },
+	{ "name": "preloadlogo", "parent": "root", "length": 136.85, "x": 149.37, "y": 249.62 }
+],
+"slots": [
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
+	{ "name": "white", "bone": "root", "attachment": "white" },
+	{ "name": "preloadlogo-loading", "bone": "preloadlogo-loading", "attachment": "preloadlogo-loading" },
+	{ "name": "preloadlogo", "bone": "preloadlogo", "attachment": "preloadlogo" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"clip": {
+				"clip": {
+					"type": "clipping",
+					"end": "clip",
+					"vertexCount": 4,
+					"vertices": [ -0.04, 0, 304.96, -0.24, 304.98, 512.1, 0.08, 512.02 ],
+					"color": "ce3a3aff"
+				}
+			},
+			"preloadlogo": {
+				"preloadlogo": { "path": "logo/preloadlogo", "x": 3.13, "y": 6.38, "width": 305, "height": 512 }
+			},
+			"preloadlogo-loading": {
+				"preloadlogo-loading": { "path": "logo/preloadlogo-loading", "x": 14.11, "y": -2.34, "rotation": 0.88, "width": 291, "height": 54 }
+			},
+			"white": {
+				"white": {
+					"path": "logo/white",
+					"x": 152.5,
+					"y": 257.61,
+					"scaleX": 305,
+					"scaleY": 512,
+					"width": 1,
+					"height": 1
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"preloadlogo-loading": {
+				"translate": [
+					{},
+					{ "time": 2, "x": -819.84 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 2,
+				"offsets": [
+					{ "slot": "preloadlogo-loading", "offset": 1 }
+				]
+			}
+		]
+	}
+}
+}
