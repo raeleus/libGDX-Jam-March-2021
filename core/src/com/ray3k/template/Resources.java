@@ -65,6 +65,11 @@ public class Resources {
         Cinematic3Spine.animationAnimation = Cinematic3Spine.skeletonData.findAnimation("animation");
         Cinematic3Spine.standingAnimation = Cinematic3Spine.skeletonData.findAnimation("standing");
         Cinematic3Spine.defaultSkin = Cinematic3Spine.skeletonData.findSkin("default");
+        Cinematic4Spine.skeletonData = assetManager.get("spine/cinematic4.json");
+        Cinematic4Spine.animationData = assetManager.get("spine/cinematic4.json-animation");
+        Cinematic4Spine.animationAnimation = Cinematic4Spine.skeletonData.findAnimation("animation");
+        Cinematic4Spine.standingAnimation = Cinematic4Spine.skeletonData.findAnimation("standing");
+        Cinematic4Spine.defaultSkin = Cinematic4Spine.skeletonData.findSkin("default");
         LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
         LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
         LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
@@ -124,6 +129,18 @@ public class Resources {
     }
 
     public static class Cinematic3Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class Cinematic4Spine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
