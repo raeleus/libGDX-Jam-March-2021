@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.Core.*;
 import com.ray3k.template.*;
+import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.vfx.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
@@ -85,6 +86,11 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
+        var player = new PlayerEntity();
+        player.setPosition(50, 0);
+        entityController.add(player);
+        
+        camera.position.set(512, 288, 0);
     }
     
     @Override
