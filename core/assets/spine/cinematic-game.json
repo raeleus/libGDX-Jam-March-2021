@@ -1,0 +1,468 @@
+{
+"skeleton": {
+	"hash": "jzdv167GBTRDidsD87Z0YkGC9zM",
+	"spine": "3.8.99",
+	"x": -0.64,
+	"y": -0.47,
+	"width": 1025.72,
+	"height": 576.87,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "cinematic/rabbit", "parent": "root", "length": 53.59, "x": 831.41, "y": 169.1 },
+	{ "name": "cinematic/bush", "parent": "root", "length": 75.79, "rotation": -1.4, "x": 1225.43, "y": 151.81 },
+	{ "name": "cinematic/bush2", "parent": "root", "length": 77.62, "rotation": 0.68, "x": 1320.89, "y": 148.11 },
+	{ "name": "cinematic/leaves", "parent": "root", "length": 79.51, "rotation": 2, "x": 1325.49, "y": 151.2 },
+	{ "name": "cinematic/tunnel2", "parent": "root", "length": 211.42, "rotation": -0.42, "x": 551.19, "y": -130.8 },
+	{ "name": "cinematic/tunnel3", "parent": "root", "length": 211.42, "rotation": -0.42, "x": 551.19, "y": -130.8 },
+	{ "name": "cinematic/tunnel4", "parent": "root", "length": 211.42, "rotation": -0.42, "x": 551.18, "y": -1013.55 },
+	{ "name": "cinematic/rock1", "parent": "root", "length": 108.22, "x": 655.65, "y": -78.61 },
+	{ "name": "cinematic/chair", "parent": "root", "length": 89.12, "x": 347.96, "y": -186.83 },
+	{ "name": "cinematic/rock2", "parent": "root", "length": 84.88, "x": 432.84, "y": -473.3 },
+	{ "name": "cinematic/cat", "parent": "root", "length": 97.61, "x": 829.65, "y": -437.22 },
+	{ "name": "cinematic/rock3", "parent": "root", "length": 114.61, "rotation": 1.06, "x": 793.58, "y": -702.47 },
+	{ "name": "cinematic/rock4", "parent": "root", "length": 84.88, "x": 759.63, "y": -256.85 },
+	{ "name": "cinematic/rock5", "parent": "root", "length": 108.22, "x": 324.62, "y": -640.94 },
+	{ "name": "cinematic/rock6", "parent": "root", "length": 114.61, "rotation": 1.06, "x": 390.4, "y": -74.36 },
+	{ "name": "player", "parent": "root", "length": 200.83, "rotation": 86.23, "x": 87.73, "y": 210.05 },
+	{ "name": "forest", "parent": "root", "length": 1083.34, "x": -22.62, "y": 285.71 },
+	{ "name": "bone2", "parent": "root", "x": -22.62, "y": 285.71 },
+	{ "name": "forest2", "parent": "root", "length": 1083.34, "x": 1060.72, "y": 285.71 }
+],
+"slots": [
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
+	{ "name": "level/intro", "bone": "root", "attachment": "level/intro" },
+	{ "name": "level/forest", "bone": "forest", "attachment": "level/forest" },
+	{ "name": "level/forest2", "bone": "forest2", "attachment": "level/forest" },
+	{ "name": "cinematic/rabbit", "bone": "cinematic/rabbit", "attachment": "cinematic/rabbit" },
+	{ "name": "cinematic/tunnel", "bone": "cinematic/tunnel2", "attachment": "cinematic/tunnel" },
+	{ "name": "cinematic/tunnel2", "bone": "cinematic/tunnel3", "attachment": "cinematic/tunnel" },
+	{ "name": "cinematic/tunnel3", "bone": "cinematic/tunnel4", "attachment": "cinematic/tunnel" },
+	{ "name": "cinematic/cat", "bone": "cinematic/cat", "attachment": "cinematic/cat" },
+	{ "name": "cinematic/chair", "bone": "cinematic/chair", "attachment": "cinematic/chair" },
+	{ "name": "cinematic/rock1", "bone": "cinematic/rock1", "attachment": "cinematic/rock1" },
+	{ "name": "cinematic/rock5", "bone": "cinematic/rock5", "attachment": "cinematic/rock1" },
+	{ "name": "cinematic/rock2", "bone": "cinematic/rock2", "attachment": "cinematic/rock2" },
+	{ "name": "cinematic/rock4", "bone": "cinematic/rock4", "attachment": "cinematic/rock2" },
+	{ "name": "cinematic/rock3", "bone": "cinematic/rock3", "attachment": "cinematic/rock3" },
+	{ "name": "cinematic/rock6", "bone": "cinematic/rock6", "attachment": "cinematic/rock3" },
+	{ "name": "game/player-forearm2", "bone": "player", "attachment": "game/player-forearm" },
+	{ "name": "game/player-arm2", "bone": "player", "attachment": "game/player-arm" },
+	{ "name": "game/player-leg2", "bone": "player", "attachment": "game/player-leg" },
+	{ "name": "game/player-foreleg2", "bone": "player", "attachment": "game/player-foreleg" },
+	{ "name": "game/player-foot2", "bone": "player", "attachment": "game/player-foot" },
+	{ "name": "game/player-hip", "bone": "player", "attachment": "game/player-hip" },
+	{ "name": "game/player-body", "bone": "player", "attachment": "game/player-body" },
+	{ "name": "game/player-leg", "bone": "player", "attachment": "game/player-leg" },
+	{ "name": "game/player-foreleg", "bone": "player", "attachment": "game/player-foreleg" },
+	{ "name": "game/player-head-scream", "bone": "player", "attachment": "game/player-head" },
+	{ "name": "game/player-foot", "bone": "player", "attachment": "game/player-foot" },
+	{ "name": "game/player-forearm", "bone": "player", "attachment": "game/player-forearm" },
+	{ "name": "game/player-arm", "bone": "player", "attachment": "game/player-arm" },
+	{ "name": "cinematic/speech-come-back", "bone": "root", "attachment": "cinematic/speech-come-back" },
+	{ "name": "cinematic/bush2", "bone": "cinematic/bush2", "attachment": "cinematic/bush" },
+	{ "name": "cinematic/bush", "bone": "cinematic/bush", "attachment": "cinematic/bush" },
+	{ "name": "cinematic/leaves", "bone": "cinematic/leaves", "attachment": "cinematic/leaves" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"cinematic/bush": {
+				"cinematic/bush": {
+					"x": 5.7,
+					"y": -82.12,
+					"scaleX": 2.2908,
+					"scaleY": 2.2908,
+					"rotation": 1.4,
+					"width": 144,
+					"height": 108
+				}
+			},
+			"cinematic/bush2": {
+				"cinematic/bush": {
+					"x": 4.33,
+					"y": -77.67,
+					"scaleX": 2.2908,
+					"scaleY": 2.2908,
+					"rotation": -0.68,
+					"width": 144,
+					"height": 108
+				}
+			},
+			"cinematic/cat": {
+				"cinematic/cat": { "x": 6.37, "y": 17.96, "rotation": -0.42, "width": 107, "height": 91 }
+			},
+			"cinematic/chair": {
+				"cinematic/chair": { "x": -2.12, "y": -24.48, "rotation": -0.42, "width": 124, "height": 178 }
+			},
+			"cinematic/leaves": {
+				"cinematic/leaves": {
+					"x": 40.76,
+					"y": 1.35,
+					"scaleX": 1.9731,
+					"scaleY": 1.9731,
+					"rotation": -1.32,
+					"width": 170,
+					"height": 163
+				}
+			},
+			"cinematic/rabbit": {
+				"cinematic/rabbit": { "x": 3.13, "y": 11.89, "scaleX": 0.3385, "scaleY": 0.3385, "width": 212, "height": 184 }
+			},
+			"cinematic/rock1": {
+				"cinematic/rock1": { "x": 4.24, "y": 3.1, "rotation": -0.42, "width": 28, "height": 19 }
+			},
+			"cinematic/rock2": {
+				"cinematic/rock2": { "x": 2.12, "y": 7.35, "rotation": -0.42, "width": 17, "height": 34 }
+			},
+			"cinematic/rock3": {
+				"cinematic/rock3": { "x": 4.3, "y": 3.02, "rotation": -1.48, "width": 13, "height": 12 }
+			},
+			"cinematic/rock4": {
+				"cinematic/rock2": { "x": 2.12, "y": 7.35, "rotation": -0.42, "width": 17, "height": 34 }
+			},
+			"cinematic/rock5": {
+				"cinematic/rock1": { "x": 4.24, "y": 3.1, "rotation": -0.42, "width": 28, "height": 19 }
+			},
+			"cinematic/rock6": {
+				"cinematic/rock3": { "x": 4.3, "y": 3.02, "rotation": -1.48, "width": 13, "height": 12 }
+			},
+			"cinematic/speech-come-back": {
+				"cinematic/speech-come-back": { "x": 187.54, "y": 391.18, "width": 133, "height": 98 }
+			},
+			"cinematic/tunnel": {
+				"cinematic/tunnel": {
+					"x": 8.42,
+					"y": -15.54,
+					"scaleX": 0.5251,
+					"scaleY": 1.2758,
+					"rotation": 0.42,
+					"width": 424,
+					"height": 556
+				}
+			},
+			"cinematic/tunnel2": {
+				"cinematic/tunnel": {
+					"x": 8.42,
+					"y": -15.54,
+					"scaleX": 0.5251,
+					"scaleY": 1.2758,
+					"rotation": 0.42,
+					"width": 424,
+					"height": 556
+				}
+			},
+			"cinematic/tunnel3": {
+				"cinematic/tunnel": {
+					"x": 8.42,
+					"y": -15.54,
+					"scaleX": 0.5251,
+					"scaleY": 1.2758,
+					"rotation": 0.42,
+					"width": 424,
+					"height": 556
+				}
+			},
+			"clip": {
+				"clip": {
+					"type": "clipping",
+					"end": "clip",
+					"vertexCount": 4,
+					"vertices": [ -0.64, -0.47, -0.24, 576.4, 1025.08, 576.28, 1024.31, 0.41 ],
+					"color": "ce3a3aff"
+				}
+			},
+			"game/player-arm": {
+				"game/player-arm": { "x": 84.09, "y": 35.17, "rotation": -86.23, "width": 17, "height": 46 }
+			},
+			"game/player-arm2": {
+				"game/player-arm": { "x": 85.64, "y": -24.86, "rotation": -86.23, "width": 17, "height": 46 }
+			},
+			"game/player-body": {
+				"game/player-body": { "x": 52.81, "y": 0.04, "rotation": -86.23, "width": 86, "height": 137 }
+			},
+			"game/player-foot": {
+				"game/player-foot": { "x": -117.94, "y": 9.1, "rotation": -86.23, "width": 24, "height": 32 }
+			},
+			"game/player-foot2": {
+				"game/player-foot": { "x": -116.57, "y": -20.87, "rotation": -86.23, "width": 24, "height": 32 }
+			},
+			"game/player-forearm": {
+				"game/player-forearm": { "x": 28.32, "y": 36.9, "rotation": -86.23, "width": 21, "height": 78 }
+			},
+			"game/player-forearm2": {
+				"game/player-forearm": { "x": 30.95, "y": -21.25, "rotation": -86.23, "width": 21, "height": 78 }
+			},
+			"game/player-foreleg": {
+				"game/player-foreleg": { "x": -90.93, "y": 17, "rotation": -86.23, "width": 16, "height": 52 }
+			},
+			"game/player-foreleg2": {
+				"game/player-foreleg": { "x": -89.56, "y": -12.98, "rotation": -86.23, "width": 16, "height": 52 }
+			},
+			"game/player-head-scream": {
+				"game/player-head": { "x": 142.7, "y": 8.1, "rotation": -86.23, "width": 81, "height": 93 },
+				"game/player-head-scream": { "x": 150.56, "y": 12.7, "rotation": -86.23, "width": 79, "height": 109 }
+			},
+			"game/player-hip": {
+				"game/player-hip": { "x": -14.98, "y": 5.35, "rotation": -86.23, "width": 56, "height": 39 }
+			},
+			"game/player-leg": {
+				"game/player-leg": { "x": -42.01, "y": 17.16, "rotation": -86.23, "width": 27, "height": 55 }
+			},
+			"game/player-leg2": {
+				"game/player-leg": { "x": -40.63, "y": -12.81, "rotation": -86.23, "width": 27, "height": 55 }
+			},
+			"level/forest": {
+				"level/forest": { "x": 547.83, "y": 12.21, "width": 1086, "height": 814 }
+			},
+			"level/forest2": {
+				"level/forest": { "x": 547.83, "y": 12.21, "width": 1086, "height": 814 }
+			},
+			"level/intro": {
+				"level/intro": { "x": 512, "y": 288, "width": 1024, "height": 576 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"cinematic/speech-come-back": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 2, "name": "cinematic/speech-come-back" },
+					{ "time": 3, "name": null }
+				]
+			},
+			"cinematic/tunnel": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 6.8, "color": "ffffff00" },
+					{ "time": 6.9333, "color": "ffffffff" }
+				]
+			},
+			"cinematic/tunnel2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 6.8, "color": "ffffff00" },
+					{ "time": 6.9333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 11.2333, "color": "ffffffff" },
+					{ "time": 12.3333, "color": "000000ff" }
+				]
+			},
+			"cinematic/tunnel3": {
+				"color": [
+					{ "time": 11.2333, "color": "ffffffff" },
+					{ "time": 12.3333, "color": "000000ff" }
+				]
+			},
+			"game/player-head-scream": {
+				"attachment": [
+					{ "time": 7.0667, "name": "game/player-head-scream" }
+				]
+			},
+			"level/forest": {
+				"color": [
+					{ "time": 7.0667, "color": "ffffffff" },
+					{ "time": 7.6667, "color": "ffffff00" }
+				]
+			},
+			"level/forest2": {
+				"color": [
+					{ "time": 7.0667, "color": "ffffffff" },
+					{ "time": 7.6667, "color": "ffffff00" }
+				]
+			},
+			"level/intro": {
+				"color": [
+					{ "color": "383838ff", "curve": "stepped" },
+					{ "time": 11.3, "color": "383838ff" },
+					{ "time": 12.3333, "color": "000000ff" }
+				]
+			}
+		},
+		"bones": {
+			"cinematic/rabbit": {
+				"rotate": [
+					{},
+					{ "time": 0.1333, "angle": 23.34 },
+					{ "time": 0.3667, "angle": -19.93 },
+					{ "time": 0.5, "curve": "stepped" },
+					{ "time": 0.6333 },
+					{ "time": 0.7667, "angle": 23.34 },
+					{ "time": 1, "angle": -19.93 },
+					{ "time": 1.1333, "curve": "stepped" },
+					{ "time": 1.2667 },
+					{ "time": 1.3667, "angle": 23.34 },
+					{ "time": 1.6333, "angle": -19.93 },
+					{ "time": 1.8333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.2667, "x": 30.95, "y": 29.57 },
+					{ "time": 0.5, "x": 61.91, "curve": "stepped" },
+					{ "time": 0.6333, "x": 61.91 },
+					{ "time": 0.8667, "x": 89.17, "y": 31.42 },
+					{ "time": 1.1333, "x": 116.42, "curve": "stepped" },
+					{ "time": 1.2667, "x": 116.42 },
+					{ "time": 1.5, "x": 172.33, "y": 27.72 },
+					{ "time": 1.8333, "x": 228.23 }
+				]
+			},
+			"cinematic/bush": {
+				"translate": [
+					{ "time": 3.8333 },
+					{ "time": 4.8333, "x": -1411.4 }
+				]
+			},
+			"cinematic/bush2": {
+				"translate": [
+					{ "time": 4.8333 },
+					{ "time": 5.9, "x": -1506.58 }
+				]
+			},
+			"cinematic/leaves": {
+				"translate": [
+					{ "time": 6, "x": -243.94, "curve": 0.183, "c2": 0.75, "c3": 0.678 },
+					{ "time": 6.7, "x": -813.49, "curve": "stepped" },
+					{ "time": 7.0667, "x": -813.49 },
+					{ "time": 9.8, "x": -813.49, "y": 1001.93 }
+				]
+			},
+			"cinematic/tunnel2": {
+				"translate": [
+					{ "time": 6.8, "y": -31.83, "curve": "stepped" },
+					{ "time": 7.0667, "y": -31.83 },
+					{ "time": 9.8, "y": 970.1 },
+					{ "time": 12.3333, "y": 1627.92 }
+				]
+			},
+			"cinematic/tunnel3": {
+				"translate": [
+					{ "time": 6.8, "y": -739.61, "curve": "stepped" },
+					{ "time": 7.0667, "y": -739.61 },
+					{ "time": 9.8, "y": 262.31 },
+					{ "time": 12.3333, "y": 920.13 }
+				]
+			},
+			"cinematic/tunnel4": {
+				"translate": [
+					{ "time": 9.8, "y": 437.13 },
+					{ "time": 12.3333, "y": 1094.95 }
+				]
+			},
+			"cinematic/rock6": {
+				"translate": [
+					{ "time": 7.0667 },
+					{ "time": 7.6, "y": 721.48 }
+				]
+			},
+			"cinematic/rock1": {
+				"translate": [
+					{ "time": 7.6 },
+					{ "time": 8.1667, "y": 685.41 }
+				]
+			},
+			"cinematic/chair": {
+				"translate": [
+					{ "time": 8.1667 },
+					{ "time": 8.7, "y": 884.87 }
+				]
+			},
+			"cinematic/rock4": {
+				"translate": [
+					{ "time": 8.7 },
+					{ "time": 9.3, "y": 867.9 }
+				]
+			},
+			"cinematic/cat": {
+				"translate": [
+					{ "time": 9.3 },
+					{ "time": 10.1, "y": 1097.07 }
+				]
+			},
+			"cinematic/rock2": {
+				"translate": [
+					{ "time": 10.1 },
+					{ "time": 10.7, "y": 1086.51 }
+				]
+			},
+			"cinematic/rock5": {
+				"translate": [
+					{ "time": 11.2333 },
+					{ "time": 11.8, "y": 1254.37 }
+				]
+			},
+			"cinematic/rock3": {
+				"translate": [
+					{ "time": 11.8 },
+					{ "time": 12.3333, "y": 1312.36 }
+				]
+			},
+			"player": {
+				"rotate": [
+					{ "time": 3.1667 },
+					{ "time": 3.4333, "angle": -10.69 },
+					{ "time": 3.6333, "angle": 23.6 },
+					{ "time": 3.9, "angle": -9.11 },
+					{ "time": 4.1667, "angle": 18.83 },
+					{ "time": 4.3667, "angle": -10.92 },
+					{ "time": 4.6333, "angle": 21.64 },
+					{ "time": 4.8667, "angle": -8.51 },
+					{ "time": 5.1333, "angle": 19.38 },
+					{ "time": 5.3667, "angle": -16.34 },
+					{ "time": 5.6, "angle": 19.68 },
+					{ "time": 5.8667, "angle": -16.73 },
+					{ "time": 6.1, "angle": 22.14 },
+					{ "time": 6.3333, "angle": -13.63 },
+					{ "time": 6.6, "angle": 29.16 },
+					{ "time": 6.8, "angle": -13.27 },
+					{ "time": 7.0667, "angle": 26.55 },
+					{ "time": 7.3667, "angle": 86.55 },
+					{ "time": 7.6667, "angle": 146.55 },
+					{ "time": 7.9667, "angle": -153.45 },
+					{ "time": 8.2667, "angle": -93.45 },
+					{ "time": 8.5667, "angle": -33.45 },
+					{ "time": 8.8333, "angle": 26.55 },
+					{ "time": 9.1333, "angle": 86.55 },
+					{ "time": 9.4333, "angle": 146.55 },
+					{ "time": 9.7333, "angle": -153.45 },
+					{ "time": 9.9667, "angle": -93.45 },
+					{ "time": 10.2667, "angle": -33.45 },
+					{ "time": 10.5667, "angle": 26.55 },
+					{ "time": 10.8333, "angle": 86.55 },
+					{ "time": 11.1333, "angle": 146.55 },
+					{ "time": 11.4333, "angle": -153.45 },
+					{ "time": 11.7333, "angle": -93.45 },
+					{ "time": 12.0333, "angle": -33.45 },
+					{ "time": 12.3333, "angle": 26.55 }
+				],
+				"translate": [
+					{ "time": 6 },
+					{ "time": 7.0667, "x": 441.73, "curve": "stepped" },
+					{ "time": 11.2333, "x": 441.73 },
+					{ "time": 12.3333, "x": 441.73, "y": -417.23 }
+				]
+			},
+			"forest2": {
+				"translate": [
+					{ "time": 3.1667 },
+					{ "time": 5.7667, "x": -835.28, "curve": 0.1, "c2": 0.61, "c3": 0.672 },
+					{ "time": 6.7667, "x": -1116.29 }
+				]
+			},
+			"forest": {
+				"translate": [
+					{ "time": 3.1667 },
+					{ "time": 5.7667, "x": -835.28, "curve": 0.1, "c2": 0.61, "c3": 0.672 },
+					{ "time": 6.7667, "x": -1116.29 }
+				]
+			}
+		}
+	},
+	"standing": {}
+}
+}

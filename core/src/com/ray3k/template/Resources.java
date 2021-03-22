@@ -50,6 +50,11 @@ public class Resources {
 
     public static void loadResources(AssetManager assetManager) {
         skin_skin = assetManager.get("skin/skin.json");
+        CinematicGameSpine.skeletonData = assetManager.get("spine/cinematic-game.json");
+        CinematicGameSpine.animationData = assetManager.get("spine/cinematic-game.json-animation");
+        CinematicGameSpine.animationAnimation = CinematicGameSpine.skeletonData.findAnimation("animation");
+        CinematicGameSpine.standingAnimation = CinematicGameSpine.skeletonData.findAnimation("standing");
+        CinematicGameSpine.defaultSkin = CinematicGameSpine.skeletonData.findSkin("default");
         Cinematic1Spine.skeletonData = assetManager.get("spine/cinematic1.json");
         Cinematic1Spine.animationData = assetManager.get("spine/cinematic1.json-animation");
         Cinematic1Spine.animationAnimation = Cinematic1Spine.skeletonData.findAnimation("animation");
@@ -80,6 +85,16 @@ public class Resources {
         LogoRay3kSpine.animationAnimation = LogoRay3kSpine.skeletonData.findAnimation("animation");
         LogoRay3kSpine.standingAnimation = LogoRay3kSpine.skeletonData.findAnimation("standing");
         LogoRay3kSpine.defaultSkin = LogoRay3kSpine.skeletonData.findSkin("default");
+        PlayerSpine.skeletonData = assetManager.get("spine/player.json");
+        PlayerSpine.animationData = assetManager.get("spine/player.json-animation");
+        PlayerSpine.aimAnimation = PlayerSpine.skeletonData.findAnimation("aim");
+        PlayerSpine.aimDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-duck");
+        PlayerSpine.aimNoneAnimation = PlayerSpine.skeletonData.findAnimation("aim-none");
+        PlayerSpine.aimNoneDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-none-duck");
+        PlayerSpine.duckAnimation = PlayerSpine.skeletonData.findAnimation("duck");
+        PlayerSpine.runAnimation = PlayerSpine.skeletonData.findAnimation("run");
+        PlayerSpine.standAnimation = PlayerSpine.skeletonData.findAnimation("stand");
+        PlayerSpine.defaultSkin = PlayerSpine.skeletonData.findSkin("default");
         PreloadSpine.skeletonData = assetManager.get("spine/preload.json");
         PreloadSpine.animationData = assetManager.get("spine/preload.json-animation");
         PreloadSpine.animationAnimation = PreloadSpine.skeletonData.findAnimation("animation");
@@ -102,6 +117,18 @@ public class Resources {
         sfx_mumble = assetManager.get("sfx/mumble.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
+    }
+
+    public static class CinematicGameSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
     public static class Cinematic1Spine {
@@ -172,6 +199,28 @@ public class Resources {
         public static Animation animationAnimation;
 
         public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class PlayerSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation aimAnimation;
+
+        public static Animation aimDuckAnimation;
+
+        public static Animation aimNoneAnimation;
+
+        public static Animation aimNoneDuckAnimation;
+
+        public static Animation duckAnimation;
+
+        public static Animation runAnimation;
+
+        public static Animation standAnimation;
 
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }

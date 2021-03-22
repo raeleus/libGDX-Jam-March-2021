@@ -1,144 +1,303 @@
 
 textures.png
-size: 2048,2048
+size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 cinematic/bed
   rotate: false
-  xy: 558, 1124
+  xy: 417, 781
   size: 332, 228
   orig: 332, 228
   offset: 0, 0
   index: -1
+cinematic/bush
+  rotate: false
+  xy: 811, 619
+  size: 144, 108
+  orig: 144, 108
+  offset: 0, 0
+  index: -1
+cinematic/cat
+  rotate: true
+  xy: 725, 1
+  size: 107, 91
+  orig: 107, 91
+  offset: 0, 0
+  index: -1
+cinematic/chair
+  rotate: true
+  xy: 417, 469
+  size: 124, 178
+  orig: 124, 178
+  offset: 0, 0
+  index: -1
 cinematic/clock3
   rotate: true
-  xy: 690, 927
+  xy: 558, 363
   size: 94, 106
   orig: 94, 106
   offset: 0, 0
   index: -1
 cinematic/clock4
   rotate: true
-  xy: 558, 846
+  xy: 831, 409
   size: 94, 99
   orig: 94, 99
   offset: 0, 0
   index: -1
 cinematic/clock5
-  rotate: true
-  xy: 693, 1023
+  rotate: false
+  xy: 842, 505
   size: 99, 112
   orig: 99, 112
   offset: 0, 0
   index: -1
 cinematic/clock6
   rotate: false
-  xy: 892, 954
+  xy: 730, 110
   size: 100, 93
   orig: 100, 93
   offset: 0, 0
   index: -1
 cinematic/doctor
-  rotate: true
-  xy: 892, 1201
+  rotate: false
+  xy: 811, 729
   size: 151, 280
   orig: 151, 280
   offset: 0, 0
   index: -1
 cinematic/doctor-head
   rotate: false
-  xy: 1048, 834
+  xy: 832, 83
   size: 75, 120
   orig: 75, 120
   offset: 0, 0
   index: -1
+cinematic/doll
+  rotate: false
+  xy: 751, 888
+  size: 56, 121
+  orig: 56, 121
+  offset: 0, 0
+  index: -1
 cinematic/ekg
-  rotate: true
-  xy: 892, 1049
+  rotate: false
+  xy: 730, 205
   size: 150, 154
   orig: 150, 154
   offset: 0, 0
   index: -1
 cinematic/heart-rate
   rotate: true
-  xy: 994, 901
+  xy: 677, 361
   size: 146, 52
   orig: 146, 52
   offset: 0, 0
   index: -1
 cinematic/heart-rate-blip
   rotate: false
-  xy: 659, 932
+  xy: 772, 878
   size: 9, 8
   orig: 9, 8
   offset: 0, 0
   index: -1
 cinematic/heart-rate-flat
-  rotate: true
-  xy: 1134, 941
+  rotate: false
+  xy: 417, 459
   size: 258, 8
   orig: 258, 8
   offset: 0, 0
   index: -1
 cinematic/hospital
   rotate: false
-  xy: 1, 939
+  xy: 1, 38
   size: 555, 413
   orig: 555, 413
   offset: 0, 0
   index: -1
-cinematic/mom
+cinematic/leaves
   rotate: false
-  xy: 1048, 956
+  xy: 558, 196
+  size: 170, 163
+  orig: 170, 163
+  offset: 0, 0
+  index: -1
+cinematic/mom
+  rotate: true
+  xy: 597, 509
   size: 84, 243
   orig: 84, 243
   offset: 0, 0
   index: -1
 cinematic/mom-head
   rotate: false
-  xy: 807, 993
+  xy: 558, 65
   size: 83, 129
   orig: 83, 129
   offset: 0, 0
   index: -1
 cinematic/mom-tear
-  rotate: true
-  xy: 1144, 1181
+  rotate: false
+  xy: 751, 830
   size: 18, 26
   orig: 18, 26
   offset: 0, 0
   index: -1
-cinematic/speech-come-back
+cinematic/rabbit
   rotate: false
-  xy: 558, 1024
+  xy: 417, 595
+  size: 212, 184
+  orig: 212, 184
+  offset: 0, 0
+  index: -1
+cinematic/rock1
+  rotate: true
+  xy: 751, 858
+  size: 28, 19
+  orig: 28, 19
+  offset: 0, 0
+  index: -1
+cinematic/rock2
+  rotate: true
+  xy: 751, 811
+  size: 17, 34
+  orig: 17, 34
+  offset: 0, 0
+  index: -1
+cinematic/rock3
+  rotate: false
+  xy: 771, 844
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+cinematic/speech-come-back
+  rotate: true
+  xy: 731, 374
   size: 133, 98
   orig: 133, 98
   offset: 0, 0
   index: -1
 cinematic/speech-come-on
-  rotate: false
-  xy: 558, 942
+  rotate: true
+  xy: 643, 67
   size: 127, 80
   orig: 127, 80
   offset: 0, 0
   index: -1
 cinematic/speech-we-did-all
   rotate: true
-  xy: 1174, 1188
+  xy: 631, 615
   size: 164, 178
   orig: 164, 178
   offset: 0, 0
   index: -1
+cinematic/tunnel
+  rotate: false
+  xy: 1, 453
+  size: 414, 556
+  orig: 424, 556
+  offset: 4, 0
+  index: -1
 cinematic/white
   rotate: false
-  xy: 687, 1021
+  xy: 783, 885
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 
 textures2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+game/player-arm
+  rotate: true
+  xy: 55, 216
+  size: 17, 46
+  orig: 17, 46
+  offset: 0, 0
+  index: -1
+game/player-body
+  rotate: true
+  xy: 96, 40
+  size: 86, 137
+  orig: 86, 137
+  offset: 0, 0
+  index: -1
+game/player-foot
+  rotate: true
+  xy: 183, 209
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+game/player-forearm
+  rotate: true
+  xy: 103, 212
+  size: 21, 78
+  orig: 21, 78
+  offset: 0, 0
+  index: -1
+game/player-foreleg
+  rotate: true
+  xy: 1, 217
+  size: 16, 52
+  orig: 16, 52
+  offset: 0, 0
+  index: -1
+game/player-head
+  rotate: true
+  xy: 1, 88
+  size: 81, 93
+  orig: 81, 93
+  offset: 0, 0
+  index: -1
+game/player-head-scream
+  rotate: true
+  xy: 116, 128
+  size: 79, 109
+  orig: 79, 109
+  offset: 0, 0
+  index: -1
+game/player-hip
+  rotate: false
+  xy: 58, 171
+  size: 56, 39
+  orig: 56, 39
+  offset: 0, 0
+  index: -1
+game/player-leg
+  rotate: true
+  xy: 1, 187
+  size: 27, 55
+  orig: 27, 55
+  offset: 0, 0
+  index: -1
+
+textures3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+level/forest
+  rotate: false
+  xy: 1, 579
+  size: 1086, 814
+  orig: 1086, 814
+  offset: 0, 0
+  index: -1
+level/intro
+  rotate: false
+  xy: 1, 1
+  size: 1024, 576
+  orig: 1024, 576
+  offset: 0, 0
+  index: -1
+
+textures4.png
 size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
@@ -326,7 +485,7 @@ logo/white
   offset: 0, 0
   index: -1
 
-textures3.png
+textures5.png
 size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
