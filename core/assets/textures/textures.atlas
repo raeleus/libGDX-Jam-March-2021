@@ -332,6 +332,13 @@ game/teapot
   orig: 115, 127
   offset: 0, 0
   index: -1
+game/white
+  rotate: false
+  xy: 100, 117
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
 
 textures3.png
 size: 2048,2048
