@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "JIN44AvIpzQNaEL2uSlFtqKnECw",
+	"hash": "3sJJ0YEmjW9NVHeb8aR1rdByVzo",
 	"spine": "3.8.99",
 	"x": -56.67,
 	"y": -2.74,
@@ -136,6 +136,15 @@
 			}
 		}
 	},
+	"aim-down-right": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": -21.98, "y": -134.11 }
+				]
+			}
+		}
+	},
 	"aim-duck": {
 		"bones": {
 			"arm-left-target": {
@@ -179,6 +188,24 @@
 					{ "time": 0.4, "x": 80, "y": -148.41 },
 					{ "time": 0.4667, "x": 73.69, "y": -143.15 },
 					{ "time": 0.5, "x": 48.96, "y": -145.78 }
+				]
+			}
+		}
+	},
+	"aim-up": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": -25.16, "y": -16.3 }
+				]
+			}
+		}
+	},
+	"aim-up-right": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": 28.96, "y": -38.59 }
 				]
 			}
 		}
@@ -297,6 +324,56 @@
 					{},
 					{ "time": 0.1333, "angle": 5.3 },
 					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"jump": {
+		"bones": {
+			"body": {
+				"rotate": [
+					{ "angle": -60.57 }
+				]
+			},
+			"leg-right-target": {
+				"translate": [
+					{ "x": 21.08, "y": 39.81 },
+					{ "time": 0.1, "x": -11.71, "y": 105.39 },
+					{ "time": 0.2333, "x": 49.18, "y": 121.78 },
+					{ "time": 0.3333, "x": 58.55, "y": 60.89 },
+					{ "time": 0.4333, "x": 21.08, "y": 39.81 }
+				]
+			},
+			"leg-left-target": {
+				"translate": [
+					{ "x": 10.12, "y": 49.27 },
+					{ "time": 0.1, "x": -51.52, "y": 114.76 },
+					{ "time": 0.2333, "x": 14.05, "y": 81.97 },
+					{ "time": 0.3333, "x": -18.74, "y": 35.13 },
+					{ "time": 0.4333, "x": 10.12, "y": 49.27 }
+				]
+			},
+			"arm-right-target": {
+				"translate": [
+					{ "x": 51.52, "y": -51.52 },
+					{ "time": 0.1, "x": 9.37, "y": -142.86 },
+					{ "time": 0.2333, "x": -105.39, "y": -87.43 },
+					{ "time": 0.3333, "x": -35.13, "y": 12.49 },
+					{ "time": 0.4333, "x": 51.52, "y": -51.52 }
+				]
+			},
+			"hip": {
+				"rotate": [
+					{},
+					{ "time": 0.1, "angle": -90 },
+					{ "time": 0.2333, "angle": 180 },
+					{ "time": 0.3333, "angle": 90 },
+					{ "time": 0.4333 }
+				]
+			},
+			"head": {
+				"rotate": [
+					{ "angle": -30.72 }
 				]
 			}
 		}
