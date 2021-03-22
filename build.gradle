@@ -19,7 +19,7 @@ allprojects {
 
     version = '1.0'
     ext {
-        appName = "ray3k-jam-template"
+        appName = "wonderland-ripper-x"
         gdxVersion = '1.9.12'
         roboVMVersion = '2.3.7'
         box2DLightsVersion = '1.4'
