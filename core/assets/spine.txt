@@ -3,6 +3,7 @@ spine/cinematic1.json
 spine/cinematic2.json
 spine/cinematic3.json
 spine/cinematic4.json
+spine/enemy.json
 spine/logo-libgdx.json
 spine/logo-ray3k.json
 spine/player.json

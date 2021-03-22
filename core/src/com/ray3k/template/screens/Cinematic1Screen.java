@@ -59,7 +59,7 @@ public class Cinematic1Screen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationAnimation) {
-                    core.transition(new MenuScreen());
+                    core.transition(new CinematicGameScreen());
                 }
             }
             
@@ -76,13 +76,13 @@ public class Cinematic1Screen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new MenuScreen());
+                core.transition(new CinematicGameScreen());
                 return true;
             }
             
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new MenuScreen());
+                core.transition(new CinematicGameScreen());
                 return true;
             }
         });

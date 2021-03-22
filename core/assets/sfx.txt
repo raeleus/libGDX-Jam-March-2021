@@ -13,3 +13,7 @@ sfx/libgdx poof.mp3
 sfx/libgdx saw.mp3
 sfx/libgdx something wrong.mp3
 sfx/mumble.mp3
+sfx/step.mp3
+sfx/surprised.mp3
+sfx/trap.mp3
+sfx/woman-mumbling.mp3

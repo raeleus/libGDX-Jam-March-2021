@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "jzdv167GBTRDidsD87Z0YkGC9zM",
+	"hash": "7yeT/AN6qP7T5L5XXLlusftbfg0",
 	"spine": "3.8.99",
 	"x": -0.64,
 	"y": -0.47,
@@ -227,6 +227,12 @@
 		}
 	}
 ],
+"events": {
+	"sfx/step": { "audio": "sfx/step.mp3" },
+	"sfx/surprised": { "audio": "sfx/surprised.mp3" },
+	"sfx/trap": { "audio": "sfx/trap.mp3" },
+	"sfx/woman-mumbling": { "audio": "sfx/woman-mumbling.mp3" }
+},
 "animations": {
 	"animation": {
 		"slots": {
@@ -461,7 +467,15 @@
 					{ "time": 6.7667, "x": -1116.29 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "time": 0.3333, "name": "sfx/step" },
+			{ "time": 0.9667, "name": "sfx/step" },
+			{ "time": 1.6667, "name": "sfx/step" },
+			{ "time": 2, "name": "sfx/woman-mumbling" },
+			{ "time": 7.0667, "name": "sfx/trap" },
+			{ "time": 7.4333, "name": "sfx/surprised" }
+		]
 	},
 	"standing": {}
 }

@@ -44,6 +44,14 @@ public class Resources {
 
     public static Sound sfx_mumble;
 
+    public static Sound sfx_step;
+
+    public static Sound sfx_surprised;
+
+    public static Sound sfx_trap;
+
+    public static Sound sfx_womanMumbling;
+
     public static Music bgm_audioSample;
 
     public static Music bgm_menu;
@@ -75,6 +83,19 @@ public class Resources {
         Cinematic4Spine.animationAnimation = Cinematic4Spine.skeletonData.findAnimation("animation");
         Cinematic4Spine.standingAnimation = Cinematic4Spine.skeletonData.findAnimation("standing");
         Cinematic4Spine.defaultSkin = Cinematic4Spine.skeletonData.findSkin("default");
+        EnemySpine.skeletonData = assetManager.get("spine/enemy.json");
+        EnemySpine.animationData = assetManager.get("spine/enemy.json-animation");
+        EnemySpine.animationAnimation = EnemySpine.skeletonData.findAnimation("animation");
+        EnemySpine.dieAnimation = EnemySpine.skeletonData.findAnimation("die");
+        EnemySpine.hurtAnimation = EnemySpine.skeletonData.findAnimation("hurt");
+        EnemySpine.clubSkin = EnemySpine.skeletonData.findSkin("club");
+        EnemySpine.diamondSkin = EnemySpine.skeletonData.findSkin("diamond");
+        EnemySpine.hatSkin = EnemySpine.skeletonData.findSkin("hat");
+        EnemySpine.heartSkin = EnemySpine.skeletonData.findSkin("heart");
+        EnemySpine.plateSkin = EnemySpine.skeletonData.findSkin("plate");
+        EnemySpine.spadeSkin = EnemySpine.skeletonData.findSkin("spade");
+        EnemySpine.teacupSkin = EnemySpine.skeletonData.findSkin("teacup");
+        EnemySpine.teapotSkin = EnemySpine.skeletonData.findSkin("teapot");
         LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
         LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
         LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
@@ -88,10 +109,16 @@ public class Resources {
         PlayerSpine.skeletonData = assetManager.get("spine/player.json");
         PlayerSpine.animationData = assetManager.get("spine/player.json-animation");
         PlayerSpine.aimAnimation = PlayerSpine.skeletonData.findAnimation("aim");
+        PlayerSpine.aimDownRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-down-right");
         PlayerSpine.aimDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-duck");
         PlayerSpine.aimNoneAnimation = PlayerSpine.skeletonData.findAnimation("aim-none");
         PlayerSpine.aimNoneDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-none-duck");
+        PlayerSpine.aimUpAnimation = PlayerSpine.skeletonData.findAnimation("aim-up");
+        PlayerSpine.aimUpRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-up-right");
         PlayerSpine.duckAnimation = PlayerSpine.skeletonData.findAnimation("duck");
+        PlayerSpine.fallingAnimation = PlayerSpine.skeletonData.findAnimation("falling");
+        PlayerSpine.jumpAnimation = PlayerSpine.skeletonData.findAnimation("jump");
+        PlayerSpine.landAnimation = PlayerSpine.skeletonData.findAnimation("land");
         PlayerSpine.runAnimation = PlayerSpine.skeletonData.findAnimation("run");
         PlayerSpine.standAnimation = PlayerSpine.skeletonData.findAnimation("stand");
         PlayerSpine.defaultSkin = PlayerSpine.skeletonData.findSkin("default");
@@ -115,6 +142,10 @@ public class Resources {
         sfx_libgdxSaw = assetManager.get("sfx/libgdx saw.mp3");
         sfx_libgdxSomethingWrong = assetManager.get("sfx/libgdx something wrong.mp3");
         sfx_mumble = assetManager.get("sfx/mumble.mp3");
+        sfx_step = assetManager.get("sfx/step.mp3");
+        sfx_surprised = assetManager.get("sfx/surprised.mp3");
+        sfx_trap = assetManager.get("sfx/trap.mp3");
+        sfx_womanMumbling = assetManager.get("sfx/woman-mumbling.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
@@ -179,6 +210,34 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
+    public static class EnemySpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static Animation dieAnimation;
+
+        public static Animation hurtAnimation;
+
+        public static com.esotericsoftware.spine.Skin clubSkin;
+
+        public static com.esotericsoftware.spine.Skin diamondSkin;
+
+        public static com.esotericsoftware.spine.Skin hatSkin;
+
+        public static com.esotericsoftware.spine.Skin heartSkin;
+
+        public static com.esotericsoftware.spine.Skin plateSkin;
+
+        public static com.esotericsoftware.spine.Skin spadeSkin;
+
+        public static com.esotericsoftware.spine.Skin teacupSkin;
+
+        public static com.esotericsoftware.spine.Skin teapotSkin;
+    }
+
     public static class LogoLibgdxSpine {
         public static SkeletonData skeletonData;
 
@@ -210,13 +269,25 @@ public class Resources {
 
         public static Animation aimAnimation;
 
+        public static Animation aimDownRightAnimation;
+
         public static Animation aimDuckAnimation;
 
         public static Animation aimNoneAnimation;
 
         public static Animation aimNoneDuckAnimation;
 
+        public static Animation aimUpAnimation;
+
+        public static Animation aimUpRightAnimation;
+
         public static Animation duckAnimation;
+
+        public static Animation fallingAnimation;
+
+        public static Animation jumpAnimation;
+
+        public static Animation landAnimation;
 
         public static Animation runAnimation;
 
