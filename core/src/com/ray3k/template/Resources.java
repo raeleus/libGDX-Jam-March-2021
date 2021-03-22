@@ -58,6 +58,11 @@ public class Resources {
 
     public static void loadResources(AssetManager assetManager) {
         skin_skin = assetManager.get("skin/skin.json");
+        BossSpine.skeletonData = assetManager.get("spine/boss.json");
+        BossSpine.animationData = assetManager.get("spine/boss.json-animation");
+        BossSpine.flyAnimation = BossSpine.skeletonData.findAnimation("fly");
+        BossSpine.runAnimation = BossSpine.skeletonData.findAnimation("run");
+        BossSpine.defaultSkin = BossSpine.skeletonData.findSkin("default");
         CinematicGameSpine.skeletonData = assetManager.get("spine/cinematic-game.json");
         CinematicGameSpine.animationData = assetManager.get("spine/cinematic-game.json-animation");
         CinematicGameSpine.animationAnimation = CinematicGameSpine.skeletonData.findAnimation("animation");
@@ -111,6 +116,11 @@ public class Resources {
         PlayerSpine.aimAnimation = PlayerSpine.skeletonData.findAnimation("aim");
         PlayerSpine.aimDownRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-down-right");
         PlayerSpine.aimDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-duck");
+        PlayerSpine.aimJumpAnimation = PlayerSpine.skeletonData.findAnimation("aim-jump");
+        PlayerSpine.aimJumpDownAnimation = PlayerSpine.skeletonData.findAnimation("aim-jump-down");
+        PlayerSpine.aimJumpDownRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-jump-down-right");
+        PlayerSpine.aimJumpUpAnimation = PlayerSpine.skeletonData.findAnimation("aim-jump-up");
+        PlayerSpine.aimJumpUpRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-jump-up-right");
         PlayerSpine.aimNoneAnimation = PlayerSpine.skeletonData.findAnimation("aim-none");
         PlayerSpine.aimNoneDuckAnimation = PlayerSpine.skeletonData.findAnimation("aim-none-duck");
         PlayerSpine.aimUpAnimation = PlayerSpine.skeletonData.findAnimation("aim-up");
@@ -148,6 +158,18 @@ public class Resources {
         sfx_womanMumbling = assetManager.get("sfx/woman-mumbling.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
+    }
+
+    public static class BossSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation flyAnimation;
+
+        public static Animation runAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
     public static class CinematicGameSpine {
@@ -272,6 +294,16 @@ public class Resources {
         public static Animation aimDownRightAnimation;
 
         public static Animation aimDuckAnimation;
+
+        public static Animation aimJumpAnimation;
+
+        public static Animation aimJumpDownAnimation;
+
+        public static Animation aimJumpDownRightAnimation;
+
+        public static Animation aimJumpUpAnimation;
+
+        public static Animation aimJumpUpRightAnimation;
 
         public static Animation aimNoneAnimation;
 

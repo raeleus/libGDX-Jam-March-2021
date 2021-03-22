@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "3sJJ0YEmjW9NVHeb8aR1rdByVzo",
+	"hash": "+7rDkVlg8IMBj8NQr2iqiyMbkr0",
 	"spine": "3.8.99",
 	"x": -56.67,
 	"y": -2.74,
@@ -150,6 +150,51 @@
 			"arm-left-target": {
 				"translate": [
 					{ "x": 24.45, "y": -187.45 }
+				]
+			}
+		}
+	},
+	"aim-jump": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": 216.66, "y": 3.14 }
+				]
+			}
+		}
+	},
+	"aim-jump-down": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": -131.09, "y": -388.57 }
+				]
+			}
+		}
+	},
+	"aim-jump-down-right": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": 75.36, "y": -388.57 }
+				]
+			}
+		}
+	},
+	"aim-jump-up": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": -150.72, "y": 274.75 }
+				]
+			}
+		}
+	},
+	"aim-jump-up-right": {
+		"bones": {
+			"arm-left-target": {
+				"translate": [
+					{ "x": -20.41, "y": 115.39 }
 				]
 			}
 		}

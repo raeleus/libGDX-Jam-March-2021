@@ -1,3 +1,4 @@
+spine/boss.json
 spine/cinematic-game.json
 spine/cinematic1.json
 spine/cinematic2.json

@@ -87,7 +87,7 @@ public class GameScreen extends JamScreen {
     
         entityController.clear();
         var player = new PlayerEntity();
-        player.setPosition(50, 0);
+        player.setPosition(100, 0);
         entityController.add(player);
         
         camera.position.set(512, 288, 0);
