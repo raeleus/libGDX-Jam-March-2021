@@ -22,9 +22,10 @@ public class PlayerEntity extends Entity {
     private static final float SHOTGUN_BULLET_SPEED = 800f;
     private static final float SHOTGUN_BULLET_RATE = .4f;
     private static final float SHOTGUN_BULLET_ANGLE = 120;
-    private static final float SHOTGUN_BULLET_COUNT = 5;
+    private static final int SHOTGUN_BULLET_COUNT = 5;
     private static final float ROCKET_BULLET_SPEED = 600f;
     private static final float ROCKET_BULLET_RATE = .6f;
+    private static final int ROCKET_BULLET_COUNT = 3;
     private PlayerWeaponEntity weapon;
     private Bone weaponHandBone;
     private Bone weaponBone;
@@ -36,6 +37,7 @@ public class PlayerEntity extends Entity {
     }
     private GunMode gunMode = GunMode.ASSAULT;
     private static Vector2 temp = new Vector2();
+    private static Vector2 temp2 = new Vector2();
     
     @Override
     public void create() {
@@ -143,13 +145,27 @@ public class PlayerEntity extends Entity {
                     var projectile = new ProjectileEntity();
                     entityController.add(projectile);
                     projectile.setPosition(temp.x, temp.y);
-                    projectile.setMotion(shotSpeed, weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i);
+                    var rotation = weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i;
+                    projectile.setMotion(shotSpeed, rotation);
+                    projectile.skeleton.getRootBone().setRotation(rotation);
+                }
+            } else if (gunMode == GunMode.ROCKET) {
+                for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
+                    var projectile = new ProjectileEntity();
+                    entityController.add(projectile);
+                    temp2.set(50f * i, 0f);
+                    temp2.rotateDeg(weaponRotation + 180);
+                    temp2.add(temp);
+                    projectile.setPosition(temp2.x, temp2.y);
+                    projectile.setMotion(shotSpeed, weaponRotation);
+                    projectile.skeleton.getRootBone().setRotation(weaponRotation);
                 }
             } else {
                 var projectile = new ProjectileEntity();
                 entityController.add(projectile);
                 projectile.setPosition(temp.x, temp.y);
                 projectile.setMotion(shotSpeed, weaponRotation);
+                projectile.skeleton.getRootBone().setRotation(weaponRotation);
             }
         }
     }

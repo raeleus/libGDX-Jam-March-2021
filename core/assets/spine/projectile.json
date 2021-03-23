@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "5UwWcN5402r7QkkRiyGKqunyPnc",
+	"hash": "EB/huOJIbC+kRPRYCVLZc06sm1k",
 	"spine": "3.8.99",
-	"x": -12,
-	"y": -16,
-	"width": 24,
-	"height": 32,
+	"x": -55,
+	"y": -19.5,
+	"width": 110,
+	"height": 39,
 	"images": "",
 	"audio": ""
 },
@@ -13,14 +13,14 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/plate", "bone": "root", "dark": "ffffff", "attachment": "game/player-foot" }
+	{ "name": "game/plate", "bone": "root", "dark": "000000", "attachment": "game/bullet-player" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
 			"game/plate": {
-				"game/player-foot": { "width": 24, "height": 32 }
+				"game/bullet-player": { "width": 110, "height": 39 }
 			}
 		}
 	}
