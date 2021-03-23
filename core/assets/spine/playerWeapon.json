@@ -1,0 +1,76 @@
+{
+"skeleton": {
+	"hash": "HwXlJVxsnzQPlkA1bPLqhtOIahY",
+	"spine": "3.8.99",
+	"x": -101.75,
+	"y": -25.28,
+	"width": 212.03,
+	"height": 55.11,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/player-arm", "bone": "root", "attachment": "arm" },
+	{ "name": "muzzle", "bone": "root", "attachment": "muzzle" }
+],
+"skins": [
+	{
+		"name": "assault-rifle",
+		"attachments": {
+			"game/player-arm": {
+				"arm": { "name": "game/assault-rifle", "x": 52.4, "y": 12.69, "rotation": 0.03, "width": 180, "height": 64 }
+			},
+			"muzzle": {
+				"muzzle": { "type": "point", "x": 134.68, "y": 27.32 }
+			}
+		}
+	},
+	{
+		"name": "flame-thrower",
+		"attachments": {
+			"game/player-arm": {
+				"arm": { "name": "game/flame-thrower", "x": 90.13, "y": -1.63, "rotation": 0.03, "width": 199, "height": 63 }
+			},
+			"muzzle": {
+				"muzzle": { "type": "point", "x": 109.96, "y": 15.61 }
+			}
+		}
+	},
+	{
+		"name": "rocket-launcher",
+		"attachments": {
+			"game/player-arm": {
+				"arm": { "name": "game/rocket", "x": 4.26, "y": 2.28, "rotation": 0.03, "width": 212, "height": 55 }
+			},
+			"muzzle": {
+				"muzzle": { "type": "point", "x": 73.53, "y": 16.91 }
+			}
+		}
+	},
+	{
+		"name": "shotgun",
+		"attachments": {
+			"game/player-arm": {
+				"arm": {
+					"name": "game/shotgun",
+					"x": 52.4,
+					"y": -1.63,
+					"scaleX": -1,
+					"rotation": 0.03,
+					"width": 196,
+					"height": 83
+				}
+			},
+			"muzzle": {
+				"muzzle": { "type": "point", "x": 146.38, "y": 27.32 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

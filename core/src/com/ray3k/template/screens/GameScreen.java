@@ -100,14 +100,6 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
-    
-        if (isBindingJustPressed(Binding.LEFT)) {
-            System.out.println("left");
-        }
-        if (isBindingJustPressed(Binding.UP)) {
-            System.out.println("up");
-        }
-        
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
     }
     

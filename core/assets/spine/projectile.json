@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "5UwWcN5402r7QkkRiyGKqunyPnc",
+	"spine": "3.8.99",
+	"x": -12,
+	"y": -16,
+	"width": 24,
+	"height": 32,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/plate", "bone": "root", "dark": "ffffff", "attachment": "game/player-foot" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/plate": {
+				"game/player-foot": { "width": 24, "height": 32 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

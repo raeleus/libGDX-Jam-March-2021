@@ -8,4 +8,6 @@ spine/enemy.json
 spine/logo-libgdx.json
 spine/logo-ray3k.json
 spine/player.json
+spine/playerWeapon.json
 spine/preload.json
+spine/projectile.json

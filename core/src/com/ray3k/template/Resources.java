@@ -132,10 +132,21 @@ public class Resources {
         PlayerSpine.runAnimation = PlayerSpine.skeletonData.findAnimation("run");
         PlayerSpine.standAnimation = PlayerSpine.skeletonData.findAnimation("stand");
         PlayerSpine.defaultSkin = PlayerSpine.skeletonData.findSkin("default");
+        PlayerWeaponSpine.skeletonData = assetManager.get("spine/playerWeapon.json");
+        PlayerWeaponSpine.animationData = assetManager.get("spine/playerWeapon.json-animation");
+        PlayerWeaponSpine.animationAnimation = PlayerWeaponSpine.skeletonData.findAnimation("animation");
+        PlayerWeaponSpine.assaultRifleSkin = PlayerWeaponSpine.skeletonData.findSkin("assault-rifle");
+        PlayerWeaponSpine.flameThrowerSkin = PlayerWeaponSpine.skeletonData.findSkin("flame-thrower");
+        PlayerWeaponSpine.rocketLauncherSkin = PlayerWeaponSpine.skeletonData.findSkin("rocket-launcher");
+        PlayerWeaponSpine.shotgunSkin = PlayerWeaponSpine.skeletonData.findSkin("shotgun");
         PreloadSpine.skeletonData = assetManager.get("spine/preload.json");
         PreloadSpine.animationData = assetManager.get("spine/preload.json-animation");
         PreloadSpine.animationAnimation = PreloadSpine.skeletonData.findAnimation("animation");
         PreloadSpine.defaultSkin = PreloadSpine.skeletonData.findSkin("default");
+        ProjectileSpine.skeletonData = assetManager.get("spine/projectile.json");
+        ProjectileSpine.animationData = assetManager.get("spine/projectile.json-animation");
+        ProjectileSpine.animationAnimation = ProjectileSpine.skeletonData.findAnimation("animation");
+        ProjectileSpine.defaultSkin = ProjectileSpine.skeletonData.findSkin("default");
         textures_textures = assetManager.get("textures/textures.atlas");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_cry = assetManager.get("sfx/cry.mp3");
@@ -328,7 +339,33 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
+    public static class PlayerWeaponSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin assaultRifleSkin;
+
+        public static com.esotericsoftware.spine.Skin flameThrowerSkin;
+
+        public static com.esotericsoftware.spine.Skin rocketLauncherSkin;
+
+        public static com.esotericsoftware.spine.Skin shotgunSkin;
+    }
+
     public static class PreloadSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class ProjectileSpine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;

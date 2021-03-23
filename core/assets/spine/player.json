@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "+7rDkVlg8IMBj8NQr2iqiyMbkr0",
+	"hash": "p7lQNbdtuXbSAUXI1LkNuJINNSE",
 	"spine": "3.8.99",
 	"x": -56.67,
 	"y": -2.74,
@@ -27,7 +27,8 @@
 	{ "name": "leg-right-target", "parent": "root", "x": -18.94, "y": 27.71, "color": "ff3f00ff" },
 	{ "name": "leg-left-target", "parent": "root", "x": 20.53, "y": 26.82, "color": "ff3f00ff" },
 	{ "name": "arm-right-target", "parent": "root", "x": 21.59, "y": 185.54, "color": "ff3f00ff" },
-	{ "name": "arm-left-target", "parent": "root", "x": 149.44, "y": 239.07, "color": "ff3f00ff" }
+	{ "name": "arm-left-target", "parent": "root", "x": 149.44, "y": 239.07, "color": "ff3f00ff" },
+	{ "name": "weapon", "parent": "forearm-left", "rotation": 0.09, "x": 67.83, "y": 0.03 }
 ],
 "slots": [
 	{ "name": "leg-left", "bone": "leg-left", "attachment": "game/player-leg" },
