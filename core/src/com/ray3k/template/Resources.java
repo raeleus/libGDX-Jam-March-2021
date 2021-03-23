@@ -101,6 +101,10 @@ public class Resources {
         EnemySpine.spadeSkin = EnemySpine.skeletonData.findSkin("spade");
         EnemySpine.teacupSkin = EnemySpine.skeletonData.findSkin("teacup");
         EnemySpine.teapotSkin = EnemySpine.skeletonData.findSkin("teapot");
+        Level1Spine.skeletonData = assetManager.get("spine/level1.json");
+        Level1Spine.animationData = assetManager.get("spine/level1.json-animation");
+        Level1Spine.animationAnimation = Level1Spine.skeletonData.findAnimation("animation");
+        Level1Spine.defaultSkin = Level1Spine.skeletonData.findSkin("default");
         LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
         LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
         LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
@@ -146,7 +150,8 @@ public class Resources {
         ProjectileSpine.skeletonData = assetManager.get("spine/projectile.json");
         ProjectileSpine.animationData = assetManager.get("spine/projectile.json-animation");
         ProjectileSpine.animationAnimation = ProjectileSpine.skeletonData.findAnimation("animation");
-        ProjectileSpine.defaultSkin = ProjectileSpine.skeletonData.findSkin("default");
+        ProjectileSpine.bulletSkin = ProjectileSpine.skeletonData.findSkin("bullet");
+        ProjectileSpine.rocketSkin = ProjectileSpine.skeletonData.findSkin("rocket");
         textures_textures = assetManager.get("textures/textures.atlas");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_cry = assetManager.get("sfx/cry.mp3");
@@ -271,6 +276,16 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin teapotSkin;
     }
 
+    public static class Level1Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
     public static class LogoLibgdxSpine {
         public static SkeletonData skeletonData;
 
@@ -372,6 +387,8 @@ public class Resources {
 
         public static Animation animationAnimation;
 
-        public static com.esotericsoftware.spine.Skin defaultSkin;
+        public static com.esotericsoftware.spine.Skin bulletSkin;
+
+        public static com.esotericsoftware.spine.Skin rocketSkin;
     }
 }

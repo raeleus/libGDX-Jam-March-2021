@@ -209,324 +209,296 @@ cinematic/white
   index: -1
 
 textures2.png
-size: 2048,2048
+size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 game/assault-rifle
-  rotate: true
-  xy: 1163, 719
+  rotate: false
+  xy: 1, 881
   size: 180, 64
   orig: 180, 64
   offset: 0, 0
   index: -1
 game/blood
   rotate: false
-  xy: 727, 911
+  xy: 537, 601
   size: 182, 114
   orig: 182, 114
   offset: 0, 0
   index: -1
 game/boss-arm
-  rotate: false
-  xy: 1056, 950
+  rotate: true
+  xy: 909, 972
   size: 45, 73
   orig: 45, 73
   offset: 0, 0
   index: -1
 game/boss-body
   rotate: true
-  xy: 1121, 1111
+  xy: 607, 717
   size: 102, 168
   orig: 102, 168
   offset: 0, 0
   index: -1
 game/boss-forearm
-  rotate: false
-  xy: 911, 945
+  rotate: true
+  xy: 277, 982
   size: 35, 80
   orig: 35, 80
   offset: 0, 0
   index: -1
 game/boss-head
   rotate: true
-  xy: 560, 898
+  xy: 850, 585
   size: 127, 165
   orig: 127, 165
   offset: 0, 0
   index: -1
 game/boss-hip
-  rotate: true
-  xy: 1646, 1137
+  rotate: false
+  xy: 359, 981
   size: 76, 36
   orig: 76, 36
   offset: 0, 0
   index: -1
 game/boss-leg
   rotate: true
-  xy: 668, 745
+  xy: 183, 854
   size: 76, 108
   orig: 82, 108
   offset: 6, 0
   index: -1
 game/bullet-enemy
-  rotate: true
-  xy: 2003, 1439
+  rotate: false
+  xy: 437, 979
   size: 110, 38
   orig: 110, 38
   offset: 0, 0
   index: -1
 game/bullet-player
-  rotate: true
-  xy: 2003, 1551
+  rotate: false
+  xy: 549, 978
   size: 110, 39
   orig: 110, 39
   offset: 0, 0
   index: -1
 game/cleaver
-  rotate: true
-  xy: 956, 1001
+  rotate: false
+  xy: 253, 738
   size: 223, 98
   orig: 223, 98
   offset: 0, 0
   index: -1
 game/cloud
   rotate: true
-  xy: 560, 797
+  xy: 145, 753
   size: 99, 106
   orig: 99, 106
   offset: 0, 0
   index: -1
 game/club
   rotate: true
-  xy: 1103, 901
+  xy: 478, 726
   size: 100, 127
   orig: 100, 127
   offset: 0, 0
   index: -1
 game/diamond
   rotate: true
-  xy: 947, 765
+  xy: 697, 821
   size: 90, 96
   orig: 90, 96
   offset: 0, 0
   index: -1
 game/explosion
   rotate: true
-  xy: 1686, 1198
+  xy: 397, 328
   size: 271, 293
   orig: 271, 293
   offset: 0, 0
   index: -1
 game/flame-thrower
-  rotate: true
-  xy: 1056, 1025
+  rotate: false
+  xy: 818, 907
   size: 199, 63
   orig: 199, 63
   offset: 0, 0
   index: -1
 game/fork
-  rotate: true
-  xy: 2003, 1853
+  rotate: false
+  xy: 1, 947
   size: 194, 44
   orig: 194, 44
   offset: 0, 0
   index: -1
 game/hat
   rotate: true
-  xy: 1121, 1003
+  xy: 401, 618
   size: 106, 134
   orig: 106, 134
   offset: 0, 0
   index: -1
 game/heart
   rotate: true
-  xy: 1047, 792
+  xy: 128, 644
   size: 107, 114
   orig: 107, 114
   offset: 0, 0
   index: -1
 game/helicopter
   rotate: false
-  xy: 560, 1027
+  xy: 1, 434
   size: 394, 197
   orig: 394, 197
   offset: 0, 0
   index: -1
 game/jetpack
   rotate: false
-  xy: 1489, 1110
+  xy: 244, 633
   size: 155, 103
   orig: 156, 103
   offset: 1, 0
   index: -1
-game/level1
-  rotate: false
-  xy: 1, 1226
-  size: 1121, 821
-  orig: 1121, 821
-  offset: 0, 0
-  index: -1
 game/missile
-  rotate: false
-  xy: 1981, 1032
+  rotate: true
+  xy: 583, 913
   size: 61, 233
   orig: 61, 233
   offset: 0, 0
   index: -1
 game/plate
   rotate: true
-  xy: 1286, 906
+  xy: 1, 675
   size: 105, 125
   orig: 105, 125
   offset: 0, 0
   index: -1
 game/player-arm
-  rotate: false
-  xy: 911, 897
+  rotate: true
+  xy: 58, 1000
   size: 17, 46
   orig: 17, 46
   offset: 0, 0
   index: -1
 game/player-body
   rotate: true
-  xy: 727, 823
+  xy: 795, 819
   size: 86, 137
   orig: 86, 137
   offset: 0, 0
   index: -1
 game/player-foot
   rotate: true
-  xy: 1232, 890
+  xy: 186, 993
   size: 24, 32
   orig: 24, 32
   offset: 0, 0
   index: -1
 game/player-forearm
-  rotate: false
-  xy: 1257, 1031
+  rotate: true
+  xy: 106, 996
   size: 21, 78
   orig: 21, 78
   offset: 0, 0
   index: -1
 game/player-foreleg
-  rotate: false
-  xy: 1981, 1417
+  rotate: true
+  xy: 4, 1001
   size: 16, 52
   orig: 16, 52
   offset: 0, 0
   index: -1
 game/player-head
-  rotate: false
-  xy: 778, 728
+  rotate: true
+  xy: 404, 838
   size: 81, 93
   orig: 81, 93
   offset: 0, 0
   index: -1
 game/player-head-scream
-  rotate: false
-  xy: 866, 786
+  rotate: true
+  xy: 293, 840
   size: 79, 109
   orig: 79, 109
   offset: 0, 0
   index: -1
 game/player-hip
-  rotate: true
-  xy: 1232, 916
+  rotate: false
+  xy: 661, 978
   size: 56, 39
   orig: 56, 39
   offset: 0, 0
   index: -1
 game/player-leg
-  rotate: false
-  xy: 1257, 974
+  rotate: true
+  xy: 220, 990
   size: 27, 55
   orig: 27, 55
   offset: 0, 0
   index: -1
 game/rocket
-  rotate: true
-  xy: 1420, 916
+  rotate: false
+  xy: 369, 921
   size: 212, 55
   orig: 212, 55
   offset: 0, 0
   index: -1
 game/shotgun
   rotate: false
-  xy: 1291, 1130
+  xy: 499, 828
   size: 196, 83
   orig: 196, 83
   offset: 0, 0
   index: -1
-game/sky
-  rotate: false
-  xy: 1124, 1215
-  size: 560, 414
-  orig: 560, 414
-  offset: 0, 0
-  index: -1
 game/spade
-  rotate: false
-  xy: 948, 857
+  rotate: true
+  xy: 1, 782
   size: 97, 142
   orig: 97, 142
   offset: 0, 0
   index: -1
 game/spear
-  rotate: true
-  xy: 2003, 1663
+  rotate: false
+  xy: 719, 976
   size: 188, 41
   orig: 188, 41
   offset: 0, 0
   index: -1
 game/spoon
-  rotate: true
-  xy: 1999, 1267
+  rotate: false
+  xy: 197, 932
   size: 170, 47
   orig: 170, 47
   offset: 0, 0
   index: -1
-game/stripes
-  rotate: false
-  xy: 1, 812
-  size: 557, 412
-  orig: 557, 412
-  offset: 0, 0
-  index: -1
-game/table
-  rotate: true
-  xy: 1699, 1471
-  size: 576, 302
-  orig: 576, 302
-  offset: 0, 0
-  index: -1
 game/teacup
   rotate: false
-  xy: 1045, 687
+  xy: 885, 714
   size: 104, 103
   orig: 104, 103
   offset: 0, 0
   index: -1
 game/teapot
   rotate: true
-  xy: 1291, 1013
+  xy: 721, 598
   size: 115, 127
   orig: 115, 127
   offset: 0, 0
   index: -1
 game/white
   rotate: false
-  xy: 2046, 1850
+  xy: 1, 1016
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 game/wing
-  rotate: true
-  xy: 1124, 1631
-  size: 416, 573
-  orig: 425, 585
-  offset: 4, 7
+  rotate: false
+  xy: 777, 715
+  size: 106, 102
+  orig: 106, 102
+  offset: 0, 0
   index: -1
 
 textures3.png
@@ -536,16 +508,44 @@ filter: Linear,Linear
 repeat: none
 level/forest
   rotate: false
-  xy: 1, 579
+  xy: 1, 305
   size: 1086, 814
   orig: 1086, 814
   offset: 0, 0
   index: -1
 level/intro
-  rotate: false
-  xy: 1, 1
+  rotate: true
+  xy: 1124, 918
   size: 1024, 576
   orig: 1024, 576
+  offset: 0, 0
+  index: -1
+level/level1
+  rotate: false
+  xy: 1, 1121
+  size: 1121, 821
+  orig: 1121, 821
+  offset: 0, 0
+  index: -1
+level/sky
+  rotate: false
+  xy: 1089, 502
+  size: 560, 414
+  orig: 560, 414
+  offset: 0, 0
+  index: -1
+level/stripes
+  rotate: false
+  xy: 1089, 88
+  size: 557, 412
+  orig: 557, 412
+  offset: 0, 0
+  index: -1
+level/table
+  rotate: false
+  xy: 1, 1
+  size: 576, 302
+  orig: 576, 302
   offset: 0, 0
   index: -1
 

@@ -44,6 +44,7 @@ public class Core extends JamGame {
     public static float WEAPON_DEPTH = 10f;
     public static float PROJECTILE_DEPTH = 12f;
     public static float ENEMY_DEPTH = 50f;
+    public static float LEVEL_DEPTH = 200f;
     
     @Override
     public void create() {

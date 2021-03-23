@@ -148,6 +148,7 @@ public class PlayerEntity extends Entity {
                     var rotation = weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i;
                     projectile.setMotion(shotSpeed, rotation);
                     projectile.skeleton.getRootBone().setRotation(rotation);
+                    projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
                 }
             } else if (gunMode == GunMode.ROCKET) {
                 for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
@@ -159,6 +160,7 @@ public class PlayerEntity extends Entity {
                     projectile.setPosition(temp2.x, temp2.y);
                     projectile.setMotion(shotSpeed, weaponRotation);
                     projectile.skeleton.getRootBone().setRotation(weaponRotation);
+                    projectile.skeleton.setSkin(ProjectileSpine.rocketSkin);
                 }
             } else {
                 var projectile = new ProjectileEntity();
@@ -166,6 +168,7 @@ public class PlayerEntity extends Entity {
                 projectile.setPosition(temp.x, temp.y);
                 projectile.setMotion(shotSpeed, weaponRotation);
                 projectile.skeleton.getRootBone().setRotation(weaponRotation);
+                projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
             }
         }
     }
@@ -185,7 +188,6 @@ public class PlayerEntity extends Entity {
             shotSpeed = ROCKET_BULLET_SPEED;
             weapon.skeleton.setSkin(PlayerWeaponSpine.rocketLauncherSkin);
         }
-        shotTimer = shotRate;
     }
     
     @Override

@@ -90,6 +90,9 @@ public class GameScreen extends JamScreen {
         player.setPosition(100, 0);
         entityController.add(player);
         
+        var level = new level1bg();
+        entityController.add(level);
+        
         camera.position.set(512, 288, 0);
     }
     

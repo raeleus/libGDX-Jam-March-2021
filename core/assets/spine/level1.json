@@ -1,0 +1,53 @@
+{
+"skeleton": {
+	"hash": "nBWM8EyZfMshr+pZIv27F5GQZFU",
+	"spine": "3.8.99",
+	"x": -0.02,
+	"y": -116.79,
+	"width": 2241.87,
+	"height": 821,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 512.31, "rotation": 0.15, "x": 553.03, "y": 260.55 },
+	{ "name": "bone2", "parent": "root", "length": 512.31, "rotation": 0.15, "x": 1672.19, "y": 260.55 }
+],
+"slots": [
+	{ "name": "game/white", "bone": "root" },
+	{ "name": "level/level1", "bone": "bone", "attachment": "level/level1" },
+	{ "name": "level/level2", "bone": "bone2", "attachment": "level/level1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"level/level1": {
+				"level/level1": { "x": 7.53, "y": 33.14, "rotation": -0.15, "width": 1121, "height": 821 }
+			},
+			"level/level2": {
+				"level/level1": { "x": 9.24, "y": 33.14, "rotation": -0.15, "width": 1121, "height": 821 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"bones": {
+			"bone": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -1121 }
+				]
+			},
+			"bone2": {
+				"translate": [
+					{},
+					{ "time": 0.6667, "x": -1121 }
+				]
+			}
+		}
+	}
+}
+}
