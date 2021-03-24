@@ -1,8 +1,12 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
+import com.dongbat.jbump.Item;
 import com.dongbat.jbump.Rect;
+import com.ray3k.template.screens.*;
+import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import java.util.Comparator;
 
@@ -104,6 +108,11 @@ public class EntityController implements Disposable {
                     entity.skeleton.updateWorldTransform();
                     
                     skeletonRenderer.draw(batch, entity.skeleton);
+                }
+                
+                if (entity.collisionBoxDebugColor != null && shapeDrawer != null) {
+                    var rect = world.getRect(entity.item);
+                    if (rect != null) shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h, entity.collisionBoxDebugColor, 1.0f);
                 }
                 
                 entity.draw(delta);
