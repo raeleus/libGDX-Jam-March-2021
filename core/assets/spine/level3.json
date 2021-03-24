@@ -1,0 +1,35 @@
+{
+"skeleton": {
+	"hash": "QWn87sBZAgakzr2yWj4dc04kSLY",
+	"spine": "3.8.99",
+	"x": -23.83,
+	"y": -171.56,
+	"width": 1106.71,
+	"height": 818.17,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/white", "bone": "root", "attachment": "game/white" },
+	{ "name": "level/sky", "bone": "root", "attachment": "level/sky" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/white": {
+				"game/white": { "x": 512, "y": 288, "scaleX": 1024, "scaleY": 576, "width": 1, "height": 1 }
+			},
+			"level/sky": {
+				"level/sky": { "x": 529.53, "y": 237.53, "scaleX": 1.9763, "scaleY": 1.9763, "width": 560, "height": 414 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

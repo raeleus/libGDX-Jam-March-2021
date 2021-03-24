@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "GyHwPjDKX2/T/TMyqqpt+z1CUzs",
+	"hash": "a/0lkDDzOdf2N5mkZwnNCk1RDYA",
 	"spine": "3.8.99",
-	"x": -116.77,
-	"y": -35.1,
-	"width": 218.42,
-	"height": 71.5,
+	"x": -39.49,
+	"y": -19.5,
+	"width": 110,
+	"height": 39,
 	"images": "",
 	"audio": ""
 },
@@ -13,12 +13,20 @@
 	{ "name": "root", "x": 15.51 }
 ],
 "slots": [
-	{ "name": "game/plate", "bone": "root", "dark": "000000", "attachment": "bullet" }
+	{ "name": "game/plate", "bone": "root", "dark": "000000", "attachment": "bullet" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "bullet",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -34.45, -24.55, -34.91, 23.86, 15.34, 24.32, 12.11, -23.63 ]
+				}
+			},
 			"game/plate": {
 				"bullet": { "name": "game/bullet-player", "width": 110, "height": 39 }
 			}
@@ -27,6 +35,13 @@
 	{
 		"name": "rocket",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -30.76, -11.18, -30.3, 17.4, 2.43, 17.86, 1.05, -11.18 ]
+				}
+			},
 			"game/plate": {
 				"bullet": {
 					"name": "game/missile",

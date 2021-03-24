@@ -28,7 +28,6 @@ public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
     public static final Color BG_COLOR = new Color();
     public Stage stage;
-    public ShapeDrawer shapeDrawer;
     public boolean paused;
     private Label fpsLabel;
     
@@ -92,6 +91,9 @@ public class GameScreen extends JamScreen {
         
         var level = new level1bg();
         entityController.add(level);
+        
+        var spawner = new EnemySpawnerEntity();
+        entityController.add(spawner);
         
         camera.position.set(512, 288, 0);
     }

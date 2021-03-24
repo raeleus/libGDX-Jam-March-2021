@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.esotericsoftware.spine.Animation;
@@ -169,6 +170,8 @@ public class PlayerEntity extends Entity {
                 projectile.setMotion(shotSpeed, weaponRotation);
                 projectile.skeleton.getRootBone().setRotation(weaponRotation);
                 projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
+                projectile.skeletonBounds.update(projectile.skeleton, true);
+                projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
             }
         }
     }

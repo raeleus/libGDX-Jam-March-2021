@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "e+X3GvqajEbYLv1CoK4DB4hBWYM",
+	"hash": "4CAMbhT9r0Vw13rywjkiBkvkNZA",
 	"spine": "3.8.99",
 	"x": -62.15,
 	"y": -3.7,
@@ -14,12 +14,20 @@
 	{ "name": "enemy", "parent": "root", "length": 108.07, "rotation": 0.83, "x": -7.78, "y": 67.63 }
 ],
 "slots": [
-	{ "name": "enemy", "bone": "enemy", "dark": "000000", "attachment": "enemy" }
+	{ "name": "enemy", "bone": "enemy", "dark": "000000", "attachment": "enemy" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "club",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -20.85, 10.16, -20.85, 118.87, 23.1, 120.05, 19.54, 10.16 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/club", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 100, "height": 127 }
 			}
@@ -28,14 +36,28 @@
 	{
 		"name": "diamond",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -27.98, 8.98, -27.39, 86.2, 20.73, 85.6, 18.35, 9.57 ]
+				}
+			},
 			"enemy": {
-				"enemy": { "name": "game/diamond", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 90, "height": 96 }
+				"enemy": { "name": "game/diamond", "x": 2.74, "y": -26.88, "rotation": -0.83, "width": 90, "height": 96 }
 			}
 		}
 	},
 	{
 		"name": "hat",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -31.55, 20.26, -31.55, 122.43, 23.7, 122.43, 23.7, 20.26 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/hat", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 106, "height": 134 }
 			}
@@ -44,6 +66,13 @@
 	{
 		"name": "heart",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -26.79, 26.2, -25.61, 108.17, 33.2, 109.36, 30.23, 24.42 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/heart", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 107, "height": 114 }
 			}
@@ -52,6 +81,13 @@
 	{
 		"name": "plate",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -41.64, 20.26, -39.27, 110.55, 36.76, 111.74, 34.98, 20.26 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/plate", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 105, "height": 125 }
 			}
@@ -60,6 +96,13 @@
 	{
 		"name": "spade",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -34.52, 27.39, -32.14, 115.9, 33.79, 116.49, 29.64, 26.8 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/spade", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 97, "height": 142 }
 			}
@@ -68,6 +111,13 @@
 	{
 		"name": "teacup",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -33.92, 25.01, -36.3, 105.2, 39.14, 104.02, 37.36, 24.42 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/teacup", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 104, "height": 103 }
 			}
@@ -76,6 +126,13 @@
 	{
 		"name": "teapot",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -38.67, 13.73, -36.89, 106.39, 36.17, 106.99, 33.79, 13.73 ]
+				}
+			},
 			"enemy": {
 				"enemy": { "name": "game/teapot", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 115, "height": 127 }
 			}
