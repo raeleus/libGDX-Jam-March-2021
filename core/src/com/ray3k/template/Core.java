@@ -33,6 +33,7 @@ public class Core extends JamGame {
     public static EntityController entityController;
     public static World<Entity> world;
     public static CollisionFilter defaultCollisionFilter;
+    public static CollisionFilter nullCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
         LEFT, RIGHT, UP, DOWN, SHOOT, CHANGE_WEAPON, JUMP;
@@ -66,6 +67,7 @@ public class Core extends JamGame {
         
         world = new World<>(100);
         defaultCollisionFilter = (item, other) -> Response.bounce;
+        nullCollisionFilter = (Item, Other) -> null;
         
         sndChangeListener = new ChangeListener() {
             @Override
