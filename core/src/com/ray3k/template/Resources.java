@@ -14,6 +14,10 @@ public class Resources {
 
     public static TextureAtlas textures_textures;
 
+    public static Sound sfx_assaultRifle;
+
+    public static Sound sfx_bloodSquish;
+
     public static Sound sfx_click;
 
     public static Sound sfx_cry;
@@ -22,7 +26,15 @@ public class Resources {
 
     public static Sound sfx_ekgFlat;
 
+    public static Sound sfx_evilLaugh;
+
+    public static Sound sfx_explosion;
+
     public static Sound sfx_happynes;
+
+    public static Sound sfx_helicopter;
+
+    public static Sound sfx_jumpLanding;
 
     public static Sound sfx_libgdxAhhh;
 
@@ -42,7 +54,13 @@ public class Resources {
 
     public static Sound sfx_libgdxSomethingWrong;
 
+    public static Sound sfx_manGrunt;
+
     public static Sound sfx_mumble;
+
+    public static Sound sfx_rocketLauncher;
+
+    public static Sound sfx_shotgun;
 
     public static Sound sfx_step;
 
@@ -50,14 +68,22 @@ public class Resources {
 
     public static Sound sfx_trap;
 
+    public static Sound sfx_womanGrunt;
+
     public static Sound sfx_womanMumbling;
 
     public static Music bgm_audioSample;
+
+    public static Music bgm_gameplay;
 
     public static Music bgm_menu;
 
     public static void loadResources(AssetManager assetManager) {
         skin_skin = assetManager.get("skin/skin.json");
+        BloodSpine.skeletonData = assetManager.get("spine/blood.json");
+        BloodSpine.animationData = assetManager.get("spine/blood.json-animation");
+        BloodSpine.animationAnimation = BloodSpine.skeletonData.findAnimation("animation");
+        BloodSpine.defaultSkin = BloodSpine.skeletonData.findSkin("default");
         BossSpine.skeletonData = assetManager.get("spine/boss.json");
         BossSpine.animationData = assetManager.get("spine/boss.json-animation");
         BossSpine.flyAnimation = BossSpine.skeletonData.findAnimation("fly");
@@ -92,8 +118,12 @@ public class Resources {
         EnemySpine.animationData = assetManager.get("spine/enemy.json-animation");
         EnemySpine.animationAnimation = EnemySpine.skeletonData.findAnimation("animation");
         EnemySpine.dieAnimation = EnemySpine.skeletonData.findAnimation("die");
+        EnemySpine.flyAnimation = EnemySpine.skeletonData.findAnimation("fly");
         EnemySpine.hurtAnimation = EnemySpine.skeletonData.findAnimation("hurt");
+        EnemySpine.jetpackAnimation = EnemySpine.skeletonData.findAnimation("jetpack");
+        EnemySpine.defaultSkin = EnemySpine.skeletonData.findSkin("default");
         EnemySpine.clubSkin = EnemySpine.skeletonData.findSkin("club");
+        EnemySpine.clubTinySkin = EnemySpine.skeletonData.findSkin("clubTiny");
         EnemySpine.diamondSkin = EnemySpine.skeletonData.findSkin("diamond");
         EnemySpine.hatSkin = EnemySpine.skeletonData.findSkin("hat");
         EnemySpine.heartSkin = EnemySpine.skeletonData.findSkin("heart");
@@ -105,6 +135,14 @@ public class Resources {
         Level1Spine.animationData = assetManager.get("spine/level1.json-animation");
         Level1Spine.animationAnimation = Level1Spine.skeletonData.findAnimation("animation");
         Level1Spine.defaultSkin = Level1Spine.skeletonData.findSkin("default");
+        Level2Spine.skeletonData = assetManager.get("spine/level2.json");
+        Level2Spine.animationData = assetManager.get("spine/level2.json-animation");
+        Level2Spine.animationAnimation = Level2Spine.skeletonData.findAnimation("animation");
+        Level2Spine.defaultSkin = Level2Spine.skeletonData.findSkin("default");
+        Level3Spine.skeletonData = assetManager.get("spine/level3.json");
+        Level3Spine.animationData = assetManager.get("spine/level3.json-animation");
+        Level3Spine.animationAnimation = Level3Spine.skeletonData.findAnimation("animation");
+        Level3Spine.defaultSkin = Level3Spine.skeletonData.findSkin("default");
         LogoLibgdxSpine.skeletonData = assetManager.get("spine/logo-libgdx.json");
         LogoLibgdxSpine.animationData = assetManager.get("spine/logo-libgdx.json-animation");
         LogoLibgdxSpine.animationAnimation = LogoLibgdxSpine.skeletonData.findAnimation("animation");
@@ -151,13 +189,20 @@ public class Resources {
         ProjectileSpine.animationData = assetManager.get("spine/projectile.json-animation");
         ProjectileSpine.animationAnimation = ProjectileSpine.skeletonData.findAnimation("animation");
         ProjectileSpine.bulletSkin = ProjectileSpine.skeletonData.findSkin("bullet");
+        ProjectileSpine.enemySkin = ProjectileSpine.skeletonData.findSkin("enemy");
         ProjectileSpine.rocketSkin = ProjectileSpine.skeletonData.findSkin("rocket");
         textures_textures = assetManager.get("textures/textures.atlas");
+        sfx_assaultRifle = assetManager.get("sfx/assault rifle.mp3");
+        sfx_bloodSquish = assetManager.get("sfx/blood squish.mp3");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_cry = assetManager.get("sfx/cry.mp3");
         sfx_ekgBeep = assetManager.get("sfx/ekg-beep.mp3");
         sfx_ekgFlat = assetManager.get("sfx/ekg-flat.mp3");
+        sfx_evilLaugh = assetManager.get("sfx/evil laugh.mp3");
+        sfx_explosion = assetManager.get("sfx/explosion.mp3");
         sfx_happynes = assetManager.get("sfx/happynes.mp3");
+        sfx_helicopter = assetManager.get("sfx/helicopter.mp3");
+        sfx_jumpLanding = assetManager.get("sfx/jump landing.mp3");
         sfx_libgdxAhhh = assetManager.get("sfx/libgdx ahhh.mp3");
         sfx_libgdxApplause = assetManager.get("sfx/libgdx applause.mp3");
         sfx_libgdxGore = assetManager.get("sfx/libgdx gore.mp3");
@@ -167,13 +212,28 @@ public class Resources {
         sfx_libgdxPoof = assetManager.get("sfx/libgdx poof.mp3");
         sfx_libgdxSaw = assetManager.get("sfx/libgdx saw.mp3");
         sfx_libgdxSomethingWrong = assetManager.get("sfx/libgdx something wrong.mp3");
+        sfx_manGrunt = assetManager.get("sfx/man grunt.mp3");
         sfx_mumble = assetManager.get("sfx/mumble.mp3");
+        sfx_rocketLauncher = assetManager.get("sfx/rocket launcher.mp3");
+        sfx_shotgun = assetManager.get("sfx/shotgun.mp3");
         sfx_step = assetManager.get("sfx/step.mp3");
         sfx_surprised = assetManager.get("sfx/surprised.mp3");
         sfx_trap = assetManager.get("sfx/trap.mp3");
+        sfx_womanGrunt = assetManager.get("sfx/woman grunt.mp3");
         sfx_womanMumbling = assetManager.get("sfx/woman-mumbling.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
+        bgm_gameplay = assetManager.get("bgm/gameplay.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
+    }
+
+    public static class BloodSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
     public static class BossSpine {
@@ -257,9 +317,17 @@ public class Resources {
 
         public static Animation dieAnimation;
 
+        public static Animation flyAnimation;
+
         public static Animation hurtAnimation;
 
+        public static Animation jetpackAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+
         public static com.esotericsoftware.spine.Skin clubSkin;
+
+        public static com.esotericsoftware.spine.Skin clubTinySkin;
 
         public static com.esotericsoftware.spine.Skin diamondSkin;
 
@@ -277,6 +345,26 @@ public class Resources {
     }
 
     public static class Level1Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class Level2Spine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class Level3Spine {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
@@ -388,6 +476,8 @@ public class Resources {
         public static Animation animationAnimation;
 
         public static com.esotericsoftware.spine.Skin bulletSkin;
+
+        public static com.esotericsoftware.spine.Skin enemySkin;
 
         public static com.esotericsoftware.spine.Skin rocketSkin;
     }

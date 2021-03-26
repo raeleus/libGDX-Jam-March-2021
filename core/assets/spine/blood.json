@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "6NHSyMyBw9miy3GQmOw7M0lGDLU",
+	"spine": "3.8.99",
+	"x": -13.43,
+	"y": -12.25,
+	"width": 32.98,
+	"height": 21.78,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/blood", "bone": "root", "attachment": "game/blood" },
+	{ "name": "game/blood2", "bone": "root", "attachment": "game/blood" },
+	{ "name": "game/blood3", "bone": "root", "attachment": "game/blood" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/blood": {
+				"game/blood": { "x": -4, "y": -1, "scaleX": 0.1036, "scaleY": 0.1036, "width": 182, "height": 114 }
+			},
+			"game/blood2": {
+				"game/blood": { "x": 3.24, "y": 3.62, "scaleX": 0.1036, "scaleY": 0.1036, "width": 182, "height": 114 }
+			},
+			"game/blood3": {
+				"game/blood": { "x": 5.38, "y": -3.38, "scaleX": 0.1557, "scaleY": 0.1557, "width": 182, "height": 114 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

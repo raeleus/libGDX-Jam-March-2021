@@ -22,9 +22,10 @@ public class EnemySpawnerEntity extends Entity {
     public void act(float delta) {
         timer -= delta;
         if (timer < 0) {
-            timer = 5;
-            var enemy = new EnemyClubEntity();
-            enemy.setPosition(1000, 360);
+            timer = 1;
+            var enemy = new EnemySpade();
+            enemy.y = 50;
+            enemy.x = 1100;
             entityController.add(enemy);
         }
     }

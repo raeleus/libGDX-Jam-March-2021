@@ -1,8 +1,14 @@
+sfx/assault rifle.mp3
+sfx/blood squish.mp3
 sfx/click.mp3
 sfx/cry.mp3
 sfx/ekg-beep.mp3
 sfx/ekg-flat.mp3
+sfx/evil laugh.mp3
+sfx/explosion.mp3
 sfx/happynes.mp3
+sfx/helicopter.mp3
+sfx/jump landing.mp3
 sfx/libgdx ahhh.mp3
 sfx/libgdx applause.mp3
 sfx/libgdx gore.mp3
@@ -12,8 +18,12 @@ sfx/libgdx magnificent dee.mp3
 sfx/libgdx poof.mp3
 sfx/libgdx saw.mp3
 sfx/libgdx something wrong.mp3
+sfx/man grunt.mp3
 sfx/mumble.mp3
+sfx/rocket launcher.mp3
+sfx/shotgun.mp3
 sfx/step.mp3
 sfx/surprised.mp3
 sfx/trap.mp3
+sfx/woman grunt.mp3
 sfx/woman-mumbling.mp3

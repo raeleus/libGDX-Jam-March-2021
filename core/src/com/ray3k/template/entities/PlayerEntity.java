@@ -11,6 +11,7 @@ import com.ray3k.template.Resources.*;
 
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.PlayerSpine.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
@@ -25,8 +26,10 @@ public class PlayerEntity extends Entity {
     private static final float SHOTGUN_BULLET_ANGLE = 120;
     private static final int SHOTGUN_BULLET_COUNT = 5;
     private static final float ROCKET_BULLET_SPEED = 600f;
-    private static final float ROCKET_BULLET_RATE = .6f;
+    private static final float ROCKET_BULLET_RATE = .9f;
     private static final int ROCKET_BULLET_COUNT = 3;
+    private static Vector2 temp = new Vector2();
+    private static Vector2 temp2 = new Vector2();
     private PlayerWeaponEntity weapon;
     private Bone weaponHandBone;
     private Bone weaponBone;
@@ -37,11 +40,12 @@ public class PlayerEntity extends Entity {
         ASSAULT, SHOTGUN, ROCKET
     }
     private GunMode gunMode = GunMode.ASSAULT;
-    private static Vector2 temp = new Vector2();
-    private static Vector2 temp2 = new Vector2();
+    private boolean onGround;
+    public static PlayerEntity player;
     
     @Override
     public void create() {
+        player = this;
         depth = PLAYER_DEPTH;
         setSkeletonData(skeletonData, animationData);
         skeleton.setScale(.5f, .5f);
@@ -53,6 +57,9 @@ public class PlayerEntity extends Entity {
         weaponBone = weapon.skeleton.getRootBone();
         
         setGunMode(GunMode.ASSAULT);
+        gravityY = GRAVITY;
+        animationState.setAnimation(0, jumpAnimation, true);
+        onGround = false;
     }
     
     @Override
@@ -65,6 +72,15 @@ public class PlayerEntity extends Entity {
         float weaponRotation = 0;
         
         if (y <= LAND_LEVEL) {
+            if (!onGround) {
+                onGround = true;
+                if (!bgm_gameplay.isPlaying()) {
+                    bgm_gameplay.setVolume(bgm * .3f);
+                    bgm_gameplay.setLooping(true);
+                    bgm_gameplay.play();
+                }
+                sfx_jumpLanding.play(sfx);
+            }
             Animation aim;
             if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
                 aim = aimUpRightAnimation;
@@ -85,6 +101,7 @@ public class PlayerEntity extends Entity {
             if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
             
             if (gameScreen.isBindingJustPressed(JUMP)) {
+                onGround = false;
                 deltaY = JUMP_SPEED;
                 gravityY = GRAVITY;
                 animationState.setAnimation(0, jumpAnimation, true);
@@ -142,18 +159,26 @@ public class PlayerEntity extends Entity {
             point.computeWorldPosition(weaponBone, temp);
             
             if (gunMode == GunMode.SHOTGUN) {
+                sfx_shotgun.play(sfx);
                 for (int i = 0; i < SHOTGUN_BULLET_COUNT; i++) {
-                    var projectile = new ProjectileEntity();
+                    var projectile = new ProjectileEntity(this);
+                    projectile.damage = 100f;
+                    projectile.recoilSpeed = 225f;
                     entityController.add(projectile);
                     projectile.setPosition(temp.x, temp.y);
                     var rotation = weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i;
                     projectile.setMotion(shotSpeed, rotation);
                     projectile.skeleton.getRootBone().setRotation(rotation);
                     projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
+                    projectile.skeletonBounds.update(projectile.skeleton, true);
+                    projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
                 }
             } else if (gunMode == GunMode.ROCKET) {
+                sfx_rocketLauncher.play(sfx);
                 for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
-                    var projectile = new ProjectileEntity();
+                    var projectile = new ProjectileEntity(this);
+                    projectile.damage = 200f;
+                    projectile.recoilSpeed = 600f;
                     entityController.add(projectile);
                     temp2.set(50f * i, 0f);
                     temp2.rotateDeg(weaponRotation + 180);
@@ -162,9 +187,14 @@ public class PlayerEntity extends Entity {
                     projectile.setMotion(shotSpeed, weaponRotation);
                     projectile.skeleton.getRootBone().setRotation(weaponRotation);
                     projectile.skeleton.setSkin(ProjectileSpine.rocketSkin);
+                    projectile.skeletonBounds.update(projectile.skeleton, true);
+                    projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
                 }
             } else {
-                var projectile = new ProjectileEntity();
+                sfx_assaultRifle.play(sfx);
+                var projectile = new ProjectileEntity(this);
+                projectile.damage = 25f;
+                projectile.recoilSpeed = 75f;
                 entityController.add(projectile);
                 projectile.setPosition(temp.x, temp.y);
                 projectile.setMotion(shotSpeed, weaponRotation);

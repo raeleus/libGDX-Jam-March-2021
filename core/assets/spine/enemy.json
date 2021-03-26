@@ -1,23 +1,100 @@
 {
 "skeleton": {
-	"hash": "4CAMbhT9r0Vw13rywjkiBkvkNZA",
+	"hash": "1+WZER1XkvECkFo2C7vA0g2tUAM",
 	"spine": "3.8.99",
-	"x": -62.15,
-	"y": -3.7,
-	"width": 115,
-	"height": 127,
+	"x": -53.15,
+	"y": -11.2,
+	"width": 97.53,
+	"height": 142,
 	"images": "",
 	"audio": ""
 },
 "bones": [
 	{ "name": "root" },
-	{ "name": "enemy", "parent": "root", "length": 108.07, "rotation": 0.83, "x": -7.78, "y": 67.63 }
+	{ "name": "enemy", "parent": "root", "length": 108.07, "rotation": 0.83, "x": -7.78, "y": 67.63 },
+	{ "name": "game/blood", "parent": "root", "length": 79.67, "rotation": 0.21, "x": 0.48, "y": 59.09 },
+	{ "name": "game/wing", "parent": "enemy", "length": 107.44, "rotation": -0.41, "x": 15.33, "y": -20.19 },
+	{ "name": "game/wing2", "parent": "enemy", "length": 63.2, "rotation": 179.17, "x": -9.83, "y": -11.92 },
+	{
+		"name": "bone",
+		"parent": "root",
+		"length": 83.89,
+		"rotation": 90.6,
+		"x": 99.06,
+		"y": 9.76,
+		"color": "abe323ff"
+	}
 ],
 "slots": [
+	{ "name": "prop", "bone": "enemy", "attachment": "prop" },
+	{ "name": "game/wing", "bone": "game/wing" },
+	{ "name": "game/wing2", "bone": "game/wing2" },
 	{ "name": "enemy", "bone": "enemy", "dark": "000000", "attachment": "enemy" },
-	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
+	{ "name": "game/blood", "bone": "game/blood" },
+	{ "name": "projectile", "bone": "enemy", "attachment": "projectile" },
+	{ "name": "circle", "bone": "root", "attachment": "circle" }
+],
+"transform": [
+	{
+		"name": "circle-constraint",
+		"order": 1,
+		"bones": [ "enemy" ],
+		"target": "bone",
+		"rotateMix": 0,
+		"translateMix": 0,
+		"scaleMix": 0,
+		"shearMix": 0
+	}
+],
+"path": [
+	{
+		"name": "circle",
+		"bones": [ "bone" ],
+		"target": "circle",
+		"position": 1
+	}
 ],
 "skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"circle": {
+				"circle": {
+					"type": "path",
+					"closed": true,
+					"lengths": [ 170.09, 345.32 ],
+					"vertexCount": 6,
+					"vertices": [ 72.67, 104.05, 0.16, 104.24, -71.44, 104.42, -76.64, -8.59, -3.37, -7.02, 78.87, -5.26 ]
+				}
+			},
+			"game/blood": {
+				"game/blood": { "x": 1.51, "y": -1.09, "rotation": 0.62, "width": 182, "height": 114 }
+			},
+			"game/wing": {
+				"game/wing": {
+					"x": 26.99,
+					"y": 17.18,
+					"scaleX": 0.6328,
+					"scaleY": -0.6328,
+					"rotation": 98.66,
+					"width": 106,
+					"height": 102
+				}
+			},
+			"game/wing2": {
+				"game/wing": {
+					"x": 28.44,
+					"y": -8.69,
+					"scaleX": 0.6328,
+					"scaleY": 0.6328,
+					"rotation": -80.92,
+					"width": 106,
+					"height": 102
+				}
+			}
+		}
+	},
 	{
 		"name": "club",
 		"attachments": {
@@ -30,6 +107,54 @@
 			},
 			"enemy": {
 				"enemy": { "name": "game/club", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 100, "height": 127 }
+			},
+			"prop": {
+				"prop": {
+					"name": "game/spear",
+					"x": 37.22,
+					"y": 40.04,
+					"scaleX": 0.4244,
+					"scaleY": 0.4244,
+					"rotation": -177.45,
+					"width": 188,
+					"height": 41
+				}
+			}
+		}
+	},
+	{
+		"name": "clubTiny",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -20.85, 0.41, -21.5, 44.77, 22.45, 45.95, 19.54, 0.41 ]
+				}
+			},
+			"enemy": {
+				"enemy": {
+					"name": "game/club",
+					"x": 5.68,
+					"y": -48.22,
+					"scaleX": 0.3598,
+					"scaleY": 0.3598,
+					"rotation": -0.83,
+					"width": 100,
+					"height": 127
+				}
+			},
+			"prop": {
+				"prop": {
+					"name": "game/spear",
+					"x": 19.32,
+					"y": -30.36,
+					"scaleX": 0.1768,
+					"scaleY": 0.1768,
+					"rotation": -177.45,
+					"width": 188,
+					"height": 41
+				}
 			}
 		}
 	},
@@ -75,6 +200,21 @@
 			},
 			"enemy": {
 				"enemy": { "name": "game/heart", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 107, "height": 114 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": -128.78, "y": 1.87, "rotation": 179.27 }
+			},
+			"prop": {
+				"prop": {
+					"name": "game/shotgun",
+					"x": -79.94,
+					"y": -11.93,
+					"scaleX": 0.5144,
+					"scaleY": 0.5144,
+					"rotation": -0.83,
+					"width": 196,
+					"height": 83
+				}
 			}
 		}
 	},
@@ -100,11 +240,23 @@
 				"bbox": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -34.52, 27.39, -32.14, 115.9, 33.79, 116.49, 29.64, 26.8 ]
+					"vertices": [ -34.52, 1.86, -32.14, 90.36, 33.79, 90.96, 29.64, 1.26 ]
 				}
 			},
 			"enemy": {
 				"enemy": { "name": "game/spade", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 97, "height": 142 }
+			},
+			"prop": {
+				"prop": {
+					"name": "game/jetpack",
+					"x": 14.99,
+					"y": -21.99,
+					"scaleX": 0.5651,
+					"scaleY": 0.5651,
+					"rotation": 99.98,
+					"width": 156,
+					"height": 103
+				}
 			}
 		}
 	},
@@ -160,23 +312,86 @@
 		"slots": {
 			"enemy": {
 				"twoColor": [
-					{ "light": "ff6969ff", "dark": "000000" },
-					{ "time": 0.5, "light": "ff000000", "dark": "ff0000" }
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.1667, "light": "ff0000ff", "dark": "000000" },
+					{ "time": 0.3333, "light": "000000ff", "dark": "ffffff" }
+				]
+			},
+			"game/blood": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "game/blood" }
 				]
 			}
 		},
 		"bones": {
-			"enemy": {
+			"game/blood": {
+				"scale": [
+					{ "x": 0, "y": 0 },
+					{ "time": 0.3333 }
+				]
+			}
+		}
+	},
+	"fly": {
+		"slots": {
+			"game/wing": {
+				"attachment": [
+					{ "name": "game/wing" }
+				]
+			},
+			"game/wing2": {
+				"attachment": [
+					{ "name": "game/wing" }
+				]
+			}
+		},
+		"bones": {
+			"game/wing2": {
 				"rotate": [
+					{ "angle": -46.38 },
+					{ "time": 0.1, "angle": -5.95 },
+					{ "time": 0.2, "angle": -46.38 },
+					{ "time": 0.3, "angle": -5.95 },
+					{ "time": 0.4, "angle": -46.38 },
+					{ "time": 0.5, "angle": -5.95 },
+					{ "time": 0.6, "angle": -46.38 },
+					{ "time": 0.7, "angle": -5.95 },
+					{ "time": 0.8, "angle": -46.38 },
+					{ "time": 0.9, "angle": -5.95 },
+					{ "time": 1, "angle": -46.38 }
+				]
+			},
+			"game/wing": {
+				"rotate": [
+					{ "angle": 45.29 },
+					{ "time": 0.1, "angle": -6.43 },
+					{ "time": 0.2, "angle": 45.29 },
+					{ "time": 0.3, "angle": -6.43 },
+					{ "time": 0.4, "angle": 45.29 },
+					{ "time": 0.5, "angle": -6.43 },
+					{ "time": 0.6, "angle": 45.29 },
+					{ "time": 0.7, "angle": -6.43 },
+					{ "time": 0.8, "angle": 45.29 },
+					{ "time": 0.9, "angle": -6.43 },
+					{ "time": 1, "angle": 45.29 }
+				]
+			}
+		},
+		"transform": {
+			"circle-constraint": [
+				{ "rotateMix": 0, "scaleMix": 0, "shearMix": 0 }
+			]
+		},
+		"path": {
+			"circle": {
+				"position": [
 					{},
-					{ "time": 0.0667, "angle": 90 },
-					{ "time": 0.1333, "angle": 180 },
-					{ "time": 0.2, "angle": -90 },
-					{ "time": 0.2667 },
-					{ "time": 0.3, "angle": 90 },
-					{ "time": 0.3667, "angle": 180 },
-					{ "time": 0.4333, "angle": -90 },
-					{ "time": 0.5 }
+					{ "time": 1, "position": 1 }
 				]
 			}
 		}
@@ -187,6 +402,21 @@
 				"twoColor": [
 					{ "light": "ff0000ff", "dark": "ff0000" },
 					{ "time": 0.3333, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	},
+	"jetpack": {
+		"transform": {
+			"circle-constraint": [
+				{ "rotateMix": 0, "scaleMix": 0, "shearMix": 0 }
+			]
+		},
+		"path": {
+			"circle": {
+				"position": [
+					{ "position": 1 },
+					{ "time": 1.5 }
 				]
 			}
 		}

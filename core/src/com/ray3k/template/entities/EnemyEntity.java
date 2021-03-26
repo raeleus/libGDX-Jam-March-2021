@@ -5,7 +5,10 @@ import com.dongbat.jbump.Response.Result;
 
 import static com.ray3k.template.Resources.EnemySpine.*;
 
-public class EnemyEntity extends Entity {
+public abstract class EnemyEntity extends Entity {
+    public float health;
+    public abstract void hurt(float damage, float recoilSpeed);
+    
     @Override
     public void create() {
         setSkeletonData(skeletonData, animationData);

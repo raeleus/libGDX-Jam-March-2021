@@ -14,15 +14,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.crashinvaders.vfx.effects.ChainVfxEffect;
-import com.ray3k.template.Core.*;
 import com.ray3k.template.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
-import com.ray3k.template.vfx.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -86,7 +84,7 @@ public class GameScreen extends JamScreen {
     
         entityController.clear();
         var player = new PlayerEntity();
-        player.setPosition(100, 0);
+        player.setPosition(100, 600);
         entityController.add(player);
         
         var level = new level1bg();
@@ -149,5 +147,6 @@ public class GameScreen extends JamScreen {
         super.hide();
         vfxManager.removeAllEffects();
         entityController.dispose();
+        bgm_gameplay.stop();
     }
 }

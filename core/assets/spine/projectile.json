@@ -1,16 +1,16 @@
 {
 "skeleton": {
-	"hash": "a/0lkDDzOdf2N5mkZwnNCk1RDYA",
+	"hash": "hPlgR10CBtuFMv2rqKZRfjpO5lk",
 	"spine": "3.8.99",
-	"x": -39.49,
-	"y": -19.5,
-	"width": 110,
-	"height": 39,
+	"x": -19.51,
+	"y": -8.52,
+	"width": 47.77,
+	"height": 16.5,
 	"images": "",
 	"audio": ""
 },
 "bones": [
-	{ "name": "root", "x": 15.51 }
+	{ "name": "root" }
 ],
 "slots": [
 	{ "name": "game/plate", "bone": "root", "dark": "000000", "attachment": "bullet" },
@@ -24,11 +24,43 @@
 				"bbox": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -34.45, -24.55, -34.91, 23.86, 15.34, 24.32, 12.11, -23.63 ]
+					"vertices": [ -5.76, -5.91, -5.88, 6.19, 6.69, 6.31, 5.88, -5.68 ]
 				}
 			},
 			"game/plate": {
-				"bullet": { "name": "game/bullet-player", "width": 110, "height": 39 }
+				"bullet": {
+					"name": "game/bullet-player",
+					"x": 4.38,
+					"y": -0.27,
+					"scaleX": 0.25,
+					"scaleY": 0.25,
+					"width": 110,
+					"height": 39
+				}
+			}
+		}
+	},
+	{
+		"name": "enemy",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -9.57, -9.87, -9.76, 9.94, 10.8, 10.13, 9.48, -9.49 ]
+				}
+			},
+			"game/plate": {
+				"bullet": {
+					"name": "game/bullet-enemy",
+					"color": "ff5454ff",
+					"x": 4.38,
+					"y": -0.27,
+					"scaleX": 0.4342,
+					"scaleY": 0.4342,
+					"width": 110,
+					"height": 38
+				}
 			}
 		}
 	},
@@ -39,16 +71,16 @@
 				"bbox": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -30.76, -11.18, -30.3, 17.4, 2.43, 17.86, 1.05, -11.18 ]
+					"vertices": [ -15.26, -11.18, -14.79, 17.4, 17.94, 17.86, 16.55, -11.18 ]
 				}
 			},
 			"game/plate": {
 				"bullet": {
 					"name": "game/missile",
-					"x": -23.07,
+					"x": -7.56,
 					"y": 0.65,
-					"scaleX": 0.9225,
-					"scaleY": 0.9225,
+					"scaleX": 0.2306,
+					"scaleY": 0.2306,
 					"rotation": 94.1,
 					"width": 61,
 					"height": 233
