@@ -7,6 +7,7 @@ import static com.ray3k.template.Resources.EnemySpine.*;
 
 public abstract class EnemyEntity extends Entity {
     public float health;
+    public boolean flying;
     public abstract void hurt(float damage, float recoilSpeed);
     
     @Override

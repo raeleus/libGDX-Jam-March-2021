@@ -177,6 +177,7 @@ public class PlayerEntity extends Entity {
                 sfx_rocketLauncher.play(sfx);
                 for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
                     var projectile = new ProjectileEntity(this);
+                    projectile.homing = true;
                     projectile.damage = 200f;
                     projectile.recoilSpeed = 600f;
                     entityController.add(projectile);
@@ -208,6 +209,7 @@ public class PlayerEntity extends Entity {
     
     public void setGunMode(GunMode gunMode) {
         this.gunMode = gunMode;
+        shotTimer = .2f;
         if (this.gunMode == GunMode.ASSAULT) {
             shotRate = ASSAULT_BULLET_RATE;
             shotSpeed = ASSAULT_BULLET_SPEED;

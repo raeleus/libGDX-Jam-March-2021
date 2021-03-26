@@ -131,6 +131,10 @@ public class Resources {
         EnemySpine.spadeSkin = EnemySpine.skeletonData.findSkin("spade");
         EnemySpine.teacupSkin = EnemySpine.skeletonData.findSkin("teacup");
         EnemySpine.teapotSkin = EnemySpine.skeletonData.findSkin("teapot");
+        ExplosionSpine.skeletonData = assetManager.get("spine/explosion.json");
+        ExplosionSpine.animationData = assetManager.get("spine/explosion.json-animation");
+        ExplosionSpine.animationAnimation = ExplosionSpine.skeletonData.findAnimation("animation");
+        ExplosionSpine.defaultSkin = ExplosionSpine.skeletonData.findSkin("default");
         Level1Spine.skeletonData = assetManager.get("spine/level1.json");
         Level1Spine.animationData = assetManager.get("spine/level1.json-animation");
         Level1Spine.animationAnimation = Level1Spine.skeletonData.findAnimation("animation");
@@ -342,6 +346,16 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin teacupSkin;
 
         public static com.esotericsoftware.spine.Skin teapotSkin;
+    }
+
+    public static class ExplosionSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
     public static class Level1Spine {

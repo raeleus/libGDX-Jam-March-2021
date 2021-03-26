@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "1+WZER1XkvECkFo2C7vA0g2tUAM",
+	"hash": "ycqEzEA8hhlFxGbhM503sgxlgfo",
 	"spine": "3.8.99",
-	"x": -53.15,
-	"y": -11.2,
-	"width": 97.53,
-	"height": 142,
+	"x": -54.65,
+	"y": -3.7,
+	"width": 123.84,
+	"height": 127,
 	"images": "",
 	"audio": ""
 },
@@ -26,14 +26,14 @@
 	}
 ],
 "slots": [
-	{ "name": "prop", "bone": "enemy", "attachment": "prop" },
 	{ "name": "game/wing", "bone": "game/wing" },
 	{ "name": "game/wing2", "bone": "game/wing2" },
 	{ "name": "enemy", "bone": "enemy", "dark": "000000", "attachment": "enemy" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
 	{ "name": "game/blood", "bone": "game/blood" },
 	{ "name": "projectile", "bone": "enemy", "attachment": "projectile" },
-	{ "name": "circle", "bone": "root", "attachment": "circle" }
+	{ "name": "circle", "bone": "root", "attachment": "circle" },
+	{ "name": "prop", "bone": "enemy", "attachment": "prop" }
 ],
 "transform": [
 	{
@@ -102,7 +102,7 @@
 				"bbox": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -20.85, 10.16, -20.85, 118.87, 23.1, 120.05, 19.54, 10.16 ]
+					"vertices": [ -20.85, 36.16, -20.85, 118.87, 23.1, 120.05, 19.54, 36.16 ]
 				}
 			},
 			"enemy": {
@@ -326,6 +326,11 @@
 				"attachment": [
 					{ "name": "game/blood" }
 				]
+			},
+			"prop": {
+				"attachment": [
+					{ "name": null }
+				]
 			}
 		},
 		"bones": {
@@ -419,7 +424,14 @@
 					{ "time": 1.5 }
 				]
 			}
-		}
+		},
+		"drawOrder": [
+			{
+				"offsets": [
+					{ "slot": "prop", "offset": -7 }
+				]
+			}
+		]
 	}
 }
 }

@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.template.*;
@@ -28,6 +29,9 @@ public class GameScreen extends JamScreen {
     public Stage stage;
     public boolean paused;
     private Label fpsLabel;
+    public boolean endLevel;
+    public Array<EnemyEntity> flyingEnemies = new Array<>();
+    public EnemyEntity closestFlying;
     
     @Override
     public void show() {
@@ -99,11 +103,22 @@ public class GameScreen extends JamScreen {
     @Override
     public void act(float delta) {
         if (!paused) {
+            var player = PlayerEntity.player;
+            var distance = Float.MAX_VALUE;
+            closestFlying = null;
+            for (var enemy : flyingEnemies) {
+                var pointDistance = Utils.pointDistance(enemy.x, enemy.y, player.x, player.y);
+                if (pointDistance < distance) {
+                    distance = pointDistance;
+                    closestFlying = enemy;
+                }
+            }
             entityController.act(delta);
             vfxManager.update(delta);
         }
         stage.act(delta);
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
+        if (endLevel) core.transition(new MenuScreen());
     }
     
     @Override

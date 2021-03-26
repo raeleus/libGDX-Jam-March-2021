@@ -1,0 +1,52 @@
+{
+"skeleton": {
+	"hash": "Xk+RRJ5sLf9XeTHMVD9tIi4g6w4",
+	"spine": "3.8.99",
+	"x": -63.99,
+	"y": -57.63,
+	"width": 101.98,
+	"height": 110.26,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "length": 67, "x": -16, "y": 0.5 }
+],
+"slots": [
+	{ "name": "game/explosion", "bone": "bone", "attachment": "game/explosion" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/explosion": {
+				"game/explosion": { "x": 3, "y": -3, "scaleX": 0.3763, "scaleY": 0.3763, "width": 271, "height": 293 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/explosion": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.2, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"bone": {
+				"translate": [
+					{ "x": 15 }
+				],
+				"scale": [
+					{ "x": 0.098, "y": 0.098 },
+					{ "time": 0.2 }
+				]
+			}
+		}
+	}
+}
+}

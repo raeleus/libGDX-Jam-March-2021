@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.ray3k.template.*;
 import com.ray3k.template.Resources.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.EnemySpine.*;
@@ -16,14 +17,16 @@ public class EnemyDiamond extends EnemyEntity {
     @Override
     public void create() {
         super.create();
+        GameScreen.gameScreen.flyingEnemies.add(this);
         health = 200f;
+        flying = true;
         skeleton.setSkin(diamondSkin);
         animationState.setAnimation(0, flyAnimation, true);
         
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeletonBounds, Core.nullCollisionFilter);
-        collisionBoxDebugColor = Color.GREEN;
+//        collisionBoxDebugColor = Color.GREEN;
     }
     
     @Override
@@ -77,5 +80,11 @@ public class EnemyDiamond extends EnemyEntity {
                 
             }
         }
+    }
+    
+    @Override
+    public void destroy() {
+        super.destroy();
+        GameScreen.gameScreen.flyingEnemies.removeValue(this, true);
     }
 }

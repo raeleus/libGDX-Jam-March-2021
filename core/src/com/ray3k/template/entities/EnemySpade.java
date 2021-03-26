@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.ray3k.template.*;
 import com.ray3k.template.Resources.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.EnemySpine.*;
@@ -16,7 +17,9 @@ public class EnemySpade extends EnemyEntity {
     @Override
     public void create() {
         super.create();
-        health = 200f;
+        GameScreen.gameScreen.flyingEnemies.add(this);
+        health = 400f;
+        flying = true;
         skeleton.setSkin(spadeSkin);
         animationState.setAnimation(0, jetpackAnimation, true);
         
@@ -77,5 +80,11 @@ public class EnemySpade extends EnemyEntity {
                 
             }
         }
+    }
+    
+    @Override
+    public void destroy() {
+        super.destroy();
+        GameScreen.gameScreen.flyingEnemies.removeValue(this, true);
     }
 }

@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.esotericsoftware.spine.attachments.PointAttachment;
 import com.ray3k.template.*;
 import com.ray3k.template.Resources.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.EnemySpine.*;
@@ -15,7 +16,7 @@ public class EnemyHeart extends EnemyEntity {
     public static final float TARGET_SPEED = 100f;
     public static final float ACCELERATION = 400f;
     private static final float BULLET_SPEED = 500f;
-    private static final float BULLET_RATE = .4f;
+    private static final float BULLET_RATE = 1.4f;
     private float shotTimer = BULLET_RATE;
     private static Vector2 temp = new Vector2();
     
