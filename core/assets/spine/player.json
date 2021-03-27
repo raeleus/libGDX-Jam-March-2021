@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "GC04uaYn8C6pl4b8eeuhivoD9VU",
+	"hash": "aTvlIXKkyK6lXmRVpPxj1tJYmhc",
 	"spine": "3.8.99",
 	"x": -56.67,
 	"y": -2.74,
@@ -28,9 +28,21 @@
 	{ "name": "leg-left-target", "parent": "root", "x": 20.53, "y": 26.82, "color": "ff3f00ff" },
 	{ "name": "arm-right-target", "parent": "root", "x": 21.59, "y": 185.54, "color": "ff3f00ff" },
 	{ "name": "arm-left-target", "parent": "root", "x": 149.44, "y": 239.07, "color": "ff3f00ff" },
-	{ "name": "weapon", "parent": "forearm-left", "rotation": 0.09, "x": 67.83, "y": 0.03 }
+	{ "name": "weapon", "parent": "forearm-left", "rotation": 0.09, "x": 67.83, "y": 0.03 },
+	{
+		"name": "game/helicopter",
+		"parent": "root",
+		"length": 184,
+		"rotation": 0.31,
+		"x": -415.66,
+		"y": 850.23,
+		"scaleX": 2.3723,
+		"scaleY": 2.3723
+	}
 ],
 "slots": [
+	{ "name": "game/helicopter", "bone": "game/helicopter" },
+	{ "name": "game/missile-no-thrust", "bone": "game/helicopter" },
 	{ "name": "leg-left", "bone": "leg-left", "attachment": "game/player-leg" },
 	{ "name": "foreleg-left", "bone": "foreleg-left", "attachment": "game/player-foreleg" },
 	{ "name": "foot-left", "bone": "foot-left", "attachment": "game/player-foot" },
@@ -111,6 +123,28 @@
 			"foreleg-right": {
 				"game/player-foreleg": { "x": 19.9, "y": -0.08, "rotation": 90.83, "width": 16, "height": 52 }
 			},
+			"game/helicopter": {
+				"game/helicopter": {
+					"x": -61.89,
+					"y": 20.34,
+					"scaleX": -0.995,
+					"scaleY": 1.005,
+					"rotation": -0.31,
+					"width": 394,
+					"height": 197
+				}
+			},
+			"game/missile-no-thrust": {
+				"game/missile-no-thrust": {
+					"x": 33.09,
+					"y": -43.92,
+					"scaleX": 1.5297,
+					"scaleY": 1.5297,
+					"rotation": 2.86,
+					"width": 140,
+					"height": 61
+				}
+			},
 			"head": {
 				"game/player-head": { "x": 25.65, "y": 9.02, "rotation": -82.32, "width": 81, "height": 93 },
 				"game/player-head-scream": {
@@ -135,6 +169,9 @@
 		}
 	}
 ],
+"events": {
+	"sfx/helicopter": { "audio": "sfx/helicopter.mp3" }
+},
 "animations": {
 	"aim": {
 		"bones": {
@@ -392,6 +429,80 @@
 				]
 			}
 		}
+	},
+	"helicopter": {
+		"slots": {
+			"game/helicopter": {
+				"attachment": [
+					{ "name": "game/helicopter" }
+				]
+			},
+			"game/missile-no-thrust": {
+				"attachment": [
+					{ "name": "game/missile-no-thrust" }
+				]
+			}
+		},
+		"bones": {
+			"game/helicopter": {
+				"rotate": [
+					{ "angle": -50.84 },
+					{ "time": 0.7667, "angle": -30.42 },
+					{ "time": 1.5, "angle": -1.58 },
+					{ "time": 3, "angle": 0.15 }
+				],
+				"translate": [
+					{ "x": -418.48, "y": 389.33 },
+					{ "time": 0.7667, "x": 540.28, "y": -489.27 },
+					{ "time": 1.5, "x": 478.43, "y": -500.58 },
+					{ "time": 3, "x": 1550.23, "y": 643.16 }
+				]
+			},
+			"arm-left-target": {
+				"translate": [
+					{ "x": -68.71, "curve": "stepped" },
+					{ "time": 1.5, "x": -68.71 },
+					{ "time": 1.6667, "x": 38.69, "y": 67.53 },
+					{ "time": 3, "x": 1034.75, "y": 1131.49 }
+				]
+			},
+			"hip": {
+				"rotate": [
+					{},
+					{ "time": 1.6667, "angle": 13.77 }
+				],
+				"translate": [
+					{ "time": 1.5 },
+					{ "time": 1.6667, "x": 101.25, "y": -41.28 },
+					{ "time": 3, "x": 1157.33, "y": 1011.49 }
+				]
+			},
+			"leg-right-target": {
+				"translate": [
+					{ "time": 1.5 },
+					{ "time": 1.6667, "x": 68.48, "y": -20.21 },
+					{ "time": 3, "x": 1157.33, "y": 1011.49 }
+				]
+			},
+			"leg-left-target": {
+				"translate": [
+					{ "time": 1.5 },
+					{ "time": 1.6667, "x": 94.23, "y": -13.19 },
+					{ "time": 3, "x": 1157.33, "y": 1011.49 }
+				]
+			},
+			"arm-right-target": {
+				"translate": [
+					{ "time": 0.7667, "x": -14.69, "y": 2.45, "curve": "stepped" },
+					{ "time": 1.5, "x": -14.69, "y": 2.45 },
+					{ "time": 1.6667, "x": 88.03, "y": -39.08 },
+					{ "time": 3, "x": 953.66, "y": 831.23 }
+				]
+			}
+		},
+		"events": [
+			{ "name": "sfx/helicopter" }
+		]
 	},
 	"jump": {
 		"bones": {

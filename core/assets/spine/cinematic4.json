@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "Rc0+oj/TcMKO/KScTAQoRAJtMV4", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "KMx1Jf0htmQ7ZZFkOZiDDI4wpq8", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "game/heart-rate-blip", "parent": "root", "length": 12.61, "rotation": -0.87, "x": 521.87, "y": 269.87 },
@@ -187,12 +187,6 @@
 					{ "time": 4.1667 },
 					{ "time": 4.3333, "x": -0.1, "y": -1.83 },
 					{ "time": 4.5 }
-				]
-			},
-			"game/bed": {
-				"translate": [
-					{ "time": 9.3333, "curve": 0.119, "c2": 0.55, "c3": 0.675 },
-					{ "time": 10.3333, "x": 71.24, "y": 100.31 }
 				]
 			}
 		},

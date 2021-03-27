@@ -27,6 +27,7 @@ public class Cinematic3Screen extends JamScreen {
     private Array<SpineDrawable> spineDrawables;
     private final static Color BG_COLOR = new Color(Color.BLACK);
     private ObjectSet<Sound> sounds;
+    private float timer = 3.0f;
     
     @Override
     public void show() {
@@ -59,7 +60,7 @@ public class Cinematic3Screen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animationAnimation) {
-                    core.transition(new MenuScreen());
+                    core.transition(new GameScreen());
                 }
             }
             
@@ -76,13 +77,15 @@ public class Cinematic3Screen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new MenuScreen());
+                if (timer < 0) {
+                    core.transition(new GameScreen());
+                }
                 return true;
             }
             
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new MenuScreen());
+                core.transition(new GameScreen());
                 return true;
             }
         });

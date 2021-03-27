@@ -89,7 +89,12 @@ public class Resources {
         BossSpine.skeletonData = assetManager.get("spine/boss.json");
         BossSpine.animationData = assetManager.get("spine/boss.json-animation");
         BossSpine.flyAnimation = BossSpine.skeletonData.findAnimation("fly");
+        BossSpine.hurtAnimation = BossSpine.skeletonData.findAnimation("hurt");
+        BossSpine.rollAnimation = BossSpine.skeletonData.findAnimation("roll");
         BossSpine.runAnimation = BossSpine.skeletonData.findAnimation("run");
+        BossSpine.secondWindAnimation = BossSpine.skeletonData.findAnimation("second wind");
+        BossSpine.throwAnimation = BossSpine.skeletonData.findAnimation("throw");
+        BossSpine.throwUnderhandAnimation = BossSpine.skeletonData.findAnimation("throw underhand");
         BossSpine.defaultSkin = BossSpine.skeletonData.findSkin("default");
         CinematicGameSpine.skeletonData = assetManager.get("spine/cinematic-game.json");
         CinematicGameSpine.animationData = assetManager.get("spine/cinematic-game.json-animation");
@@ -139,6 +144,10 @@ public class Resources {
         ExplosionSpine.animationData = assetManager.get("spine/explosion.json-animation");
         ExplosionSpine.animationAnimation = ExplosionSpine.skeletonData.findAnimation("animation");
         ExplosionSpine.defaultSkin = ExplosionSpine.skeletonData.findSkin("default");
+        KnifeSpine.skeletonData = assetManager.get("spine/knife.json");
+        KnifeSpine.animationData = assetManager.get("spine/knife.json-animation");
+        KnifeSpine.animationAnimation = KnifeSpine.skeletonData.findAnimation("animation");
+        KnifeSpine.defaultSkin = KnifeSpine.skeletonData.findSkin("default");
         Level1Spine.skeletonData = assetManager.get("spine/level1.json");
         Level1Spine.animationData = assetManager.get("spine/level1.json-animation");
         Level1Spine.animationAnimation = Level1Spine.skeletonData.findAnimation("animation");
@@ -177,6 +186,7 @@ public class Resources {
         PlayerSpine.aimUpRightAnimation = PlayerSpine.skeletonData.findAnimation("aim-up-right");
         PlayerSpine.duckAnimation = PlayerSpine.skeletonData.findAnimation("duck");
         PlayerSpine.fallingAnimation = PlayerSpine.skeletonData.findAnimation("falling");
+        PlayerSpine.helicopterAnimation = PlayerSpine.skeletonData.findAnimation("helicopter");
         PlayerSpine.jumpAnimation = PlayerSpine.skeletonData.findAnimation("jump");
         PlayerSpine.landAnimation = PlayerSpine.skeletonData.findAnimation("land");
         PlayerSpine.runAnimation = PlayerSpine.skeletonData.findAnimation("run");
@@ -252,7 +262,17 @@ public class Resources {
 
         public static Animation flyAnimation;
 
+        public static Animation hurtAnimation;
+
+        public static Animation rollAnimation;
+
         public static Animation runAnimation;
+
+        public static Animation secondWindAnimation;
+
+        public static Animation throwAnimation;
+
+        public static Animation throwUnderhandAnimation;
 
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }
@@ -367,6 +387,16 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }
 
+    public static class KnifeSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
     public static class Level1Spine {
         public static SkeletonData skeletonData;
 
@@ -453,6 +483,8 @@ public class Resources {
         public static Animation duckAnimation;
 
         public static Animation fallingAnimation;
+
+        public static Animation helicopterAnimation;
 
         public static Animation jumpAnimation;
 

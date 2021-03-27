@@ -7,6 +7,7 @@ spine/cinematic3.json
 spine/cinematic4.json
 spine/enemy.json
 spine/explosion.json
+spine/knife.json
 spine/level1.json
 spine/level2.json
 spine/level3.json

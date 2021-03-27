@@ -116,6 +116,16 @@ public class ProjectileEntity extends Entity {
                         Core.entityController.add(prop);
                     }
                 }
+            } else if (collision.other.userData instanceof EnemyMortarRound) {
+                var projectile = (EnemyMortarRound) collision.other.userData;
+                projectile.destroy = true;
+                var prop = new Prop(skeletonData, animationData, false);
+                prop.killOnOutside = true;
+                prop.skeleton.setSkin(projectile.skeleton.getSkin());
+                prop.setMotion(projectile.getSpeed(), projectile.getDirection() + 180);
+                prop.setPosition(projectile.x, projectile.y);
+                prop.skeleton.getRootBone().setRotation(prop.getDirection());
+                Core.entityController.add(prop);
             }
         }
     }
@@ -131,6 +141,8 @@ public class ProjectileEntity extends Entity {
             } else if (other.userData instanceof ProjectileEntity) {
                 var otherProjectile = (ProjectileEntity) other.userData;
                 if (projectile.parent != otherProjectile.parent) return Response.cross;
+            } else if (other.userData instanceof  EnemyMortarRound) {
+                return Response.cross;
             }
             return null;
         }

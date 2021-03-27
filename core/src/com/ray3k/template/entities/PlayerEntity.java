@@ -1,12 +1,17 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.esotericsoftware.spine.Animation;
+import com.esotericsoftware.spine.AnimationState.AnimationStateAdapter;
+import com.esotericsoftware.spine.AnimationState.TrackEntry;
 import com.esotericsoftware.spine.Bone;
+import com.esotericsoftware.spine.Event;
 import com.esotericsoftware.spine.attachments.PointAttachment;
 import com.ray3k.template.Resources.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
@@ -41,6 +46,7 @@ public class PlayerEntity extends Entity {
     private GunMode gunMode = GunMode.ASSAULT;
     private boolean onGround;
     public static PlayerEntity player;
+    public boolean controllable = true;
     
     @Override
     public void create() {
@@ -59,6 +65,22 @@ public class PlayerEntity extends Entity {
         gravityY = GRAVITY;
         animationState.setAnimation(0, jumpAnimation, true);
         onGround = false;
+        animationState.addListener(new AnimationStateAdapter() {
+            @Override
+            public void event(TrackEntry entry, Event event) {
+                if (event.getData().getAudioPath() != null) {
+                    Sound sound = assetManager.get(event.getData().getAudioPath());
+                    sound.play(sfx);
+                }
+            }
+    
+            @Override
+            public void complete(TrackEntry entry) {
+                if (entry.getAnimation() == helicopterAnimation) {
+                    gameScreen.endLevel = true;
+                }
+            }
+        });
     }
     
     @Override
@@ -68,140 +90,143 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void act(float delta) {
-        float weaponRotation = 0;
-        
-        if (y <= landLevel) {
-            if (!onGround) {
-                onGround = true;
-                if (!bgm_gameplay.isPlaying()) {
-                    bgm_gameplay.setVolume(bgm * .3f);
-                    bgm_gameplay.setLooping(true);
-                    bgm_gameplay.play();
+        if (controllable) {
+            float weaponRotation = 0;
+    
+            if (y <= landLevel) {
+                if (!onGround) {
+                    onGround = true;
+                    if (!bgm_gameplay.isPlaying()) {
+                        bgm_gameplay.setVolume(bgm * .3f);
+                        bgm_gameplay.setLooping(true);
+                        bgm_gameplay.play();
+                    }
+                    sfx_jumpLanding.play(sfx);
                 }
-                sfx_jumpLanding.play(sfx);
-            }
-            Animation aim;
-            if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
-                aim = aimUpRightAnimation;
-                weaponRotation = 45;
-            } else if (gameScreen.isBindingPressed(UP)) {
-                aim = aimUpAnimation;
-                weaponRotation = 90;
-            } else if (gameScreen.areAllBindingsPressed(DOWN, RIGHT)) {
-                aim = aimDownRightAnimation;
-                weaponRotation = 315;
-            } else if (gameScreen.isBindingPressed(DOWN)) {
-                aim = aimDuckAnimation;
-                weaponRotation = 0;
-            } else {
-                aim = aimAnimation;
-                weaponRotation = 0;
-            }
-            if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
-            
-            if (gameScreen.isBindingJustPressed(JUMP)) {
-                onGround = false;
-                deltaY = JUMP_SPEED;
-                gravityY = GRAVITY;
-                animationState.setAnimation(0, jumpAnimation, true);
-            } else {
-                Animation stance;
-                if (gameScreen.isBindingPressed(DOWN) && !gameScreen.isBindingPressed(RIGHT)) {
-                    stance = duckAnimation;
+                Animation aim;
+                if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
+                    aim = aimUpRightAnimation;
+                    weaponRotation = 45;
+                } else if (gameScreen.isBindingPressed(UP)) {
+                    aim = aimUpAnimation;
+                    weaponRotation = 90;
+                } else if (gameScreen.areAllBindingsPressed(DOWN, RIGHT)) {
+                    aim = aimDownRightAnimation;
+                    weaponRotation = 315;
+                } else if (gameScreen.isBindingPressed(DOWN)) {
+                    aim = aimDuckAnimation;
+                    weaponRotation = 0;
                 } else {
-                    stance = runAnimation;
+                    aim = aimAnimation;
+                    weaponRotation = 0;
                 }
-    
-                if (animationState.getCurrent(0).getAnimation() != stance) animationState.setAnimation(0, stance, true);
-            }
-        } else {
-            Animation aim;
-            if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
-                aim = aimJumpUpRightAnimation;
-                weaponRotation = 45;
-            } else if (gameScreen.isBindingPressed(UP)) {
-                aim = aimJumpUpAnimation;
-                weaponRotation = 90;
-            } else if (gameScreen.areAllBindingsPressed(DOWN, RIGHT)) {
-                aim = aimJumpDownRightAnimation;
-                weaponRotation = 315;
-            } else if (gameScreen.isBindingPressed(DOWN)) {
-                aim = aimJumpDownAnimation;
-                weaponRotation = 270;
-            } else {
-                weaponRotation = 0;
-                aim = aimJumpAnimation;
-            }
-            if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
-        }
+                if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
         
-        if (y < landLevel) {
-            y = landLevel;
-            deltaY = 0;
-            gravityY = 0;
-            animationState.setAnimation(0, landAnimation, false);
-            animationState.addAnimation(0, runAnimation, true, 0);
-        }
-        
-        weapon.setPosition(weaponHandBone.getWorldX(), weaponHandBone.getWorldY());
-        weapon.skeleton.getRootBone().setRotation(weaponRotation);
-    
-        if (gameScreen.isBindingJustPressed(CHANGE_WEAPON)) {
-            setGunMode(GunMode.values()[(gunMode.ordinal() + 1) % GunMode.values().length]);
-        }
-        
-        shotTimer -= delta;
-        if (shotTimer <= 0 && gameScreen.isBindingPressed(SHOOT)) {
-            shotTimer = shotRate;
-            var point = (PointAttachment) weapon.skeleton.findSlot("muzzle").getAttachment();
-            temp.setZero();
-            point.computeWorldPosition(weaponBone, temp);
+                if (gameScreen.isBindingJustPressed(JUMP)) {
+                    onGround = false;
+                    deltaY = JUMP_SPEED;
+                    gravityY = GRAVITY;
+                    animationState.setAnimation(0, jumpAnimation, true);
+                } else {
+                    Animation stance;
+                    if (gameScreen.isBindingPressed(DOWN) && !gameScreen.isBindingPressed(RIGHT)) {
+                        stance = duckAnimation;
+                    } else {
+                        stance = runAnimation;
+                    }
             
-            if (gunMode == GunMode.SHOTGUN) {
-                sfx_shotgun.play(sfx);
-                for (int i = 0; i < SHOTGUN_BULLET_COUNT; i++) {
+                    if (animationState.getCurrent(0).getAnimation() != stance)
+                        animationState.setAnimation(0, stance, true);
+                }
+            } else {
+                Animation aim;
+                if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
+                    aim = aimJumpUpRightAnimation;
+                    weaponRotation = 45;
+                } else if (gameScreen.isBindingPressed(UP)) {
+                    aim = aimJumpUpAnimation;
+                    weaponRotation = 90;
+                } else if (gameScreen.areAllBindingsPressed(DOWN, RIGHT)) {
+                    aim = aimJumpDownRightAnimation;
+                    weaponRotation = 315;
+                } else if (gameScreen.isBindingPressed(DOWN)) {
+                    aim = aimJumpDownAnimation;
+                    weaponRotation = 270;
+                } else {
+                    weaponRotation = 0;
+                    aim = aimJumpAnimation;
+                }
+                if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
+            }
+    
+            if (y < landLevel) {
+                y = landLevel;
+                deltaY = 0;
+                gravityY = 0;
+                animationState.setAnimation(0, landAnimation, false);
+                animationState.addAnimation(0, runAnimation, true, 0);
+            }
+    
+            weapon.setPosition(weaponHandBone.getWorldX(), weaponHandBone.getWorldY());
+            weapon.skeleton.getRootBone().setRotation(weaponRotation);
+    
+            if (gameScreen.isBindingJustPressed(CHANGE_WEAPON)) {
+                setGunMode(GunMode.values()[(gunMode.ordinal() + 1) % GunMode.values().length]);
+            }
+    
+            shotTimer -= delta;
+            if (shotTimer <= 0 && gameScreen.isBindingPressed(SHOOT)) {
+                shotTimer = shotRate;
+                var point = (PointAttachment) weapon.skeleton.findSlot("muzzle").getAttachment();
+                temp.setZero();
+                point.computeWorldPosition(weaponBone, temp);
+        
+                if (gunMode == GunMode.SHOTGUN) {
+                    sfx_shotgun.play(sfx);
+                    for (int i = 0; i < SHOTGUN_BULLET_COUNT; i++) {
+                        var projectile = new ProjectileEntity(this);
+                        projectile.damage = 100f;
+                        projectile.recoilSpeed = 225f;
+                        entityController.add(projectile);
+                        projectile.setPosition(temp.x, temp.y);
+                        var rotation = weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i;
+                        projectile.setMotion(shotSpeed, rotation);
+                        projectile.skeleton.getRootBone().setRotation(rotation);
+                        projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
+                        projectile.skeletonBounds.update(projectile.skeleton, true);
+                        projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
+                    }
+                } else if (gunMode == GunMode.ROCKET) {
+                    sfx_rocketLauncher.play(sfx);
+                    for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
+                        var projectile = new ProjectileEntity(this);
+                        projectile.homing = true;
+                        projectile.damage = 200f;
+                        projectile.recoilSpeed = 600f;
+                        entityController.add(projectile);
+                        temp2.set(50f * i, 0f);
+                        temp2.rotateDeg(weaponRotation + 180);
+                        temp2.add(temp);
+                        projectile.setPosition(temp2.x, temp2.y);
+                        projectile.setMotion(shotSpeed, weaponRotation);
+                        projectile.skeleton.getRootBone().setRotation(weaponRotation);
+                        projectile.skeleton.setSkin(ProjectileSpine.rocketSkin);
+                        projectile.skeletonBounds.update(projectile.skeleton, true);
+                        projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
+                    }
+                } else {
+                    sfx_assaultRifle.play(sfx);
                     var projectile = new ProjectileEntity(this);
-                    projectile.damage = 100f;
-                    projectile.recoilSpeed = 225f;
+                    projectile.damage = 25f;
+                    projectile.recoilSpeed = 75f;
                     entityController.add(projectile);
                     projectile.setPosition(temp.x, temp.y);
-                    var rotation = weaponRotation - SHOTGUN_BULLET_ANGLE / 2 + SHOTGUN_BULLET_ANGLE / SHOTGUN_BULLET_COUNT * i;
-                    projectile.setMotion(shotSpeed, rotation);
-                    projectile.skeleton.getRootBone().setRotation(rotation);
+                    projectile.setMotion(shotSpeed, weaponRotation);
+                    projectile.skeleton.getRootBone().setRotation(weaponRotation);
                     projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
                     projectile.skeletonBounds.update(projectile.skeleton, true);
                     projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
                 }
-            } else if (gunMode == GunMode.ROCKET) {
-                sfx_rocketLauncher.play(sfx);
-                for (int i = 0; i < ROCKET_BULLET_COUNT; i++) {
-                    var projectile = new ProjectileEntity(this);
-                    projectile.homing = true;
-                    projectile.damage = 200f;
-                    projectile.recoilSpeed = 600f;
-                    entityController.add(projectile);
-                    temp2.set(50f * i, 0f);
-                    temp2.rotateDeg(weaponRotation + 180);
-                    temp2.add(temp);
-                    projectile.setPosition(temp2.x, temp2.y);
-                    projectile.setMotion(shotSpeed, weaponRotation);
-                    projectile.skeleton.getRootBone().setRotation(weaponRotation);
-                    projectile.skeleton.setSkin(ProjectileSpine.rocketSkin);
-                    projectile.skeletonBounds.update(projectile.skeleton, true);
-                    projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
-                }
-            } else {
-                sfx_assaultRifle.play(sfx);
-                var projectile = new ProjectileEntity(this);
-                projectile.damage = 25f;
-                projectile.recoilSpeed = 75f;
-                entityController.add(projectile);
-                projectile.setPosition(temp.x, temp.y);
-                projectile.setMotion(shotSpeed, weaponRotation);
-                projectile.skeleton.getRootBone().setRotation(weaponRotation);
-                projectile.skeleton.setSkin(ProjectileSpine.bulletSkin);
-                projectile.skeletonBounds.update(projectile.skeleton, true);
-                projectile.setCollisionBox(projectile.skeletonBounds, new ProjectileEntity.Filter());
             }
         }
     }
@@ -242,5 +267,16 @@ public class PlayerEntity extends Entity {
     @Override
     public void collision(Collisions collisions) {
     
+    }
+    
+    public void stopControlling() {
+        controllable = false;
+        animationState.setAnimation(0, runAnimation, false);
+        y = landLevel;
+        weapon.visible = false;
+        animationState.clearTrack(1);
+        animationState.setEmptyAnimation(0, 0);
+        animationState.addAnimation(0, standAnimation, false, 2);
+        animationState.addAnimation(0, helicopterAnimation, false, 0);
     }
 }

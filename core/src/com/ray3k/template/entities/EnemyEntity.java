@@ -2,7 +2,9 @@ package com.ray3k.template.entities;
 
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.*;
 
+import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.EnemySpine.*;
 
 public abstract class EnemyEntity extends Entity {
@@ -15,6 +17,7 @@ public abstract class EnemyEntity extends Entity {
     @Override
     public void create() {
         setSkeletonData(skeletonData, animationData);
+        depth = ENEMY_DEPTH;
     }
     
     @Override

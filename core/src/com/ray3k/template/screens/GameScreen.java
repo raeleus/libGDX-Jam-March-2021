@@ -107,12 +107,21 @@ public class GameScreen extends JamScreen {
             entityController.add(spawner);
             PlayerEntity.landLevel = 150f;
         } else if (level == 3) {
+            var level = new Level1bg();
+            entityController.add(level);
+    
+            PlayerEntity.landLevel = 150f;
+            var boss = new EnemyBoss();
+            entityController.add(boss);
+            boss.setPosition(1024, PlayerEntity.landLevel - 40);
+        } else if (level == 4) {
             var level = new Level3bg();
             entityController.add(level);
     
-            var spawner = new EnemySpawner2();
-            entityController.add(spawner);
             PlayerEntity.landLevel = 150f;
+            var boss = new EnemyBoss();
+            entityController.add(boss);
+            boss.setPosition(1024, PlayerEntity.landLevel - 40);
         }
         
         camera.position.set(512, 288, 0);
@@ -142,6 +151,10 @@ public class GameScreen extends JamScreen {
                 core.transition(new Cinematic2Screen());
             } else if (level == 3) {
                 core.transition(new Cinematic3Screen());
+            } else if (level == 4) {
+                core.transition(new GameScreen());
+            } else if (level == 5) {
+                core.transition(new Cinematic4Screen());
             }
         }
     }
