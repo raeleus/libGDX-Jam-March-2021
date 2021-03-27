@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Item;
@@ -67,9 +68,19 @@ public class ProjectileEntity extends Entity {
             var collision = collisions.get(i);
             if (collision.other.userData instanceof  EnemyEntity) {
                 var enemy = (EnemyEntity) collision.other.userData;
-                if (!enemy.isOutside(0, 0, 1024, 576, 0)) {
-                    if (skeleton.getSkin() != rocketSkin || enemy.flying || GameScreen.gameScreen.closestFlying == null) {
-                        enemy.hurt(!homing && enemy.flying ? damage / 4 : damage, recoilSpeed);
+                if (enemy.x < 1024) {
+                    if (enemy.invincible) {
+                        destroy = true;
+                        var prop = new Prop(skeletonData, animationData, false);
+                        prop.killOnOutside = true;
+                        prop.skeleton.setSkin(skeleton.getSkin());
+                        prop.setMotion(getSpeed(), MathUtils.random(360));
+                        prop.setPosition(x, y);
+                        prop.skeleton.getRootBone().setRotation(prop.getDirection());
+                        Core.entityController.add(prop);
+                        Resources.sfx_ricochet.play(Core.sfx);
+                    } else if (skeleton.getSkin() != rocketSkin || enemy.flying || GameScreen.gameScreen.closestFlying == null) {
+                        enemy.hurt(!homing && enemy.flying && !(enemy instanceof EnemyPlate)  && !(enemy instanceof EnemyPot) ? damage / 4 : damage, recoilSpeed);
                         destroy = true;
     
                         if (skeleton.getSkin() == rocketSkin) {
@@ -84,6 +95,8 @@ public class ProjectileEntity extends Entity {
                 var projectile = (ProjectileEntity) collision.other.userData;
                 if (!projectile.destroy && (projectile.parent instanceof EnemyEntity && parent instanceof PlayerEntity || projectile.parent instanceof PlayerEntity && parent instanceof EnemyEntity)) {
                     if (projectile.skeleton.getSkin() != rocketSkin && skeleton.getSkin() != rocketSkin) {
+                        Resources.sfx_ricochet.play(Core.sfx);
+                        
                         projectile.destroy = true;
                         var prop = new Prop(skeletonData, animationData, false);
                         prop.killOnOutside = true;

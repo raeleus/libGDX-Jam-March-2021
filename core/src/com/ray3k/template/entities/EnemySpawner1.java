@@ -7,7 +7,7 @@ import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 
-public class EnemySpawnerEntity extends Entity {
+public class EnemySpawner1 extends Entity {
     float timeline;
     final float CLUB_APPEARANCE = 2;
     final float SMALL_CLUB_APPEARANCE = 20;

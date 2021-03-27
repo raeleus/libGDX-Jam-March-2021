@@ -20,6 +20,7 @@ sfx/libgdx saw.mp3
 sfx/libgdx something wrong.mp3
 sfx/man grunt.mp3
 sfx/mumble.mp3
+sfx/ricochet.mp3
 sfx/rocket launcher.mp3
 sfx/shotgun.mp3
 sfx/step.mp3

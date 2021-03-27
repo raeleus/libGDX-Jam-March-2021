@@ -4,9 +4,9 @@ import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 
-import static com.ray3k.template.Resources.Level1Spine.*;
+import static com.ray3k.template.Resources.Level2Spine.*;
 
-public class level1bg extends Entity {
+public class Level2bg extends Entity {
     @Override
     public void create() {
         depth = Core.LEVEL_DEPTH;

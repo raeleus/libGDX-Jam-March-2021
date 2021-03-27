@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.template.*;
+import com.ray3k.template.entities.*;
 
 import static com.ray3k.template.Core.*;
 
@@ -38,6 +39,7 @@ public class SplashScreen extends JamScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.input.setInputProcessor(null);
+                GameScreen.level = 2;
                 core.transition(new GameScreen());
             }
         });

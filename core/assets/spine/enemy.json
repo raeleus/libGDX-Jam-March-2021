@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "ycqEzEA8hhlFxGbhM503sgxlgfo",
+	"hash": "EL4xqaeVvclYj0db9Pu1WRhCD9M",
 	"spine": "3.8.99",
-	"x": -54.65,
-	"y": -3.7,
-	"width": 123.84,
-	"height": 127,
+	"x": -64.41,
+	"y": -8.89,
+	"width": 88.54,
+	"height": 82.46,
 	"images": "",
 	"audio": ""
 },
@@ -225,11 +225,32 @@
 				"bbox": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -41.64, 20.26, -39.27, 110.55, 36.76, 111.74, 34.98, 20.26 ]
+					"vertices": [ -19.79, 3.61, -18.58, 49.62, 20.16, 50.22, 19.25, 3.61 ]
 				}
 			},
 			"enemy": {
-				"enemy": { "name": "game/plate", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 105, "height": 125 }
+				"enemy": {
+					"name": "game/plate",
+					"x": 6.22,
+					"y": -46.83,
+					"scaleX": 0.4766,
+					"scaleY": 0.4766,
+					"rotation": -0.83,
+					"width": 105,
+					"height": 125
+				}
+			},
+			"prop": {
+				"prop": {
+					"name": "game/fork",
+					"x": -18.15,
+					"y": -21.92,
+					"scaleX": 0.4102,
+					"scaleY": 0.4102,
+					"rotation": -150.04,
+					"width": 194,
+					"height": 44
+				}
 			}
 		}
 	},
@@ -272,6 +293,42 @@
 			},
 			"enemy": {
 				"enemy": { "name": "game/teacup", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 104, "height": 103 }
+			},
+			"prop": {
+				"prop": {
+					"name": "game/spoon",
+					"x": -44.02,
+					"y": -0.33,
+					"scaleX": 0.5827,
+					"scaleY": 0.5827,
+					"rotation": 90.19,
+					"width": 170,
+					"height": 47
+				}
+			}
+		}
+	},
+	{
+		"name": "teacupTiny",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -20.85, 0.41, -21.5, 44.77, 22.45, 45.95, 19.54, 0.41 ]
+				}
+			},
+			"enemy": {
+				"enemy": {
+					"name": "game/teacup",
+					"x": 6.48,
+					"y": -44.93,
+					"scaleX": 0.3958,
+					"scaleY": 0.3958,
+					"rotation": -0.83,
+					"width": 104,
+					"height": 103
+				}
 			}
 		}
 	},
@@ -287,6 +344,21 @@
 			},
 			"enemy": {
 				"enemy": { "name": "game/teapot", "x": 3.02, "y": -7.87, "rotation": -0.83, "width": 115, "height": 127 }
+			},
+			"projectile": {
+				"projectile": { "name": "projectile2", "type": "point", "x": -128.78, "y": 1.87, "rotation": 179.27 }
+			},
+			"prop": {
+				"prop": {
+					"name": "game/shotgun",
+					"x": -79.94,
+					"y": -11.93,
+					"scaleX": 0.5144,
+					"scaleY": 0.5144,
+					"rotation": -0.83,
+					"width": 196,
+					"height": 83
+				}
 			}
 		}
 	}
@@ -432,6 +504,22 @@
 				]
 			}
 		]
+	},
+	"rainbow": {
+		"slots": {
+			"enemy": {
+				"twoColor": [
+					{ "light": "ff0000ff", "dark": "ff0000" },
+					{ "time": 0.1, "light": "ff8900ff", "dark": "ff8c00" },
+					{ "time": 0.2, "light": "fdff00ff", "dark": "fffc00" },
+					{ "time": 0.3, "light": "00ff03ff", "dark": "17ff00" },
+					{ "time": 0.3667, "light": "00fbffff", "dark": "00fffb" },
+					{ "time": 0.4667, "light": "000effff", "dark": "000aff" },
+					{ "time": 0.5667, "light": "ff00fcff", "dark": "ff00fc" },
+					{ "time": 0.6667, "light": "ff0000ff", "dark": "ff0000" }
+				]
+			}
+		}
 	}
 }
 }

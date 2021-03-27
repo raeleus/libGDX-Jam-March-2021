@@ -32,6 +32,7 @@ public class GameScreen extends JamScreen {
     public boolean endLevel;
     public Array<EnemyEntity> flyingEnemies = new Array<>();
     public EnemyEntity closestFlying;
+    public static int level;
     
     @Override
     public void show() {
@@ -91,11 +92,28 @@ public class GameScreen extends JamScreen {
         player.setPosition(100, 600);
         entityController.add(player);
         
-        var level = new level1bg();
-        entityController.add(level);
-        
-        var spawner = new EnemySpawnerEntity();
-        entityController.add(spawner);
+        if (level == 1) {
+            var level = new Level1bg();
+            entityController.add(level);
+    
+            var spawner = new EnemySpawner1();
+            entityController.add(spawner);
+            PlayerEntity.landLevel = 50f;
+        } else if (level == 2) {
+            var level = new Level2bg();
+            entityController.add(level);
+    
+            var spawner = new EnemySpawner2();
+            entityController.add(spawner);
+            PlayerEntity.landLevel = 150f;
+        } else if (level == 3) {
+            var level = new Level3bg();
+            entityController.add(level);
+    
+            var spawner = new EnemySpawner2();
+            entityController.add(spawner);
+            PlayerEntity.landLevel = 150f;
+        }
         
         camera.position.set(512, 288, 0);
     }
@@ -118,7 +136,14 @@ public class GameScreen extends JamScreen {
         }
         stage.act(delta);
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
-        if (endLevel) core.transition(new MenuScreen());
+        if (endLevel) {
+            level++;
+            if (level == 2) {
+                core.transition(new Cinematic2Screen());
+            } else if (level == 3) {
+                core.transition(new Cinematic3Screen());
+            }
+        }
     }
     
     @Override

@@ -2,19 +2,16 @@ package com.ray3k.template.entities;
 
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.*;
 
-import static com.ray3k.template.Resources.EnemySpine.*;
+import static com.ray3k.template.Resources.Level3Spine.*;
 
-public abstract class EnemyEntity extends Entity {
-    public float health;
-    public boolean flying;
-    public boolean invincible;
-    
-    public abstract void hurt(float damage, float recoilSpeed);
-    
+public class Level3bg extends Entity {
     @Override
     public void create() {
+        depth = Core.LEVEL_DEPTH;
         setSkeletonData(skeletonData, animationData);
+        animationState.setAnimation(0, animationAnimation, true);
     }
     
     @Override

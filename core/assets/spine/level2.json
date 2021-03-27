@@ -1,10 +1,10 @@
 {
 "skeleton": {
-	"hash": "KgT0h/umUiVEg0RRVkwdDxS4FNI",
+	"hash": "nDKMi2GQ45vjmxVeBmjbk8P/qoA",
 	"spine": "3.8.99",
-	"x": -76.67,
+	"x": -835.57,
 	"y": -164.38,
-	"width": 2294.17,
+	"width": 2294.18,
 	"height": 898.65,
 	"images": "",
 	"audio": ""
@@ -71,19 +71,19 @@
 			"level/table2": {
 				"translate": [
 					{},
-					{ "time": 0.0333, "x": -758.9 }
+					{ "time": 0.6667, "x": -758.9 }
 				]
 			},
 			"level/table": {
 				"translate": [
 					{},
-					{ "time": 0.0333, "x": -758.9 }
+					{ "time": 0.6667, "x": -758.9 }
 				]
 			},
 			"level/table3": {
 				"translate": [
 					{},
-					{ "time": 0.0333, "x": -758.9 }
+					{ "time": 0.6667, "x": -758.9 }
 				]
 			}
 		}

@@ -58,6 +58,8 @@ public class Resources {
 
     public static Sound sfx_mumble;
 
+    public static Sound sfx_ricochet;
+
     public static Sound sfx_rocketLauncher;
 
     public static Sound sfx_shotgun;
@@ -121,6 +123,7 @@ public class Resources {
         EnemySpine.flyAnimation = EnemySpine.skeletonData.findAnimation("fly");
         EnemySpine.hurtAnimation = EnemySpine.skeletonData.findAnimation("hurt");
         EnemySpine.jetpackAnimation = EnemySpine.skeletonData.findAnimation("jetpack");
+        EnemySpine.rainbowAnimation = EnemySpine.skeletonData.findAnimation("rainbow");
         EnemySpine.defaultSkin = EnemySpine.skeletonData.findSkin("default");
         EnemySpine.clubSkin = EnemySpine.skeletonData.findSkin("club");
         EnemySpine.clubTinySkin = EnemySpine.skeletonData.findSkin("clubTiny");
@@ -130,6 +133,7 @@ public class Resources {
         EnemySpine.plateSkin = EnemySpine.skeletonData.findSkin("plate");
         EnemySpine.spadeSkin = EnemySpine.skeletonData.findSkin("spade");
         EnemySpine.teacupSkin = EnemySpine.skeletonData.findSkin("teacup");
+        EnemySpine.teacupTinySkin = EnemySpine.skeletonData.findSkin("teacupTiny");
         EnemySpine.teapotSkin = EnemySpine.skeletonData.findSkin("teapot");
         ExplosionSpine.skeletonData = assetManager.get("spine/explosion.json");
         ExplosionSpine.animationData = assetManager.get("spine/explosion.json-animation");
@@ -218,6 +222,7 @@ public class Resources {
         sfx_libgdxSomethingWrong = assetManager.get("sfx/libgdx something wrong.mp3");
         sfx_manGrunt = assetManager.get("sfx/man grunt.mp3");
         sfx_mumble = assetManager.get("sfx/mumble.mp3");
+        sfx_ricochet = assetManager.get("sfx/ricochet.mp3");
         sfx_rocketLauncher = assetManager.get("sfx/rocket launcher.mp3");
         sfx_shotgun = assetManager.get("sfx/shotgun.mp3");
         sfx_step = assetManager.get("sfx/step.mp3");
@@ -327,6 +332,8 @@ public class Resources {
 
         public static Animation jetpackAnimation;
 
+        public static Animation rainbowAnimation;
+
         public static com.esotericsoftware.spine.Skin defaultSkin;
 
         public static com.esotericsoftware.spine.Skin clubSkin;
@@ -344,6 +351,8 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin spadeSkin;
 
         public static com.esotericsoftware.spine.Skin teacupSkin;
+
+        public static com.esotericsoftware.spine.Skin teacupTinySkin;
 
         public static com.esotericsoftware.spine.Skin teapotSkin;
     }

@@ -1,7 +1,6 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.math.Vector2;
-import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.esotericsoftware.spine.Animation;
@@ -18,7 +17,7 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class PlayerEntity extends Entity {
     private static final float JUMP_SPEED = 1800f;
     private static final float GRAVITY = -5000f;
-    private static final float LAND_LEVEL = 50f;
+    public static float landLevel = 50f;
     private static final float ASSAULT_BULLET_SPEED = 1000f;
     private static final float ASSAULT_BULLET_RATE = .05f;
     private static final float SHOTGUN_BULLET_SPEED = 800f;
@@ -71,7 +70,7 @@ public class PlayerEntity extends Entity {
     public void act(float delta) {
         float weaponRotation = 0;
         
-        if (y <= LAND_LEVEL) {
+        if (y <= landLevel) {
             if (!onGround) {
                 onGround = true;
                 if (!bgm_gameplay.isPlaying()) {
@@ -136,8 +135,8 @@ public class PlayerEntity extends Entity {
             if (animationState.getCurrent(1).getAnimation() != aim) animationState.setAnimation(1, aim, false);
         }
         
-        if (y < LAND_LEVEL) {
-            y = LAND_LEVEL;
+        if (y < landLevel) {
+            y = landLevel;
             deltaY = 0;
             gravityY = 0;
             animationState.setAnimation(0, landAnimation, false);
