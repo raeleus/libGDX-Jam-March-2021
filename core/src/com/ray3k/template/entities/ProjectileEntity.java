@@ -27,7 +27,6 @@ public class ProjectileEntity extends Entity {
     public void create() {
         depth = Core.PROJECTILE_DEPTH;
         setSkeletonData(skeletonData, animationData);
-        collisionBoxDebugColor = Color.RED;
     }
     
     @Override

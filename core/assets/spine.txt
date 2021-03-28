@@ -5,6 +5,7 @@ spine/cinematic1.json
 spine/cinematic2.json
 spine/cinematic3.json
 spine/cinematic4.json
+spine/cloud.json
 spine/enemy.json
 spine/explosion.json
 spine/knife.json

@@ -346,6 +346,13 @@ game/heart
   orig: 107, 114
   offset: 0, 0
   index: -1
+game/heart-cinema
+  rotate: false
+  xy: 295, 475
+  size: 71, 60
+  orig: 76, 63
+  offset: 3, 1
+  index: -1
 game/helicopter
   rotate: false
   xy: 1, 826

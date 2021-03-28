@@ -122,6 +122,10 @@ public class Resources {
         Cinematic4Spine.animationAnimation = Cinematic4Spine.skeletonData.findAnimation("animation");
         Cinematic4Spine.standingAnimation = Cinematic4Spine.skeletonData.findAnimation("standing");
         Cinematic4Spine.defaultSkin = Cinematic4Spine.skeletonData.findSkin("default");
+        CloudSpine.skeletonData = assetManager.get("spine/cloud.json");
+        CloudSpine.animationData = assetManager.get("spine/cloud.json-animation");
+        CloudSpine.animationAnimation = CloudSpine.skeletonData.findAnimation("animation");
+        CloudSpine.defaultSkin = CloudSpine.skeletonData.findSkin("default");
         EnemySpine.skeletonData = assetManager.get("spine/enemy.json");
         EnemySpine.animationData = assetManager.get("spine/enemy.json-animation");
         EnemySpine.animationAnimation = EnemySpine.skeletonData.findAnimation("animation");
@@ -338,6 +342,16 @@ public class Resources {
         public static Animation animationAnimation;
 
         public static Animation standingAnimation;
+
+        public static com.esotericsoftware.spine.Skin defaultSkin;
+    }
+
+    public static class CloudSpine {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationAnimation;
 
         public static com.esotericsoftware.spine.Skin defaultSkin;
     }

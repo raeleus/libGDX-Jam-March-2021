@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "3EbeqAvtNO/kUJto1EvB1g9nY5k",
+	"hash": "4K09upxj8ZgcQbousBXWXf/IpAM",
 	"spine": "3.8.99",
-	"x": -406.67,
+	"x": -56.67,
 	"y": -2.74,
-	"width": 608.93,
-	"height": 421.9,
+	"width": 196.09,
+	"height": 332.9,
 	"images": "",
 	"audio": ""
 },
@@ -50,7 +50,7 @@
 	{ "name": "hip", "bone": "hip", "attachment": "game/player-hip" },
 	{ "name": "arm-left", "bone": "arm-left", "attachment": "game/player-arm" },
 	{ "name": "forearm-left", "bone": "forearm-left", "attachment": "game/player-forearm" },
-	{ "name": "game/missile", "bone": "game/missile", "attachment": "game/missile" },
+	{ "name": "game/missile", "bone": "game/missile" },
 	{ "name": "body", "bone": "body", "attachment": "game/player-body" },
 	{ "name": "arm-right", "bone": "arm-right", "attachment": "game/player-arm" },
 	{ "name": "forearm-right", "bone": "forearm-right", "attachment": "game/player-forearm" },
@@ -728,6 +728,13 @@
 		}
 	},
 	"missile": {
+		"slots": {
+			"game/missile": {
+				"attachment": [
+					{ "name": "game/missile" }
+				]
+			}
+		},
 		"bones": {
 			"arm-right-target": {
 				"translate": [

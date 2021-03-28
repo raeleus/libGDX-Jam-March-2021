@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "kTNwex2bbTca1oXTgHw6wwefxu8",
+	"spine": "3.8.99",
+	"x": -48.5,
+	"y": -57.5,
+	"width": 99,
+	"height": 106,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/cloud", "bone": "root", "attachment": "game/cloud" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/cloud": {
+				"game/cloud": { "x": 1, "y": -4.5, "width": 99, "height": 106 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

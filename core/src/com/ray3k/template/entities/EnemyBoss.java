@@ -30,7 +30,6 @@ public class EnemyBoss extends EnemyEntity {
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeletonBounds, Core.nullCollisionFilter);
-        collisionBoxDebugColor = Color.GREEN;
     }
     
     @Override

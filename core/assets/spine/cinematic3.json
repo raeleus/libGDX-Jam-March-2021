@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "nmfI8JM+A3KFTzLPcX8ohNR9Mzo", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "Jhfb8Hnh+178v5HKwHAbdgm2d24", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "game/heart-rate-blip", "parent": "root", "length": 12.61, "rotation": -0.87, "x": 521.87, "y": 269.87 },
@@ -8,7 +8,9 @@
 	{ "name": "tear", "parent": "root", "length": 36.03, "x": 499.57, "y": 391.83 },
 	{ "name": "tear2", "parent": "root", "length": 36.03, "x": 499.57, "y": 391.83 },
 	{ "name": "tear3", "parent": "root", "length": 36.03, "x": 499.57, "y": 391.83 },
-	{ "name": "tear4", "parent": "root", "length": 36.03, "x": 499.57, "y": 391.83 }
+	{ "name": "tear4", "parent": "root", "length": 36.03, "x": 499.57, "y": 391.83 },
+	{ "name": "game/heart-cinema", "parent": "root", "length": 39.05, "rotation": 91.06, "x": 476.1, "y": 297.93 },
+	{ "name": "game/heart-cinema2", "parent": "root", "length": 39.05, "rotation": 91.06, "x": 476.1, "y": 297.93 }
 ],
 "slots": [
 	{ "name": "game/white", "bone": "root", "attachment": "game/white" },
@@ -24,7 +26,9 @@
 	{ "name": "cinematic/mom-tear", "bone": "tear", "attachment": "cinematic/mom-tear" },
 	{ "name": "cinematic/mom-tear2", "bone": "tear2", "attachment": "cinematic/mom-tear" },
 	{ "name": "cinematic/mom-tear3", "bone": "tear3", "attachment": "cinematic/mom-tear" },
-	{ "name": "cinematic/mom-tear4", "bone": "tear4", "attachment": "cinematic/mom-tear" }
+	{ "name": "cinematic/mom-tear4", "bone": "tear4", "attachment": "cinematic/mom-tear" },
+	{ "name": "game/heart-cinema", "bone": "game/heart-cinema", "attachment": "game/heart-cinema" },
+	{ "name": "game/heart-cinema2", "bone": "game/heart-cinema2", "attachment": "game/heart-cinema" }
 ],
 "skins": [
 	{
@@ -65,6 +69,28 @@
 			},
 			"game/ekg": {
 				"game/ekg": { "path": "cinematic/ekg", "x": 589.9, "y": 246.07, "width": 150, "height": 154 }
+			},
+			"game/heart-cinema": {
+				"game/heart-cinema": {
+					"x": 14.6,
+					"y": 7.38,
+					"scaleX": 0.4811,
+					"scaleY": 0.4811,
+					"rotation": -177.34,
+					"width": 76,
+					"height": 63
+				}
+			},
+			"game/heart-cinema2": {
+				"game/heart-cinema": {
+					"x": 14.29,
+					"y": -9.24,
+					"scaleX": 0.4811,
+					"scaleY": -0.4811,
+					"rotation": -177.34,
+					"width": 76,
+					"height": 63
+				}
 			},
 			"game/heart-rate": {
 				"game/heart-rate": { "path": "cinematic/heart-rate", "x": 604.04, "y": 269.22, "width": 146, "height": 52 }
@@ -150,6 +176,24 @@
 					{ "time": 5.1, "color": "ffffff00" },
 					{ "time": 6.4667, "color": "ffffffff" },
 					{ "time": 6.8, "color": "ffffff00" }
+				]
+			},
+			"game/heart-cinema": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 4.5333, "color": "ffffff00" },
+					{ "time": 4.7, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 4.9333, "color": "ffffffff" },
+					{ "time": 5.2333, "color": "ffffff00" }
+				]
+			},
+			"game/heart-cinema2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 4.5333, "color": "ffffff00" },
+					{ "time": 4.7, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 4.9333, "color": "ffffffff" },
+					{ "time": 5.2333, "color": "ffffff00" }
 				]
 			},
 			"game/heart-rate": {
@@ -419,6 +463,18 @@
 					{ "time": 5.1, "x": 0, "y": 0, "curve": "stepped" },
 					{ "time": 6.1333, "x": 0, "y": 0 },
 					{ "time": 6.4667 }
+				]
+			},
+			"game/heart-cinema": {
+				"rotate": [
+					{ "time": 4.7 },
+					{ "time": 5.2333, "angle": 89.22 }
+				]
+			},
+			"game/heart-cinema2": {
+				"rotate": [
+					{ "time": 4.7 },
+					{ "time": 5.2333, "angle": -76.69 }
 				]
 			}
 		},

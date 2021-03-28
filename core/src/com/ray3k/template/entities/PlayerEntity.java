@@ -59,7 +59,6 @@ public class PlayerEntity extends Entity {
         jumping = jumpAnimation;
         ducking = duckAnimation;
         
-        collisionBoxDebugColor = Color.BLUE;
         player = this;
         depth = PLAYER_DEPTH;
         setSkeletonData(skeletonData, animationData);

@@ -16,7 +16,6 @@ public class MortarRound extends Entity {
         skeleton.setSkin(enemySkin);
         setCollisionBox(skeletonBounds, mortarRoundCollisionFilter);
         animationState.setAnimation(0, animationAnimation,true);
-        collisionBoxDebugColor = Color.RED;
     }
     
     @Override

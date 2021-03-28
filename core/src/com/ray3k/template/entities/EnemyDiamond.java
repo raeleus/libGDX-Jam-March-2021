@@ -26,7 +26,6 @@ public class EnemyDiamond extends EnemyEntity {
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeletonBounds, enemyCollisionFilter);
-//        collisionBoxDebugColor = Color.GREEN;
     }
     
     @Override

@@ -32,7 +32,6 @@ public class EnemyBoss2 extends EnemyEntity {
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeletonBounds, Core.nullCollisionFilter);
-        collisionBoxDebugColor = Color.GREEN;
         targetY = y;
     }
     
@@ -102,7 +101,7 @@ public class EnemyBoss2 extends EnemyEntity {
         if (moveTimer >= 0) {
             moveTimer -= delta;
             if (moveTimer < 0) {
-                targetY = MathUtils.random(50, 300);
+                targetY = MathUtils.random(50, 200);
             }
         }
         y = Utils.approach(y, targetY, 700 * delta);

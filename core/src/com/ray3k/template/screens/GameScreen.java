@@ -6,10 +6,10 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
@@ -28,11 +28,11 @@ public class GameScreen extends JamScreen {
     public static final Color BG_COLOR = new Color();
     public Stage stage;
     public boolean paused;
-    private Label fpsLabel;
     public boolean endLevel;
     public Array<EnemyEntity> flyingEnemies = new Array<>();
     public EnemyEntity closestFlying;
     public static int level;
+    private float cloudTimer;
     
     @Override
     public void show() {
@@ -50,9 +50,6 @@ public class GameScreen extends JamScreen {
         root.align(Align.bottomLeft);
         root.pad(10);
         stage.addActor(root);
-        
-        fpsLabel = new Label("test", skin);
-        root.add(fpsLabel);
         
         stage.addListener(new InputListener() {
             @Override
@@ -157,7 +154,6 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
-        fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
         if (endLevel) {
             level++;
             if (level == 2) {
@@ -168,6 +164,18 @@ public class GameScreen extends JamScreen {
                 core.transition(new GameScreen());
             } else if (level == 5) {
                 core.transition(new Cinematic4Screen());
+            }
+        } else if (level == 4) {
+            cloudTimer -= delta;
+            if (cloudTimer < 0) {
+                cloudTimer = MathUtils.random(.4f, 1f);
+                var cloud = new Cloud();
+                cloud.x = 1024 + 150;
+                cloud.y = MathUtils.random(576);
+                cloud.setMotion(1500, 180);
+                entityController.add(cloud);
+                cloud.skeleton.getRootBone().setRotation(MathUtils.random(360));
+                cloud.skeleton.getRootBone().setScale(MathUtils.random(1f, 1.5f));
             }
         }
     }

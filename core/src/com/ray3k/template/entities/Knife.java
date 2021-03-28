@@ -14,7 +14,6 @@ public class Knife extends Entity {
         setSkeletonData(skeletonData, animationData);
         setCollisionBox(skeletonBounds, knifeCollisionFilter);
         animationState.setAnimation(0, animationAnimation,true);
-        collisionBoxDebugColor = Color.RED;
     }
     
     @Override
