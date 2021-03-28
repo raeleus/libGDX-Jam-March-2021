@@ -88,6 +88,7 @@ public class Resources {
         BloodSpine.defaultSkin = BloodSpine.skeletonData.findSkin("default");
         BossSpine.skeletonData = assetManager.get("spine/boss.json");
         BossSpine.animationData = assetManager.get("spine/boss.json-animation");
+        BossSpine.dieAnimation = BossSpine.skeletonData.findAnimation("die");
         BossSpine.flyAnimation = BossSpine.skeletonData.findAnimation("fly");
         BossSpine.hurtAnimation = BossSpine.skeletonData.findAnimation("hurt");
         BossSpine.rollAnimation = BossSpine.skeletonData.findAnimation("roll");
@@ -188,7 +189,9 @@ public class Resources {
         PlayerSpine.fallingAnimation = PlayerSpine.skeletonData.findAnimation("falling");
         PlayerSpine.helicopterAnimation = PlayerSpine.skeletonData.findAnimation("helicopter");
         PlayerSpine.jumpAnimation = PlayerSpine.skeletonData.findAnimation("jump");
+        PlayerSpine.jumpMissileAnimation = PlayerSpine.skeletonData.findAnimation("jump-missile");
         PlayerSpine.landAnimation = PlayerSpine.skeletonData.findAnimation("land");
+        PlayerSpine.missileAnimation = PlayerSpine.skeletonData.findAnimation("missile");
         PlayerSpine.runAnimation = PlayerSpine.skeletonData.findAnimation("run");
         PlayerSpine.standAnimation = PlayerSpine.skeletonData.findAnimation("stand");
         PlayerSpine.defaultSkin = PlayerSpine.skeletonData.findSkin("default");
@@ -259,6 +262,8 @@ public class Resources {
         public static SkeletonData skeletonData;
 
         public static AnimationStateData animationData;
+
+        public static Animation dieAnimation;
 
         public static Animation flyAnimation;
 
@@ -488,7 +493,11 @@ public class Resources {
 
         public static Animation jumpAnimation;
 
+        public static Animation jumpMissileAnimation;
+
         public static Animation landAnimation;
+
+        public static Animation missileAnimation;
 
         public static Animation runAnimation;
 

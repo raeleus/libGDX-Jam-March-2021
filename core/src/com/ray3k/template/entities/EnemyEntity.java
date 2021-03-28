@@ -1,6 +1,9 @@
 package com.ray3k.template.entities;
 
+import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
+import com.dongbat.jbump.Item;
+import com.dongbat.jbump.Response;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 
@@ -47,6 +50,15 @@ public abstract class EnemyEntity extends Entity {
     
     @Override
     public void collision(Collisions collisions) {
+        if (collisions.size() > 0) PlayerEntity.player.kill();
+    }
     
+    public static final EnemyCollisionFilter enemyCollisionFilter = new EnemyCollisionFilter();
+    public static class EnemyCollisionFilter implements CollisionFilter {
+        @Override
+        public Response filter(Item item, Item other) {
+            if (other.userData instanceof PlayerEntity) return Response.cross;
+            return null;
+        }
     }
 }

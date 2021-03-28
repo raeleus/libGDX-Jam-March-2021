@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "YAZbIUa404qhORVH/QypUEmczjQ",
+	"hash": "ku3LQWVPr38O7qIzpP7BkOfVjxs",
 	"spine": "3.8.99",
-	"x": -57.15,
-	"y": -52.43,
-	"width": 152.17,
-	"height": 460,
+	"x": -79.69,
+	"y": -32.53,
+	"width": 155.26,
+	"height": 442.61,
 	"images": "",
 	"audio": ""
 },
@@ -33,9 +33,11 @@
 	{ "name": "leg-right-target", "parent": "hip", "rotation": 178.58, "x": 81.03, "y": 84.11, "color": "ff3f00ff" },
 	{ "name": "leg-left-target", "parent": "hip", "rotation": 178.58, "x": 36.34, "y": 93.69, "color": "ff3f00ff" },
 	{ "name": "arm-left-target", "parent": "hip", "rotation": 178.58, "x": 15.05, "y": -67.42, "color": "ff3f00ff" },
-	{ "name": "arm-right-target", "parent": "hip", "rotation": 178.58, "x": 105.87, "y": -127.75, "color": "ff3f00ff" }
+	{ "name": "arm-right-target", "parent": "hip", "rotation": 178.58, "x": 105.87, "y": -127.75, "color": "ff3f00ff" },
+	{ "name": "game/assault-rifle", "parent": "forearm-right", "length": 119.18, "rotation": 28.38, "x": 57.01, "y": -9.99 }
 ],
 "slots": [
+	{ "name": "game/assault-rifle", "bone": "game/assault-rifle" },
 	{ "name": "game/jetpack", "bone": "body2h" },
 	{ "name": "arm-right", "bone": "arm-right", "dark": "000000", "attachment": "game/boss-arm" },
 	{ "name": "forearm-right", "bone": "forearm-right", "dark": "000000", "attachment": "game/boss-forearm" },
@@ -129,6 +131,17 @@
 			"forearm-right": {
 				"game/boss-forearm": { "x": 27.72, "y": 1.17, "rotation": 93.29, "width": 35, "height": 80 }
 			},
+			"game/assault-rifle": {
+				"game/assault-rifle": {
+					"x": 69.6,
+					"y": -7.38,
+					"scaleX": -1.4055,
+					"scaleY": 1.8261,
+					"rotation": -178.58,
+					"width": 180,
+					"height": 64
+				}
+			},
 			"game/jetpack": {
 				"game/jetpack": { "x": -61.3, "y": -42.3, "rotation": 15.34, "width": 156, "height": 103 }
 			},
@@ -169,8 +182,38 @@
 	"sfx/rocket launcher": { "audio": "sfx/rocket launcher.mp3" }
 },
 "animations": {
+	"die": {
+		"bones": {
+			"hip": {
+				"rotate": [
+					{},
+					{ "time": 0.1, "angle": 90 },
+					{ "time": 0.1667, "angle": 180 },
+					{ "time": 0.2667, "angle": -90 },
+					{ "time": 0.3333 },
+					{ "time": 0.4333, "angle": 90 },
+					{ "time": 0.5, "angle": 180 },
+					{ "time": 0.6, "angle": -90 },
+					{ "time": 0.6667 },
+					{ "time": 0.7667, "angle": 90 },
+					{ "time": 0.8333, "angle": 180 },
+					{ "time": 0.9333, "angle": -90 },
+					{ "time": 1 }
+				],
+				"scale": [
+					{},
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
 	"fly": {
 		"slots": {
+			"game/assault-rifle": {
+				"attachment": [
+					{ "name": "game/assault-rifle" }
+				]
+			},
 			"game/jetpack": {
 				"attachment": [
 					{ "name": "game/jetpack" }
@@ -222,6 +265,19 @@
 			"root": {
 				"translate": [
 					{ "x": -1.1, "y": 2.2 }
+				]
+			},
+			"game/assault-rifle": {
+				"rotate": [
+					{ "angle": -25.34 },
+					{ "time": 0.1667, "angle": -23.74 },
+					{ "time": 0.3333, "angle": -22.96 },
+					{ "time": 0.5, "angle": -23.06 },
+					{ "time": 0.6667, "angle": -24.11 },
+					{ "time": 0.8333, "angle": -23.06 },
+					{ "time": 1, "angle": -22.96 },
+					{ "time": 1.1667, "angle": -23.74 },
+					{ "time": 1.3333, "angle": -25.34 }
 				]
 			}
 		}

@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
@@ -11,12 +12,11 @@ import com.esotericsoftware.spine.Bone;
 import com.esotericsoftware.spine.Event;
 import com.esotericsoftware.spine.attachments.PointAttachment;
 import com.ray3k.template.Resources.*;
-import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.PlayerSpine.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
@@ -40,6 +40,8 @@ public class PlayerEntity extends Entity {
     private float shotRate;
     private float shotTimer;
     private float shotSpeed;
+    public boolean flying;
+    
     public enum GunMode {
         ASSAULT, SHOTGUN, ROCKET
     }
@@ -47,14 +49,23 @@ public class PlayerEntity extends Entity {
     private boolean onGround;
     public static PlayerEntity player;
     public boolean controllable = true;
+    public Animation running;
+    public Animation jumping;
+    public Animation ducking;
     
     @Override
     public void create() {
+        running = runAnimation;
+        jumping = jumpAnimation;
+        ducking = duckAnimation;
+        
+        collisionBoxDebugColor = Color.BLUE;
         player = this;
         depth = PLAYER_DEPTH;
         setSkeletonData(skeletonData, animationData);
+        setCollisionBox(-10, 15, 50, 100, nullCollisionFilter);
         skeleton.setScale(.5f, .5f);
-        animationState.setAnimation(0, runAnimation, true);
+        animationState.setAnimation(0, running, true);
         animationState.setAnimation(1, aimAnimation, false);
         weapon = new PlayerWeaponEntity();
         weaponHandBone = skeleton.findBone("weapon");
@@ -63,7 +74,7 @@ public class PlayerEntity extends Entity {
         
         setGunMode(GunMode.ASSAULT);
         gravityY = GRAVITY;
-        animationState.setAnimation(0, jumpAnimation, true);
+        animationState.setAnimation(0, jumping, true);
         onGround = false;
         animationState.addListener(new AnimationStateAdapter() {
             @Override
@@ -105,18 +116,29 @@ public class PlayerEntity extends Entity {
                 }
                 Animation aim;
                 if (gameScreen.areAllBindingsPressed(UP, RIGHT)) {
+                    setCollisionBox(-10, 15, 50, flying ? 120 : 100, nullCollisionFilter);
                     aim = aimUpRightAnimation;
                     weaponRotation = 45;
                 } else if (gameScreen.isBindingPressed(UP)) {
+                    setCollisionBox(-10, 15, 50, flying ? 120 : 100, nullCollisionFilter);
                     aim = aimUpAnimation;
                     weaponRotation = 90;
                 } else if (gameScreen.areAllBindingsPressed(DOWN, RIGHT)) {
+                    setCollisionBox(-10, 15, 50, flying ? 120 : 100, nullCollisionFilter);
                     aim = aimDownRightAnimation;
                     weaponRotation = 315;
                 } else if (gameScreen.isBindingPressed(DOWN)) {
-                    aim = aimDuckAnimation;
-                    weaponRotation = 0;
+                    if (flying) {
+                        aim = aimJumpDownAnimation;
+                        setCollisionBox(-10, 15, 50, 120, nullCollisionFilter);
+                        weaponRotation = 270;
+                    } else {
+                        aim = aimDuckAnimation;
+                        setCollisionBox(-10, 15, 50, 50, nullCollisionFilter);
+                        weaponRotation = 0;
+                    }
                 } else {
+                    setCollisionBox(-10, 15, 50, flying ? 120 : 100, nullCollisionFilter);
                     aim = aimAnimation;
                     weaponRotation = 0;
                 }
@@ -126,13 +148,13 @@ public class PlayerEntity extends Entity {
                     onGround = false;
                     deltaY = JUMP_SPEED;
                     gravityY = GRAVITY;
-                    animationState.setAnimation(0, jumpAnimation, true);
+                    animationState.setAnimation(0, jumping, true);
                 } else {
                     Animation stance;
                     if (gameScreen.isBindingPressed(DOWN) && !gameScreen.isBindingPressed(RIGHT)) {
-                        stance = duckAnimation;
+                        stance = ducking;
                     } else {
-                        stance = runAnimation;
+                        stance = running;
                     }
             
                     if (animationState.getCurrent(0).getAnimation() != stance)
@@ -164,7 +186,7 @@ public class PlayerEntity extends Entity {
                 deltaY = 0;
                 gravityY = 0;
                 animationState.setAnimation(0, landAnimation, false);
-                animationState.addAnimation(0, runAnimation, true, 0);
+                animationState.addAnimation(0, running, true, 0);
             }
     
             weapon.setPosition(weaponHandBone.getWorldX(), weaponHandBone.getWorldY());
@@ -269,9 +291,25 @@ public class PlayerEntity extends Entity {
     
     }
     
+    public void kill() {
+        sfx_womanGrunt.play(sfx);
+        destroy = true;
+        weapon.destroy = true;
+        var prop = new Prop(skeletonData, animationData, false);
+        prop.animationState.setAnimation(0, standAnimation, false);
+        prop.killOnOutside = true;
+        prop.deltaRotation = 500f;
+        prop.setPosition(x, y);
+        prop.setMotion(1500, 90);
+        prop.skeleton.getRootBone().setScale(.5f);
+        prop.setGravity(3000, 270f);
+        prop.reloadLevel = true;
+        entityController.add(prop);
+    }
+    
     public void stopControlling() {
         controllable = false;
-        animationState.setAnimation(0, runAnimation, false);
+        animationState.setAnimation(0, running, false);
         y = landLevel;
         weapon.visible = false;
         animationState.clearTrack(1);

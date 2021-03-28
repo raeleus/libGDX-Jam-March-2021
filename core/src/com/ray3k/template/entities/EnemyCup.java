@@ -22,7 +22,7 @@ public class EnemyCup extends EnemyEntity {
         
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
-        setCollisionBox(-20.85f, 0f, 45f, 120f, Core.nullCollisionFilter);
+        setCollisionBox(-20.85f, 0f, 45f, 120f, enemyCollisionFilter);
         collisionBoxDebugColor = Color.GREEN;
     }
     

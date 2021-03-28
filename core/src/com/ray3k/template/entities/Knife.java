@@ -50,6 +50,7 @@ public class Knife extends Entity {
             var collision = collisions.get(i);
             if (collision.other.userData instanceof PlayerEntity) {
                 destroy = true;
+                PlayerEntity.player.kill();
             }
         }
     }

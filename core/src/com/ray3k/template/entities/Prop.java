@@ -3,19 +3,22 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.audio.Sound;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
-import com.esotericsoftware.spine.AnimationState;
 import com.esotericsoftware.spine.AnimationState.AnimationStateAdapter;
 import com.esotericsoftware.spine.AnimationState.TrackEntry;
 import com.esotericsoftware.spine.AnimationStateData;
 import com.esotericsoftware.spine.Event;
 import com.esotericsoftware.spine.SkeletonData;
+import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.JamGame.*;
 
 public class Prop extends Entity {
     public boolean killOnOutside;
     public float deltaRotation;
+    public boolean reloadLevel;
+    public boolean endGame;
+    
     public Prop(SkeletonData skeletonData, AnimationStateData animationData, boolean destroyOnComplete) {
         setSkeletonData(skeletonData, animationData);
         
@@ -66,7 +69,8 @@ public class Prop extends Entity {
     
     @Override
     public void destroy() {
-    
+        if (reloadLevel) Core.core.transition(new GameScreen());
+        if (endGame) GameScreen.gameScreen.endLevel = true;
     }
     
     @Override

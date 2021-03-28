@@ -31,7 +31,7 @@ public class EnemyPot extends EnemyEntity {
         
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
-        setCollisionBox(skeletonBounds, Core.nullCollisionFilter);
+        setCollisionBox(skeletonBounds, enemyCollisionFilter);
         collisionBoxDebugColor = Color.GREEN;
     }
     

@@ -9,7 +9,7 @@ import com.dongbat.jbump.Response.Result;
 
 import static com.ray3k.template.Resources.ProjectileSpine.*;
 
-public class EnemyMortarRound extends Entity {
+public class MortarRound extends Entity {
     @Override
     public void create() {
         setSkeletonData(skeletonData, animationData);
@@ -53,6 +53,7 @@ public class EnemyMortarRound extends Entity {
             var collision = collisions.get(i);
             if (collision.other.userData instanceof PlayerEntity) {
                 destroy = true;
+                PlayerEntity.player.kill();
             }
         }
     }

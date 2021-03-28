@@ -9,15 +9,17 @@ import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.BossSpine.*;
 import static com.ray3k.template.Resources.*;
 
-public class EnemyBoss extends EnemyEntity {
+public class EnemyBoss2 extends EnemyEntity {
     public static final float TARGET_SPEED = 200f;
     public static final float ACCELERATION = 400f;
     public static final float STANDING_X = 950f;
-    public static final float DELAY_START = 3.0f;
+    public static final float DELAY_START = 1.5f;
     public static final float DELAY_MINIMUM = .7f;
-    public static final float HEALTH_START = 20000f;
+    public static final float HEALTH_START = 10000f;
     private float delay = 3.0f;
     private float timer = delay;
+    private float moveTimer = -1;
+    private float targetY;
     
     @Override
     public void create() {
@@ -25,12 +27,13 @@ public class EnemyBoss extends EnemyEntity {
         sfx_evilLaugh.play(sfx);
         health = HEALTH_START;
         setSkeletonData(skeletonData, animationData);
-        animationState.setAnimation(0, runAnimation, true);
+        animationState.setAnimation(0, flyAnimation, true);
         
         setMotion(TARGET_SPEED, 180f);
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeletonBounds, Core.nullCollisionFilter);
         collisionBoxDebugColor = Color.GREEN;
+        targetY = y;
     }
     
     @Override
@@ -51,54 +54,63 @@ public class EnemyBoss extends EnemyEntity {
             var choice = MathUtils.random(3);
             switch (choice) {
                 case 0:
-                    animationState.setAnimation(1, throwAnimation, false);
-                    animationState.addEmptyAnimation(1, .15f, 0);
-    
-                    var knife = new Knife();
-                    knife.setMotion(900, 180);
-                    knife.setPosition(x, y + 180);
-                    entityController.add(knife);
-                    knife.depth = ENEMY_DEPTH + 1;
+                    for (int i = 0; i < 5; i++) {
+                        var mortar = new MortarRound();
+                        mortar.setMotion(900, 180);
+                        mortar.setPosition(x - 250 + 50 * i, y + 230);
+                        entityController.add(mortar);
+                        mortar.depth = ENEMY_DEPTH + 1;
+                        moveTimer = .5f;
+                    }
                     break;
                 case 1:
-                    animationState.setAnimation(1, throwUnderhandAnimation, false);
-                    animationState.addEmptyAnimation(1, .15f, 0);
-    
-                    knife = new Knife();
-                    knife.setMotion(900, 180);
-                    knife.setPosition(x, y + 100);
-                    entityController.add(knife);
-                    knife.depth = ENEMY_DEPTH - 1;
+                    for (int i = 0; i < 8; i++) {
+                        var mortar = new MortarRound();
+                        mortar.setMotion(875, 110 + 140 / 8 * i);
+                        mortar.setPosition(x - 250, y + 200);
+                        entityController.add(mortar);
+                        mortar.depth = ENEMY_DEPTH + 1;
+                        moveTimer = .5f;
+                    }
                     break;
                 case 2:
-                    animationState.setAnimation(1, throwAnimation, false);
-                    animationState.addEmptyAnimation(1, .15f, 0);
-    
-                    var mortar = new MortarRound();
-                    mortar.gravityY = -1000f;
-                    mortar.setMotion(875, 135);
-                    mortar.setPosition(x, y + 180);
-                    entityController.add(mortar);
-                    mortar.depth = ENEMY_DEPTH + 1;
+                    for (int j = 0; j < 3; j++) {
+                        for (int i = 0; i < 3; i++) {
+                            var mortar = new MortarRound();
+                            mortar.gravityY = -1000f;
+                            mortar.setMotion(800, 150 + 160 / 5 * i);
+                            mortar.setPosition(x - 250 + 50 * j, y + 200);
+                            entityController.add(mortar);
+                            mortar.depth = ENEMY_DEPTH + 1;
+                            moveTimer = .5f;
+                        }
+                    }
                     break;
                 case 3:
-                    animationState.setAnimation(1, throwUnderhandAnimation, false);
-                    animationState.addEmptyAnimation(1, .15f, 0);
-        
-                    mortar = new MortarRound();
-                    mortar.gravityY = 1000f;
-                    mortar.setMotion(900, 225);
-                    mortar.setPosition(x, y + 100);
-                    entityController.add(mortar);
-                    mortar.depth = ENEMY_DEPTH - 1;
+                    for (int i = 0; i < 3; i++) {
+                        var mortar = new MortarRound();
+                        mortar.setPosition(x - 250 + 50 * i, y + 230);
+                        mortar.setMotion(1200, Utils.pointDirection(mortar.x, mortar.y, PlayerEntity.player.getCollisionBoxCenterX(), PlayerEntity.player.getCollisionBoxCenterY()));
+                        entityController.add(mortar);
+                        mortar.depth = ENEMY_DEPTH + 1;
+                        moveTimer = .5f;
+                    }
                     break;
             }
             
         }
+        if (moveTimer >= 0) {
+            moveTimer -= delta;
+            if (moveTimer < 0) {
+                targetY = MathUtils.random(50, 300);
+            }
+        }
+        y = Utils.approach(y, targetY, 700 * delta);
     }
     
     @Override
     public void hurt(float damage, float recoilSpeed) {
+        System.out.println(health);
         if (animationState.getCurrent(2) == null || animationState.getCurrent(2).isComplete()) {
             animationState.setAnimation(2, hurtAnimation, false);
         }
@@ -113,11 +125,11 @@ public class EnemyBoss extends EnemyEntity {
                 }
             }
             
-            PlayerEntity.player.stopControlling();
             destroy = true;
             var prop = new Prop(skeletonData, animationData, true);
+            prop.endGame = true;
             prop.skeleton.setSkin(skeleton.getSkin());
-            prop.animationState.setAnimation(0, secondWindAnimation, false);
+            prop.animationState.setAnimation(0, dieAnimation, false);
             prop.setPosition(x, y);
             Core.entityController.add(prop);
     

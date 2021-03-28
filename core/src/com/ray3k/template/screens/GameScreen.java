@@ -88,11 +88,12 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
-        var player = new PlayerEntity();
-        player.setPosition(100, 600);
-        entityController.add(player);
         
         if (level == 1) {
+            var player = new PlayerEntity();
+            player.setPosition(100, 600);
+            entityController.add(player);
+            
             var level = new Level1bg();
             entityController.add(level);
     
@@ -100,6 +101,10 @@ public class GameScreen extends JamScreen {
             entityController.add(spawner);
             PlayerEntity.landLevel = 50f;
         } else if (level == 2) {
+            var player = new PlayerEntity();
+            player.setPosition(100, 600);
+            entityController.add(player);
+            
             var level = new Level2bg();
             entityController.add(level);
     
@@ -107,6 +112,10 @@ public class GameScreen extends JamScreen {
             entityController.add(spawner);
             PlayerEntity.landLevel = 150f;
         } else if (level == 3) {
+            var player = new PlayerEntity();
+            player.setPosition(100, 600);
+            entityController.add(player);
+            
             var level = new Level1bg();
             entityController.add(level);
     
@@ -115,11 +124,15 @@ public class GameScreen extends JamScreen {
             entityController.add(boss);
             boss.setPosition(1024, PlayerEntity.landLevel - 40);
         } else if (level == 4) {
+            var player = new PlayerEntity2();
+            player.setPosition(100, 600);
+            entityController.add(player);
+            
             var level = new Level3bg();
             entityController.add(level);
     
-            PlayerEntity.landLevel = 150f;
-            var boss = new EnemyBoss();
+            PlayerEntity.landLevel = 200f;
+            var boss = new EnemyBoss2();
             entityController.add(boss);
             boss.setPosition(1024, PlayerEntity.landLevel - 40);
         }
